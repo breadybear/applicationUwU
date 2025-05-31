@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application</title>
+  <link rel="stylesheet" href="style.css" />
+
+<style>
+    #backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background-color: #bfc3e2; /* 根據你的色票背景 */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: none; /* 初始隱藏 */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #cacde4;
+  transform: scale(1.1);
+}
+
+.experience-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.experience-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.experience-tooltip {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: default;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.experience-tooltip:hover {
+  transform: translateY(-5px);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 260px;
+  background-color: #fff8dc;
+  color: #333;
+  text-align: left;
+  border-radius: 10px;
+  padding: 12px;
+  position: absolute;
+  z-index: 10;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.experience-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+    
+  <header class="banner">
+    <img src="images/CYCU.jpg" alt="CYCU Banner" />
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#habits">Habits</a></li>
+        <li><a href="#ref">Referees/Recommendation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 彈窗 modal 結構 -->
+  <div id="certificateModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" src="images/toeic-certificate.JPG" alt="TOEIC Certificate" />
+  </div>
+
+  <main>
+    <section id="intro" class="intro-section">
+      <div class="intro-content">
+        <div class="intro-photo">
+          <img src="images/myphoto.JPG" alt="My Photo" />
+        </div>
+        <div class="intro-text">
+          <p>Hi! I am a passionate engineer with a background in electronics and programming.</p>
+          <p>I enjoy solving complex problems and building creative solutions.</p>
+        </div>
+      </div>
+    </section>
+
+
+<section class="slogan-rotator">
+  <p id="fade-text" class="slogan">Engineer. Dreamer. Problem-Solver.🖥️</p>
+</section>
+
+
+    <section id="languages" class="language-hover-section">
+      <h2>Languages</h2>
+      <div class="language-grid">
+
+        <!-- English -->
+        <div class="language-box" onclick="togglePopup(this)">
+          <div class="label">English</div>
+          <div class="popup">
+            <p>★★★★★</p>
+            <ul>
+              <li>Native speaker</li>
+              <li>Fluent in speaking, writing, and reading</li>
+              <li>One of my recommender is the America la!</li>
+              <li>TOEIC 890</li>
+            </ul>
+            <button onclick="openModal('certificateModal'); event.stopPropagation()">View Certificate</button>
+
+          </div>
+        </div>
+
+        <!-- 中文 -->
+        <div class="language-box" onclick="togglePopup(this)">
+          <div class="label">中文</div>
+          <div class="popup">
+            <p>★★★★★</p>
+            <ul>
+              <li>母語者 + 一單位的孔子</li>
+              <li>可流暢表達抽象概念</li>
+              <li>具備文化敏感度</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Español -->
+        <div class="language-box" onclick="togglePopup(this)">
+          <div class="label">Español</div>
+          <div class="popup">
+            <p>★★☆☆☆</p>
+            <ul>
+              <li>Hablo un pococita de Español.</li>
+              <li>Aprender palabras gramaticales</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 日本語 -->
+        <div class="language-box" onclick="togglePopup(this)">
+          <div class="label">日本語</div>
+          <div class="popup">
+            <p>★★★☆☆</p>
+            <ul>
+              <li>普通の会話ができる</li>
+              <li>敬語については勉強中</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  <section id="projects" class="project-section">
+  <h2>Projects</h2>
+      <a>wanna see my projects? Hover and Click it</a>
+    <div class="project-intro">
+      <p>Click the project title to view the project details.</p>
+  <div class="project-grid">
+    <!-- 一個 Project -->
+    <a href="https://drive.google.com/file/d/1_OaHg0EDtgLZsocfpuOgT43ftzH-U_m_/view?usp=sharing" class="project-box" target="_blank">
+      <img src="images/project1-preview.jpg" alt="Project 1">
+    </a>
+    <a href="https://drive.google.com/file/d/1pzQObhYhT9uBltoQsVPdJtU3Qi_gZ6qG/view?usp=sharing" class="project-box" target="_blank">
+      <img src="images/project2-preview.png" alt="Project 2">
+    </a>
+    <a href="https://drive.google.com/file/d/1b2Nkrj2WMyZ0rmq9_dDHMjhYuvTsCm8o/view?usp=sharing" class="project-box" target="_blank">
+      <img src="images/project3-preview.jpg" alt="Project 3">
+    </a>
+    <a href="https://drive.google.com/file/d/1hIVEMoCVNm2OhITI2IsOBiHG9DdQJG-s/view?usp=sharing" class="project-box" target="_blank">
+      <img src="images/project4-preview.png" alt="Project 4">
+    </a>
+  </div>
+</section>
+
+  </section>
+<section>
+<section id="skills" class="skills-section content-section reveal-fade">
+  <h2>Skills</h2>
+  <div class="skill-grid">
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-c')" title="點我看 C 學習歷程">C</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-python')" title="點我看 Python 學習歷程">Python</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-html')" title="點我看 HTML 學習歷程">HTML</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-css')" title="點我看 CSS 學習歷程">CSS</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-matlab')" title="點我看 MATLAB 學習歷程">MATLAB</div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-and-so-on')" title="點我看更多技能">ET CETERA</div>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<!-- Experience Section -->
+<section id="experience" class="experience-section">
+  <h2>Experience</h2>
+  <div class="experience-grid">
+    <div class="card experience-tooltip">
+      助教
+      <span class="tooltip-text">中原大學 (2025/2–2025/6)<br>
+      協助授講與統計軟體教學、批改作業與考試，指導使用 Excel 與 SPSS。然後老師真的很健忘( ′0 ω。‵)，每天都會收到學弟妹郵件，再不來交作業跟考試啊哈!!!!</span>
+    </div>
+
+    <div class="card experience-tooltip">
+      專科訓練教師
+      <span class="tooltip-text">鴻鑫補習班 (2022/10–2023/5)<br>
+      教授小六英文文法與單字，輔導學生應試。現代學生破壞力跟「想像力」我終於知道這行為甚麼這麼缺了。較小型補習班的國中生是哥吉拉。(認證)</span>
+    </div>
+
+    <div class="card experience-tooltip">
+      餐飲店
+      <span class="tooltip-text">晶品牛排 (2020/3–2022/8)<br>
+      配合店長來出餐收營與備料，各種奇形種客人與店長也一樣很想下班XD。看到有人要臨時壓線進來馬上收煎鍋跟時間一到馬上關掉招牌，連客人都還在時就已經開始叫我去打掃。個人覺得餐飲業最好的提升技能是：不怕蟑螂，死也不能讓客人看到。</span>
+    </div>
+
+    <div class="card experience-tooltip">
+      售票接待
+      <span class="tooltip-text">台北市立動物園 (2018/3–2019/8)<br>
+      擔任售票事務與導覽，管理 13 人以上收銀隊伍。會遇到各種奧客和世界各地的觀光客，因為語言優勢我都是被主管推出去的！有一次在穿山甲館有外國旅客暈倒，直接從貓熊館扛著輪椅用跑得去支援，說真的那個動線爛死了。</span>
+    </div>
+  </div>
+</section>
+
+    <!-- Habits Section -->
+<section id="habits" class="habits-section content-section reveal-fade">
+  <h2>Habits</h2>
+  <a class="habit-subtext">Click the card to see more details</a>
+  <div class="card-container">
+
+    <!-- 文學 -->
+    <div class="card habit-preview-card" onclick="openHabitModal('modal-spring')">
+      世界經典文學
+      <div class="habit-preview">
+        <img src="images/lesmis.jpg" alt="悲慘世界預覽圖">
+        <p>從《悲慘世界》起，開啟世界文學之旅，進而閱讀芥川龍之介並燃燒其遺稿，以行動致敬文學靈魂。</p>
+      </div>
+    </div>
+
+    <!-- 哲學 -->
+    <div class="card habit-preview-card" onclick="openHabitModal('modal-summer')">
+      宗教哲學
+      <div class="habit-preview">
+        <img src="images/magic.jpg" alt="宗教神秘學預覽圖">
+        <p>家族族譜連結台灣風水與召喚術，探索祆教與凱爾特神話，讓信仰成為生活的內核。</p>
+      </div>
+    </div>
+
+    <!-- 歷史 -->
+    <div class="card habit-preview-card" onclick="openHabitModal('modal-autumn')">
+      西洋通史
+      <div class="habit-preview">
+        <img src="images/history.jpg" alt="歷史書圖預覽">
+        <p>從文學跳脫到普魯士史與戰後政治，歷史成為生活與文化理解的框架，而不只是考試科目。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+      <!-- Recommendation Section -->
+<section id="ref" class="recommendation-section">
+  <h2>References / Recommendation</h2>
+  <div class="recommendation-grid">
+    <!-- 左邊 -->
+    <a href="https://eeweb.cycu.edu.tw/portfolio-item/4679/" target="_blank" class="recommendation-card">
+      <img src="images/recommend1.png" alt="Shih-Hsiung Twu">
+    </a>
+
+    <!-- 右邊 -->
+    <a href="https://site-783956-7297-5412.mystrikingly.com/" target="_blank" class="recommendation-card">
+      <img src="images/recommend2.png" alt="Cole Carnesecca">
+    </a>
+  </div>
+</section>
+
+    <!-- Education Section -->
+
+<section class="content-section education-section reveal-fade">
+  <h2>🎓 Education</h2>
+  <div class="education-card">
+    <div class="edu-info">
+      <div class="school-name">CYCU</div>
+      <div class="degree">Bachelor of Science in Electronics Engineering</div>
+      <div class="duration">2021/9 – 2025/6</div>
+    </div>
+  </div>
+</section>
+
+<!-- Behind the Scenes Section -->
+<section class="behind-section">
+  <h2>Behind the Scenes</h2>
+  <div class="behind-split-row">
+<div class="behind-split-row">
+
+  <!-- 左欄 -->
+  <div class="behind-column">
+    <div class="behind-card">
+      <h3>第一次Ver超醜DER</h3>
+      <div class="image-hover-wrapper">
+        <a href="https://github.com/breadybear/apllicationOWO" target="_blank" class="image-hover-link">🔗 GitHub</a>
+        <img src="images/laugh.png" alt="Version 1" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 右欄 -->
+  <div class="behind-column">
+    <div class="behind-card">
+      <h3>錯誤展示圖</h3>
+      <img src="images/error_demo.png" alt="Error Demo" />
+    </div>
+  </div>
+
+</div>
+</section>
+
+  </main>
+  <button id="backToTop" title="回到最上方">🔼</button>
+
+  
+<!-- 點擊角色圖 -->
+ 
+<div class="click-game-wrapper">
+  <div class="game-title">點點遊戲</div>
+  <img id="clickImg" src="images/export.png" onclick="handleGameClick()" />
+</div>
+    
+
+<!-- 成就圖層（顯示到某成就時出現） -->
+<img id="shame-overlay" src="images/shame.png"
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+  <footer>
+    <p>© 2025 by Sanguis Lecter. All rights reserved.</p>
+  </footer>
+
+  <!-- ✅ JavaScript（唯一版本） -->
+  <script>
+    function openModal() {
+      document.getElementById("certificateModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("certificateModal").style.display = "none";
+    }
+
+    window.addEventListener("click", function (e) {
+      const modal = document.getElementById("certificateModal");
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    function togglePopup(element) {
+      document.querySelectorAll(".language-box").forEach((box) => {
+        if (box !== element) box.classList.remove("active");
+      });
+      element.classList.toggle("active");
+    }
+
+    document.addEventListener("click", function (e) {
+      const isBox = e.target.closest(".language-box");
+      if (!isBox) {
+        document.querySelectorAll(".language-box").forEach((box) =>
+          box.classList.remove("active")
+        );
+      }
+    });
+  </script>
+  <div id="projectModal" class="modal">
+  <span class="close" onclick="closePreview()">&times;</span>
+  <img class="modal-content" id="projectImage" src="" alt="Project Preview">
+</div>
+<script>
+  function showPreview(src) {
+    const modal = document.getElementById("projectModal");
+    const img = document.getElementById("projectImage");
+    img.src = src;
+    modal.style.display = "block";
+  }
+
+  function closePreview() {
+    document.getElementById("projectModal").style.display = "none";
+  }
+
+  // 點擊背景區域也可以關閉
+  window.addEventListener("click", function (e) {
+    const modal = document.getElementById("projectModal");
+    const img = document.getElementById("projectImage");
+    if (e.target === modal || e.target === img) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+<script>
+  const slogans = [
+    "Engineer. Dreamer. Problem-Solver.🖥️",
+    "Coding the future, one line at a time.💻",
+    "Exploring AI and electronics with passion.⚡",
+    "Turning ideas into beautiful systems.🌟"
+  ];
+
+  let sloganIndex = 0;
+  const fadeText = document.getElementById('fade-text');
+
+  function showNextSlogan() {
+    fadeText.classList.remove('show');
+    setTimeout(() => {
+      sloganIndex = (sloganIndex + 1) % slogans.length;
+      fadeText.textContent = slogans[sloganIndex];
+      fadeText.classList.add('show');
+    }, 500); // wait for fade-out before change
+  }
+
+  // 初始顯示
+  fadeText.classList.add('show');
+  setInterval(showNextSlogan, 2500); // 每 3.5 秒換一句
+</script>
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// 點 modal 背景區塊關閉
+window.addEventListener("click", function (e) {
+  const modals = document.querySelectorAll(".skill-modal");
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+window.addEventListener("click", function (e) {
+  const modals = document.querySelectorAll(".skill-modal");
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+</script>
+<!-- Place ALL modals outside any section -->
+
+<div id="modal-c" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-c')">&times;</span>
+      <h3>C 的學習歷程</h3>
+      <p>濫觴是高中時接觸到電腦克和國家高速運算中心，但後來開始coding我難過，但我相信真有人喜歡的。我在大學修習 C 語言時，從資料型別、邏輯控制到指標與記憶體管理逐步建立基礎。尤其在操作硬體層級與理解程式底層運作上，C 給了我深厚的訓練。實作過簡易資料結構（stack, queue）與小型嵌入式專案，大部分如MCU等都是以C為基礎以及SERVER的管理和更低接的設置，顧C我認為算是難學但需要具備的基礎。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-python" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-python')">&times;</span>
+      <h3>Python 的學習歷程</h3>
+      <p>Python 是我進入資料處理，再到接觸 TensorFlow 與 sklearn 做機器學習練習。當時使用餵數據庫也遇到許多挫折，但現在依然對其保持興趣。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-html" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-html')">&times;</span>
+      <h3>HTML 的學習歷程</h3>
+      <p>HTML 是我進入網頁開發的第一步。了解各種標籤語義與結構佈局後，逐步結合 CSS 與 JS 打造互動式網頁，並透過開發作品集強化結構思維。現在這個就是HTMLσ`∀´σ</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-css" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-css')">&times;</span>
+      <h3>CSS 的學習歷程</h3>
+      <p>學習 CSS 時，最早接觸其實是噗浪，我從控制版面結構、色彩搭配、到動畫效果漸進累積，看到別人的神奇介面自己也想要故剛好噗浪提供了一個接觸機會。沒錯，而且為了美美地上千行在所不惜。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-matlab" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-matlab')">&times;</span>
+      <h3>MATLAB 的學習歷程</h3>
+      <p>MATLAB 是我在工程學科常用的分析工具，特別是處理訊號處理、數值模擬與機器學習的 prototyping。曾經使用 MATLAB 進行無人機模擬與生物模型建構。然後專題老師完全不提供!!謝謝學長同學有完整版QWQ</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-and-so-on" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-and-so-on')">&times;</span>
+      <h3>其他技能的學習歷程</h3>
+      <p>我也持續學習其它語言與技術，例如 JavaScript(這個一定要學習了)、C#、PHP 等，視需求探索並進行專案實踐。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-spring" class="habit-modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeHabitModal('modal-spring')">&times;</span>
+
+
+<div class="image-text-block">
+  <img src="images/lesmis.jpg" alt="悲慘世界 Les Misérables" />
+  <p>
+    一開始接觸文學的機會是在國三的「音樂課」，對，音樂。
+    我們必須要做一份報告，有關於音樂劇《悲慘世界》。在找尋資料的過程中我發現他是有原著的，於是，
+    我去圖書館找來看，厚度可以拿來敲暈別人，但，我讀到淚流滿面。
+    此時，對於文學的愛意種子發芽。
+  </p>
+</div>
+
+<div class="image-text-block">
+  <img src="images/literature.jpg" alt="書櫃上的世界文學作品" />
+  <p>
+    漸漸地我開始從雨果去搜尋其他作品，當我回過神時我的書櫃已經變成文學的產地。
+    但我不滿足於此，所有經過翻譯的文字是會變形的，不論信達雅做得多好。
+    故我將手伸向原文，因為我的英文能力，我可以從更深層的地方感受到這些作者為何使用這些詞語，
+    為何如此編排情緒與句構，所以也可以說是我對文學的熱愛推進了我學習語言的部分原因。
+  </p>
+</div>
+
+<p>
+  如同我後來因為一些遊戲接觸到大正文學，日文的最終目標，就是成為那些大師身旁的讀者，跨越時空與背景，
+  這是讀文學最讓人感動的，如同《蘭亭集序》縮寫，我們，會站在跟那些留下印記的文人身邊，感受與理解他們的思想。
+</p>
+<p>
+  最喜歡的莫過於《基督山恩仇記》，他是個很好閱讀，屬於大仲馬時代的八點檔，但文筆流暢，即使經過翻譯還是能體會他的文學風格與浪漫。
+</p>
+
+<div class="image-text-block">
+  <img src="images/japan.jpg" alt="芥川龍之介與大正文學藏書" />
+  <p>
+    大正文學則是我最崇敬的芥川龍之介老師，他的孤寂與對自身的要求，非常的痛苦細膩。
+    我曾經在讀他的全集時，他又表明過，他的遺書並不想被公開，但，後代世人還是將其當作他的文學，
+    我心一橫，將書中那個篇章損毀，並燃燒，這是我對於作者最高敬意的表現，謝謝您，芥川老師。
+    最喜歡的代表作是短篇：《海市蜃樓》。
+  </p>
+</div>
+
+<p>P.S. 所以其實應該寫成「西洋經典文學」和「日本大正文學」，更加精準。</p>
+
+
+  </div>
+</div>
+<div id="modal-summer" class="habit-modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeHabitModal('modal-summer')">&times;</span>
+
+<!-- 第一組 (圖片左/文字右) -->
+
+<div class="image-text-block">
+  <img src="images/magic.jpg" alt="魔法書圖片" />
+  <p>神秘學與台灣民宿真的算是一件非常詭譎的興趣？我的朋友曾經說過我的櫃子感覺裡面會招喚出惡魔哈哈哈哈。其實一切都來自於我是何家第26代第三房子孫，這個族譜</p>
+  <p>是我們家祠堂發現的，讓我開始研究了我們的來歷以及為何客家人會有許多習俗，慢慢演變成感受到我們台灣生活中的每一步都是神話與信仰，習慣的房門方向、廚房的擺設、神明的供奉，甚至是我們的名字都是有意義的。</p>
+</div>
+
+<!-- 第二組 (文字左/圖片右) -->
+
+<div class="image-text-block reverse">
+  <img src="images/1000001667.jpg" alt="召喚惡魔圖" />
+  <p>召喚惡魔沒那麼簡單喔，尤其是72魔神，<br>需要特定行星排列，日子，衣服，銀做的所羅門五角星（省略）。</p>
+</div>
+
+<!-- 第四組（文字左、圖片右） -->
+
+<div class="image-text-block reverse">
+  <img src="images/myth.jpg" alt="神話圖片" />
+  <p>
+    曾經在我們學校的宗教哲學課堂上報告為什麼要「安太歲」，明明是自己的年份為何還要安呢？想知道的話可以問我本人（挑眉，你懂得）。<br>
+    我對於神話也有濃厚的興趣，尤其是越少人知道的越有趣。
+    目前專職在凱爾特與北斯堪地那維亞神話、中南美洲神話文化、波斯祆教等稀有神話領域。
+  </p>
+</div>
+</div>
+</div>
+
+<div id="modal-autumn" class="habit-modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeHabitModal('modal-autumn')">&times;</span>
+
+
+<div style="text-align: center;">
+  <img src="images/history.jpg" alt="書櫃與歷史書" style="max-width: 300px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+</div>
+
+<div class="text-row-split">
+  <div class="text-block">
+    <p>西洋，為何是西洋呢，因為也跟我一開始碰到的文學有關係，我開始認識了作者雨果，他所撰寫的《悲慘世界》也是真實巴黎公社的一段。我自然而然開始去參考他的背景，逐漸地發現原來所有的一切，科學文學藝術文化都是建立在「文明」也就是「歷史」之上。</p>
+  </div>
+  <div class="text-block">
+    <p>最有趣發生過的是音樂課！老師正在介紹音樂家，突然跳到了神聖羅馬帝國、普魯士等，老師也說他沒研究。我就自告奮勇開始講解羅馬帝國史，一直講到一戰、二戰與東西德。</p>
+  </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <p>所以，其實歷史影響著不只是歷史，而是所有的你對一切的認知與生活。後來的歷史課，我的課本上都是額外的補充知識，彷彿在看一場人類如何走到如今的紀錄片，而不是為了考試而讀。</p>
+  <div style="text-align: center; font-weight: bold; margin-top: 20px;">
+    人必須發展出社會三科的穩定才有辦法在生活安穩的基礎上發展文明科學甚至思想！<br>
+    故沒有文理孰重孰輕，這些基礎才是我們該尊重的，沒有他們也就沒有後來的二三四類未來。
+  </div>
+</div>
+
+
+
+
+<script>
+function openHabitModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = "flex";
+}
+
+function closeHabitModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = "none";
+}
+
+// 點擊背景區域關閉 habit-modal
+window.addEventListener("click", function (e) {
+  const modals = document.querySelectorAll(".habit-modal");
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+</script>
+
+
+
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  // 當滑動超過 300px 顯示按鈕
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  // 點擊後平滑返回最上方
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+
+<script>
+  let clickCount = 0;
+
+  function handleGameClick() {
+    const clickImg = document.getElementById("clickImg");
+
+    // 切換爆炸圖
+    clickImg.src = "images/export(1).png";
+    setTimeout(() => {
+      clickImg.src = "images/export.png";
+    }, 200);
+
+    clickCount++;
+    showClickCount();
+
+    if (clickCount === 5) showAchievement("coding人生online");
+    if (clickCount === 10) showAchievement("esc鍵去了！");
+    if (clickCount === 15) {
+      showAchievement("error在哪裡!");
+      showShameImage();
+    }
+    if (clickCount === 20) showAchievement("天好黑風好大");
+    if (clickCount === 25) showAchievement("再上去沒了");
+    if (clickCount === 35) showAchievement("人要沒了兄弟!");
+    if (clickCount === 50) showAchievement("HIRE ME!");
+    if (clickCount === 65) showAchievement("您...真狠");
+    if (clickCount === 100) showAchievement("還是算了我沒了");
+  }
+
+  function showClickCount() {
+    const countEl = document.createElement("div");
+    countEl.className = "click-count";
+    countEl.textContent = `點擊數：${clickCount}`;
+    document.body.appendChild(countEl);
+    setTimeout(() => countEl.remove(), 1000);
+  }
+
+  function showAchievement(text) {
+    const ach = document.createElement("div");
+    ach.className = "achievement";
+    ach.textContent = `🏆 成就達成：${text}`;
+    document.body.appendChild(ach);
+    setTimeout(() => ach.remove(), 2500);
+  }
+
+  function showShameImage() {
+    const shame = document.getElementById("shame-overlay");
+    if (shame) {
+      shame.style.display = "block";
+      setTimeout(() => {
+        shame.style.display = "none";
+      }, 3500);
+    }
+  }
+</script>
+<script>
+
+  window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+<img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+
+
+</body>
+</html>
