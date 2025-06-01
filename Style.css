@@ -1247,14 +1247,13 @@ html {
 
 .css-preview-hover:hover::after {
   content: "";
-  position: absolute;
+  position: fixed; /* ⬅️ 固定在畫面中間 */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: auto;
+  width: 360px;
   aspect-ratio: 4 / 3;
-  background-image: url("images/traincrash.png"); /* ← 記得換成你火車圖的檔名 */
+  background-image: url("images/csserr.png"); /* ✅ 使用正確檔名 */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1262,7 +1261,7 @@ html {
   border: 2px solid #ccc;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  z-index: 999;
+  z-index: 9999;
   opacity: 1;
 }
 
