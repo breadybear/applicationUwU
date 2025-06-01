@@ -370,8 +370,8 @@
 </div>
 
 <!-- 🎬 Modal -->
-<div class="css-modal" id="cssModal">
-  <img id="cssModalImg" src="" alt="CSS災難圖">
+<div class="css-modal" id="cssCrashModal" style="display:none;">
+  <img id="cssCrashImg" class="modal-content" src="" alt="CSS災難圖">
 </div>
 
   </div>
@@ -811,23 +811,29 @@ window.addEventListener("click", function (e) {
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
 
 <script>
-const cssTrigger = document.querySelector('.css-trigger-card');
-const cssModal = document.getElementById('cssModal');          // ✅ 確保對的是 cssModal
-const cssModalImg = document.getElementById('cssModalImg');    // ✅ 對的是 cssModalImg
+<script>
+  const cssTrigger = document.querySelector('.css-trigger-card');
+  const cssCrashModal = document.getElementById('cssCrashModal');
+  const cssCrashImg = document.getElementById('cssCrashImg');
 
-cssTrigger.addEventListener('click', () => {
-  cssModal.style.display = 'flex';
-  cssModalImg.src = 'images/csserr.png'; // 預設第一張
+  cssTrigger.addEventListener('click', () => {
+    cssCrashModal.style.display = 'flex';
+    cssCrashImg.src = 'images/csserr.png';
 
-  setTimeout(() => {
-    cssModalImg.src = 'images/css.png'; // ✅ 確定名稱沒錯
-  }, 2000);
-});
+    // 2 秒後切換圖片
+    setTimeout(() => {
+      cssCrashImg.src = 'images/css.png';
+    }, 2000);
+  });
 
-cssModal.addEventListener('click', () => {
-  cssModal.style.display = 'none';
-  cssModalImg.src = ''; // 清掉圖片避免殘影
-});
+  // 點擊模態窗任意區域可關閉
+  cssCrashModal.addEventListener('click', (e) => {
+    if (e.target === cssCrashModal || e.target === cssCrashImg) {
+      cssCrashModal.style.display = 'none';
+      cssCrashImg.src = ''; // 清空以免殘影
+    }
+  });
+</script>
 
 </script>
 
