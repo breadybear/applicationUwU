@@ -826,6 +826,28 @@ window.addEventListener("click", function (e) {
     }
   }
 </script>
+<script>
+  const triggerCard = document.querySelector('.css-trigger-card');
+  const modal = document.getElementById('cssModal');
+  const modalImg = document.getElementById('cssModalImg');
+
+  triggerCard.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = 'images/csserr.png'; // 第一步：火車圖
+    modalImg.style.opacity = '1';
+
+    // 2秒後切換為完整崩壞圖
+    setTimeout(() => {
+      modalImg.src = 'images/css.png';
+    }, 2000);
+  });
+
+  // 點擊任意處退出
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modalImg.src = ''; // 清空以免殘影
+  });
+</script>
 
 
 </body>
