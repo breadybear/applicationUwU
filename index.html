@@ -362,14 +362,16 @@
   </div>
 
   <!-- 右欄 -->
-<div class="behind-card">
-  <h3>CSS呢?回來啊!</h3>
-  <img src="images/css.png" alt="Error Demo" onclick="showCssCrash()" />
-<p style="font-size: 0.9rem; margin-top: 10px; color: #777;">點擊看發生什麼慘案 💥</p>
+    <!-- 右欄 CSS崩壞模擬 -->
+    <div class="behind-column">
+      <div class="behind-card">
+        <h3>CSS呢?回來啊!</h3>
+        <img src="images/css.png" alt="Error Demo" class="preview" onclick="showCssCrash()" />
+        <p style="font-size: 0.9rem; margin-top: 10px; color: #777;">點擊看發生什麼慘案 💥</p>
+      </div>
+    </div>
 
-</div>
-
-</div>
+  </div>
 </section>
 
   </main>
@@ -802,27 +804,24 @@ window.addEventListener("click", function (e) {
   });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
-<!-- CSS崩壞模態窗 -->
-<div id="cssModal" class="modal">
-  <span class="close" onclick="closeCssCrash()">&times;</span>
-  <img class="modal-content" id="cssBigImage" src="images/csserr.png" alt="CSS崩壞示意">
+
+<!-- CSS 崩壞模態窗 -->
+<div id="cssModal" class="modal" onclick="closeCssCrash(event)">
+  <span class="close">&times;</span>
+  <img class="modal-content" src="images/csserr.png" alt="CSS 崩壞示意">
 </div>
 
 <script>
   function showCssCrash() {
-    document.getElementById("cssModal").style.display = "block";
+    document.getElementById("cssModal").style.display = "flex";
   }
 
-  function closeCssCrash() {
-    document.getElementById("cssModal").style.display = "none";
-  }
-
-  window.addEventListener("click", function (e) {
+  function closeCssCrash(event) {
     const modal = document.getElementById("cssModal");
-    if (e.target === modal) {
+    if (event.target === modal || event.target.classList.contains("close")) {
       modal.style.display = "none";
     }
-  });
+  }
 </script>
 
 
