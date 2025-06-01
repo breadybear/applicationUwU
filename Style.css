@@ -1290,3 +1290,30 @@ html {
 .behind-card.css-preview::after {
   opacity: 0;
 }
+
+.modal-content {
+  display: block;
+  margin: 80px auto;
+  max-width: 90vw;   /* ✅ 限制最大寬度不超過視窗寬度 */
+  max-height: 90vh;  /* ✅ 限制最大高度不超過視窗高度 */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  object-fit: contain; /* ✅ 保持圖片完整比例 */
+}
+#cssBigImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+body, html {
+  overflow-x: hidden; /* 禁止橫向捲動（避免圖片超出畫面） */
+}
+.modal-content {
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+}
+.modal {
+  overflow: auto;
+}
