@@ -362,10 +362,10 @@
   </div>
 
   <!-- 右欄 -->
-<div class="behind-card css-preview">
+<div class="behind-card">
   <h3>CSS呢?回來啊!</h3>
-  <img src="images/css.png" alt="Error Demo" />
-</div>
+  <img src="images/css.png" alt="Error Demo" onclick="showCssCrash()" />
+</div>>
 
 </div>
 </section>
@@ -796,6 +796,28 @@ window.addEventListener("click", function (e) {
   });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+<!-- CSS崩壞模態窗 -->
+<div id="cssModal" class="modal">
+  <span class="close" onclick="closeCssCrash()">&times;</span>
+  <img class="modal-content" id="cssBigImage" src="images/csserr.png" alt="CSS崩壞示意">
+</div>
+
+<script>
+  function showCssCrash() {
+    document.getElementById("cssModal").style.display = "block";
+  }
+
+  function closeCssCrash() {
+    document.getElementById("cssModal").style.display = "none";
+  }
+
+  window.addEventListener("click", function (e) {
+    const modal = document.getElementById("cssModal");
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
 
 
 </body>
