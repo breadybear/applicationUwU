@@ -861,7 +861,10 @@ window.addEventListener("click", function (e) {
   });
 </script>
 
-  <button id="darkModeToggle">🌙</button>
+<!-- 夜間模式切換按鈕 -->
+<button id="darkModeToggle" aria-label="切換夜間模式">
+  <span id="darkModeIcon">🌙</span>
+</button>
 
 <script>
   const toggleButton = document.getElementById('darkModeToggle');
@@ -881,11 +884,5 @@ window.addEventListener("click", function (e) {
     localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
   });
 </script>
-
-
-
-<button id="darkModeToggle" aria-label="切換夜間模式">
-  <span id="darkModeIcon">🌙</span>
-</button>
 </body>
 </html>
