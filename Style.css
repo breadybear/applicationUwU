@@ -1385,7 +1385,10 @@ body.dark-mode .nav-bar ul {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-
+#darkModeToggle:hover {
+  transform: scale(1.1);
+  background-color: #666;
+}
 
 #darkModeToggle {
   position: fixed;
@@ -1403,33 +1406,7 @@ body.dark-mode .nav-bar ul {
   transition: background-color 0.3s ease, transform 0.2s ease;
   z-index: 9999;
 }
-
-#darkModeToggle:hover {
-  transform: scale(1.1);
-  background-color: #666;
-}
-
-#darkModeToggle {
-  z-index: 9999;
-}
-#darkModeToggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 22px;
-  cursor: pointer;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  z-index: 9999;
-}
-
-#darkModeToggle:hover {
-  transform: scale(1.1);
-  background-color: #666;
+body.dark-mode #darkModeToggle {
+  background-color: #888;
+  color: #000;
 }
