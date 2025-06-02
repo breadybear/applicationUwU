@@ -1409,3 +1409,6 @@ body.dark-mode .nav-bar ul {
   background-color: #666;
 }
 
+#darkModeToggle {
+  z-index: 9999;
+}
