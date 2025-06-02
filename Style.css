@@ -1357,3 +1357,32 @@ main section,
   }
 }
 
+body.dark-mode {
+  background: linear-gradient(to bottom, #1a1a1a, #222, #2c2c2c, #333, #3a3a3a);
+  color: #f0f0f0;
+}
+
+body.dark-mode .contact-section,
+body.dark-mode .skills-section,
+body.dark-mode .intro-section,
+body.dark-mode .project-section,
+body.dark-mode .habits-section,
+body.dark-mode .recommendation-section,
+body.dark-mode .behind-section,
+body.dark-mode .education-section,
+body.dark-mode .language-hover-section,
+body.dark-mode .experience-section {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode a {
+  color: #8ecfff;
+}
+
+body.dark-mode .nav-bar ul {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .project-
