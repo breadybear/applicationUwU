@@ -425,9 +425,7 @@ html {
   <img id="cssCrashImg" class="modal-content" src="" alt="CSS Crash Preview">
 </div>
 
-<button id="toggleDarkMode" style="position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 8px 16px; border-radius: 12px; background-color: #444; color: white; border: none; cursor: pointer;">
-  🌙 夜間模式
-</button>
+
 
 
 
@@ -863,24 +861,28 @@ window.addEventListener("click", function (e) {
   });
 </script>
 <script>
-  const toggleBtn = document.getElementById('toggleDarkMode');
+  const toggleButton = document.getElementById('darkModeToggle');
+  const icon = document.getElementById('darkModeIcon');
   const body = document.body;
 
-  // 載入時檢查偏好
+  // 啟動時檢查偏好
   if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
-    toggleBtn.textContent = '☀️ 日間模式';
+    icon.textContent = '☀️';
   }
 
-  toggleBtn.addEventListener('click', () => {
+  toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     const isDark = body.classList.contains('dark-mode');
-    toggleBtn.textContent = isDark ? '☀️ 日間模式' : '🌙 夜間模式';
+    icon.textContent = isDark ? '☀️' : '🌙';
     localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
   });
 </script>
 
 
 
+<button id="darkModeToggle" aria-label="切換夜間模式">
+  <span id="darkModeIcon">🌙</span>
+</button>
 </body>
 </html>
