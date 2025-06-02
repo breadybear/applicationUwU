@@ -1410,3 +1410,7 @@ body.dark-mode #darkModeToggle {
   background-color: #888;
   color: #000;
 }
+#darkModeToggle {
+  display: block !important;
+  background-color: red;
+}
