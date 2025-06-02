@@ -1412,5 +1412,6 @@ body.dark-mode #darkModeToggle {
 }
 #darkModeToggle {
   display: block !important;
-  background-color: red;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
