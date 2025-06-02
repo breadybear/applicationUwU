@@ -1320,4 +1320,7 @@ html {
   content: "📱 ";
   margin-right: 8px;
 }
+.reveal-fade {
+  animation: fadeInUp 0.6s ease;
+}
 
