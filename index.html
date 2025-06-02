@@ -25,6 +25,7 @@ html {
   font-size: 1.5rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  display: none; /* 初始隱藏 */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -99,13 +100,6 @@ html {
   opacity: 1;
 }
 </style>
-
-.reveal-fade {
-  animation: fadeInUp 0.6s ease;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
 </head>
 <body>
     
@@ -121,7 +115,7 @@ html {
         <li><a href="#habits">Habits</a></li>
         <li><a href="#ref">Referees/Recommendation</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </nav>
   </header>
@@ -235,6 +229,8 @@ html {
   </div>
 </section>
 
+  </section>
+<section>
 <section id="skills" class="skills-section content-section reveal-fade">
   <h2>Skills</h2>
   <div class="skill-grid">
@@ -357,19 +353,17 @@ html {
 </section>
 
 <!-- Contact 區塊 -->
-<section id="contact" class="contact-section reveal-fade">
-  <h2>Contact</h2>
-  <div class="contact-content">
-    <p class="EMAIL">february5882@gmail.com　｜ backup: dumppydear@gmail.com</p>
-    <p class="TEL📱">0921301430　｜ backup: 0939121600</p>
-  </div>
+<section id="contact"class="contact-section">
+  <h2> contact</h2>
+  <div class="EMAIL">📫 february5882@gmail.com ⃟ backup dumppydear@gmail.com</div>
+  <div class="TEL📱">📲 0921301430 ⃟ backup 0939121600</div>
 </section>
-
 
 
 <!-- Behind the Scenes Section -->
 <section class="behind-section">
   <h2>Behind the Scenes</h2>
+  <div class="behind-split-row">
 <div class="behind-split-row">
 
   <!-- 左欄 -->
@@ -427,8 +421,6 @@ html {
 <div id="cssCrashModal" class="modal" style="display:none;" onclick="closeCssCrash(event)">
   <img id="cssCrashImg" class="modal-content" src="" alt="CSS Crash Preview">
 </div>
-
-
 
 
 
@@ -532,6 +524,12 @@ window.addEventListener("click", function (e) {
   });
 });
 
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
 
 window.addEventListener("click", function (e) {
   const modals = document.querySelectorAll(".skill-modal");
@@ -846,7 +844,7 @@ window.addEventListener("click", function (e) {
     // 2 秒後切換圖片
     setTimeout(() => {
       cssCrashImg.src = 'images/css.png';
-    }, 2550);
+    }, 2000);
   });
 
   // 點擊模態窗任意區域可關閉
