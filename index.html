@@ -99,6 +99,13 @@ html {
   opacity: 1;
 }
 </style>
+
+.reveal-fade {
+  animation: fadeInUp 0.6s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 </head>
 <body>
     
@@ -363,7 +370,6 @@ html {
 <!-- Behind the Scenes Section -->
 <section class="behind-section">
   <h2>Behind the Scenes</h2>
-  <div class="behind-split-row">
 <div class="behind-split-row">
 
   <!-- 左欄 -->
@@ -526,12 +532,6 @@ window.addEventListener("click", function (e) {
   });
 });
 
-function openModal(id) {
-  document.getElementById(id).style.display = "flex";
-}
-function closeModal(id) {
-  document.getElementById(id).style.display = "none";
-}
 
 window.addEventListener("click", function (e) {
   const modals = document.querySelectorAll(".skill-modal");
