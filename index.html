@@ -860,35 +860,7 @@ window.addEventListener("click", function (e) {
   });
 </script>
 
-<!-- 夜間模式切換按鈕 -->
-<button id="darkModeToggle" aria-label="切換夜間模式">
-  <span id="darkModeIcon">🌙</span>
-</button>
 
-<script>
-  const toggleButton = document.getElementById('darkModeToggle');
-  const icon = document.getElementById('darkModeIcon');
-  const body = document.body;
-
-  // 啟動時檢查偏好
-  if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-    icon.textContent = '☀️';
-  }
-
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    const isDark = body.classList.contains('dark-mode');
-    icon.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-  });
-</script>
-
-<style>
-  body {
-    min-height: 2000px;
-  }
-</style>
 
 </body>
 </html>
