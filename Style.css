@@ -25,7 +25,7 @@
 
 /* ☁️ 白色半透明遮罩調整 */
 .intro-content {
-  background-color: rgba(255, 255, 255, 0.95);  /* ✅ 更高不透明度提升可讀性 */
+  background-color: rgba(255, 255, 255, 0.50);  /* ✅ 更高不透明度提升可讀性 */
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
