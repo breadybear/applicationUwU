@@ -1947,6 +1947,10 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   opacity: 1;
 }
 
+.tooltip-text {
+  pointer-events: none; /* ✅ 讓 tooltip 不吃掉點擊 */
+}
+
 /* ✅ 顯示 Tooltip */
 .habit-tooltip:hover .tooltip-text {
   visibility: visible;
