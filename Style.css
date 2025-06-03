@@ -941,41 +941,29 @@ body {
 .habit-preview {
   display: none;
   position: absolute;
-  bottom: 110%; /* 在卡片上方顯示 */
+  bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  width: 280px; /* 稍微加寬 */
+  width: 240px;
   background-color: #ffffff;
   color: #333;
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  z-index: 100; /* 確保在最上層 */
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 99;
   text-align: left;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  
-  /* 添加動畫效果 */
-  opacity: 0;
-  transform: translateX(-50%) translateY(10px);
-  transition: all 0.3s ease;
-  pointer-events: none; /* 防止意外點擊 */
 }
 
-/* 預覽框內的圖片 */
 .habit-preview img {
   width: 100%;
-  height: 120px; /* 固定高度 */
-  object-fit: cover; /* 保持比例裁切 */
+  height: auto;
   border-radius: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-/* 預覽框內的文字 */
-.habit-preview p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  margin: 0;
-  color: #555;
+/* ==== Hover 時顯示預覽 ==== */
+.card.habit-preview-card:hover .habit-preview {
+  display: block;
 }
 
 /* 🎯 顯示預覽框的觸發 */
