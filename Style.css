@@ -54,12 +54,12 @@ body {
 }
 
 
+/* Banner 區 */
 .banner {
   position: relative;
   width: 100%;
-  height: 300px; /* 根據你的設計調整高度 */
+  height: 300px; /* 可依需求微調 */
   overflow: hidden;
-  margin: 0; /* 確保沒多餘空隙 */
 }
 
 .banner img {
