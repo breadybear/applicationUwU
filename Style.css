@@ -12,89 +12,21 @@ body {
   line-height: 1.6;
   background-color: #f8f9fa;
 }
-.intro-section {
-  max-width: 360px;              /* ✅ Reduced from 720px to 360px (50% reduction) */
-  margin: 20px auto;             /* ✅ Reduced margin from 40px to 20px */
-  padding: 20px 15px;            /* ✅ Reduced padding from 40px 30px to 20px 15px */
-  border-radius: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-.intro-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;                     /* ✅ Reduced gap from 24px to 12px */
-}
-.intro-photo img {
-  width: 80px;                   /* ✅ Reduced from 160px to 80px (50% reduction) */
-  border-radius: 12px;
-}
-.intro-text {
-  flex: 1;
-  font-size: 0.5rem;
-  line-height: 1.7;
-  color: #444;
-}
-.intro-highlight {
-  font-weight: bold;
-  font-size: 1.05rem;
-  margin-top: 1rem;
-  display: block;
-}
-
-/* Banner 區 */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(1.05); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.banner img {
-  animation: fadeIn 1.2s ease;
-}
 
 /* Banner 區 */
 .banner {
   position: relative;
   width: 100%;
   height: 300px;
-  margin: 0;
-  padding: 0;
+  overflow: hidden;
 }
 
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  filter: brightness(80%);
 }
-
-@media (max-width: 600px) {
-  .intro-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .intro-photo img {
-    width: 100px;
-  }
-}
-@media (max-width: 768px) {
-  .intro-section {
-    margin: 100px 20px 30px;  /* 小螢幕左右留空 */
-    padding: 20px;
-  }
-
-  .intro-content {
-    flex-direction: column;  /* 圖片與文字上下排 */
-    text-align: center;
-  }
-
-  .intro-photo {
-    margin-bottom: 20px;
-  }
-}
-
 
 /* 導覽列 */
 .nav-bar {
@@ -258,20 +190,12 @@ footer {
 
 .modal-content {
   display: block;
-  max-width: 50vw;
-  max-height: 50vh;
-  width: auto;
-  height: auto;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  background-color: white;
+  margin: 80px auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
 }
-
 
 .close {
   position: absolute;
@@ -1398,197 +1322,5 @@ html {
 }
 .reveal-fade {
   animation: fadeInUp 0.6s ease;
-}
-
-body::before {
-  content: "";
-  display: block;
-  height: 60px; /* 導覽列高度 */
-}
-
-
-/* ✅ 導覽列固定設定 */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  border-radius: 0 0 20px 20px;
-  padding: 18px 40px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.navbar ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 30px;
-}
-
-.navbar a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-
-/* ✅ 避免 intro 區塊被導覽列遮擋 */
-body {
-  padding-top: 140px;
-}
-
-/* ✅ 滾動對齊修正 */
-section {
-  scroll-margin-top: 100px;
-}
-
-/* ✅ 動畫 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* === ✨ 自定義 LOGO + BANNER 顯示區域 === */
-.logo-wrapper {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: 10px;
-}
-
-.logo-alone {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  opacity: 0.95;
-  animation: fadeIn 1s ease-in-out;
-  transition: transform 0.3s ease;
-}
-
-
-.logo-alone:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 0 0 20px 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* ✅ 導覽列避免遮擋內容 */
-body {
-  padding-top: 160px; /* 根據 navbar + logo 區塊留空間 */
-}
-
-section {
-  scroll-margin-top: 100px;
-}
-
-/* ✅ 淡入動畫 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ✅ 家徽區塊 */
-/* ✅ 分離家徽樣式 */
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px;
-  margin-bottom: -20px;
-}
-
-.logo-alone {
-  width: 120px;
-  height: auto;
-  opacity: 0.95;
-  animation: fadeIn 1s ease-in-out;
-}
-.logo-alone:hover {
-  transform: scale(1.05);
-}
-
-/* ✅ Banner 樣式 */
-.banner-container {
-  text-align: center;
-}
-.banner-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0 0 20px 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-/* ✅ 導覽列設定：避免額外空間 */
-.navbar {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 如你原本有陰影可保留 */
-}
-
-
-/* ✅ 家徽圖片尺寸與動畫 */
-.logo-alone {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  opacity: 0.95;
-  animation: fadeIn 1s ease-in-out;
-  transition: transform 0.3s ease;
-}
-.logo-alone:hover {
-  transform: scale(1.05);
-}
-
-/* ✅ Banner 圖片區塊：消除可能產生空隙 */
-.banner-container {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  line-height: 0;  /* ⬅️ 消除圖片下方可能出現的 4px 空隙 */
-}
-
-/* ✅ Banner 圖片 */
-.banner-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  margin: 0;
-  padding: 0;
-  border-radius: 0 0 20px 20px;
-  animation: fadeIn 1s ease-in-out;
 }
 
