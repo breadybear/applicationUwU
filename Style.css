@@ -259,8 +259,8 @@ footer {
 .modal-content {
   display: block;
   margin: 80px auto;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 50%;
+  max-height: 50%;
   border-radius: 8px;
   box-shadow: 0 0 10px #000;
 }
@@ -1550,12 +1550,6 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 如你原本有陰影可保留 */
 }
 
-/* ✅ 家徽區塊：移除上下 margin */
-.logo-wrapper {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
 
 /* ✅ 家徽圖片尺寸與動畫 */
 .logo-alone {
