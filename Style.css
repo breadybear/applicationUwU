@@ -1400,6 +1400,7 @@ body::before {
 
 /* ✅ 導覽列浮在 Banner 上方 */
 /* 固定導覽列 */
+/* ✅ 導覽列固定設定 */
 .navbar {
   position: fixed;
   top: 0;
@@ -1416,21 +1417,22 @@ body::before {
 .navbar ul {
   display: flex;
   justify-content: center;
-  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 30px;
 }
 
 .navbar a {
   color: white;
   font-weight: bold;
-  font-size: 1.1rem;
   text-decoration: none;
+  font-size: 1.1rem;
   padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
+
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -1469,5 +1471,39 @@ section {
   scroll-margin-top: 100px;
 }
 
+.hero-banner {
+  position: relative;
+  text-align: center;
+  margin-top: 0px; /* 導覽列已預留空間，這裡設為0即可 */
+}
 
+/* ✅ 家徽圖 */
+.logo-overlay {
+  max-width: 120px;
+  width: 70%;
+  height: auto;
+  margin-bottom: 6px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ✅ Banner 圖片 */
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+}
+
+/* ✅ 動畫（可略） */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
