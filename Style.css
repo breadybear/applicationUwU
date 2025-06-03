@@ -1798,7 +1798,7 @@ section[id]::before {
   transform: translateX(-50%);
   width: 240px;
   background-color: #ffffff;
-  color: #333;
+  color: # 111;
   padding: 10px 14px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
