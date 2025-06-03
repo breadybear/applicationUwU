@@ -793,8 +793,14 @@ window.addEventListener("click", function (e) {
     });
   });
 </script>
-
-
+<script>
+window.addEventListener("load", () => {
+  const img = new Image();
+  img.onload = () => console.log("✔️ ex33.png 預載成功");
+  img.onerror = () => console.warn("❌ ex33.png 無法預載，請檢查路徑");
+  img.src = "images/ex33.png";
+});
+</script>
 <script>
   let clickCount = 0;
 
