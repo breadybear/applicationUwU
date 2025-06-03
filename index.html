@@ -747,8 +747,7 @@ window.addEventListener("click", function (e) {
 </div>
 
 
-<img id="ex33-overlay" src="images/EX33.png"
-     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+
 
 <script>
 function openHabitModal(id) {
@@ -823,7 +822,7 @@ window.addEventListener("click", function (e) {
       showAchievement("Tomorrow Comes");
       showEX33Image();
                 }
-    if (clickCount === 35) showAchievement("人要沒了兄弟!");
+    if (clickCount === 40) showAchievement("人要沒了兄弟!");
     if (clickCount === 50) showAchievement("HIRE ME!");
     if (clickCount === 65) showAchievement("您...真狠");
     if (clickCount === 100) showAchievement("還是算了我沒了");
@@ -883,7 +882,8 @@ function showEX33Image() {
   });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
-
+<img id="ex33-overlay" src="images/EX33.png"
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
 
 <script>
   const cssTrigger = document.querySelector('.css-trigger-card');
