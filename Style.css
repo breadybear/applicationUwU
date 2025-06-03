@@ -1460,3 +1460,16 @@ body {
   display: block;
   object-fit: cover;
 }
+.logo-gap {
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  background-color: transparent;
+}
+
+.logo-gap img {
+  max-height: 80px;
+  width: auto;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-in-out;
+}
