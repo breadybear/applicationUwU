@@ -7,12 +7,13 @@
 /*INTRO*/
 
 /* 🌳 Intro 區塊背景設定 */
+/* 🎨 Intro 區背景：慢速貼齊且全區一致 */
 .intro-section {
   background-image: url("images/season.gif");
-  background-size: cover;
-  background-position: center;
+  background-size: 100% 100%;             /* ✅ 讓 gif 完整填滿且不留邊 */
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-position: center center;
+  background-attachment: fixed;           /* ✅ 固定背景達到慢速滑動錯覺 */
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
@@ -21,6 +22,19 @@
   position: relative;
   z-index: 1;
 }
+
+/* ☁️ 白色半透明遮罩調整 */
+.intro-content {
+  background-color: rgba(255, 255, 255, 0.95);  /* ✅ 更高不透明度提升可讀性 */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
 
 
 /* 字體與整體風格 */
