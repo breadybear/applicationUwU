@@ -12,11 +12,10 @@ body {
   line-height: 1.6;
   background-color: #f8f9fa;
 }
-
 .intro-section {
-  max-width: 720px;              /* ✅ 控制最大寬度 */
-  margin: 40px auto;             /* ✅ 置中 */
-  padding: 40px 30px;
+  max-width: 360px;              /* ✅ Reduced from 720px to 360px (50% reduction) */
+  margin: 20px auto;             /* ✅ Reduced margin from 40px to 20px */
+  padding: 20px 15px;            /* ✅ Reduced padding from 40px 30px to 20px 15px */
   border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -25,28 +24,24 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  gap: 12px;                     /* ✅ Reduced gap from 24px to 12px */
 }
 .intro-photo img {
-  width: 160px;
+  width: 80px;                   /* ✅ Reduced from 160px to 80px (50% reduction) */
   border-radius: 12px;
 }
-
 .intro-text {
   flex: 1;
-  font-size: 0.5rem;                /* ✅ 字體更清晰不擁擠 */
+  font-size: 0.5rem;
   line-height: 1.7;
   color: #444;
 }
-
-
 .intro-highlight {
   font-weight: bold;
   font-size: 1.05rem;
   margin-top: 1rem;
   display: block;
 }
-
 
 /* Banner 區 */
 .banner img {
