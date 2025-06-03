@@ -1399,8 +1399,9 @@ body::before {
 }
 
 /* ✅ 導覽列浮在 Banner 上方 */
+/* 固定導覽列 */
 .navbar {
-  position: fixed;       /* ✅ 改成固定在畫面上方 */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1412,76 +1413,61 @@ body::before {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
 .navbar ul {
   display: flex;
   justify-content: center;
+  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 30px;
 }
 
 .navbar a {
   color: white;
   font-weight: bold;
-  text-decoration: none;
   font-size: 1.1rem;
+  text-decoration: none;
   padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
-
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-section {
-  scroll-margin-top: 80px;  /* 預留導覽列高度 */
-}
-section[id]::before {
-  content: "";
-  display: block;
-  height: 80px;           /* 導覽列高度 */
-  margin-top: -80px;      /* 抵銷滾動位置 */
-  visibility: hidden;
+/* ✅ 中央家徽設定 */
+.logo-center {
+  margin-top: 90px; /* navbar底下的空間 */
+  text-align: center;
 }
 
-
-body {
-  padding-top: 100px; /* ✅ 根據 navbar 高度讓出空間 */
+.logo-center img {
+  width: 120px;   /* 控制大小 */
+  height: auto;
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+.logo-center img:hover {
+  transform: scale(1.05);
 }
 
-.banner img {
-  margin-top: 0;      /* 避免額外推動內容 */
+/* ✅ Banner 圖片 */
+.banner-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  margin-top: 10px; /* 與logo留一點距離 */
 }
 
-.logo-gap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;        /* 導覽列下方間距 */
-  margin-bottom: -10px;    /* 縮短與 Banner 間距 */
+/* ✅ 為了不被 navbar 擋住，補上 padding */
+body {
+  padding-top: 150px;
 }
 
-.logo-gap img {
-  width: 70%;              /* ✅ 縮小為 70% 寬度 */
-  max-width: 120px;        /* ✅ 加保護最大寬度限制 */
-  height: auto;
-  object-fit: contain;
-  opacity: 0.95;
-  animation: fadeIn 0.8s ease-in-out;
-  transition: transform 0.3s ease;
+/* 滾動對齊修正 */
+section {
+  scroll-margin-top: 100px;
 }
 
-.logo-gap img:hover {
-  transform: scale(1.05);
-}
 
 
