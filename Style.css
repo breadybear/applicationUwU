@@ -1382,20 +1382,6 @@ body {
   padding-top: 100px; /* ⬅️ 視 navbar 高度調整，避免內容被蓋住 */
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.75); /* 半透明黑底 */
-  backdrop-filter: blur(4px);
-  padding: 12px 0;
-  display: flex;
-  justify-content: center;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
 
 /* 裡面 ul */
 .navbar ul {
