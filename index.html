@@ -798,33 +798,30 @@ window.addEventListener("click", function (e) {
 <script>
   let clickCount = 0;
 
-function handleGameClick() {
-  const clickImg = document.getElementById("clickImg");
+  function handleGameClick() {
+    const clickImg = document.getElementById("clickImg");
 
-  clickImg.src = "images/export(1).png";
-  setTimeout(() => {
-    clickImg.src = "images/export.png";
-  }, 200);
+    // 切換爆炸圖
+    clickImg.src = "images/export(1).png";
+    setTimeout(() => {
+      clickImg.src = "images/export.png";
+    }, 200);
 
-  clickCount++;
-  showClickCount();
+    clickCount++;
+    showClickCount();
 
-  if (clickCount === 3) showAchievement("coding人生online");
-  if (clickCount === 10) showAchievement("esc鍵去了！");
-if (clickCount === 15) {
-  showAchievement("error在哪裡!");
-  showOverlay("shame-overlay");
-}
-  if (clickCount === 23) showAchievement("天好黑風好大");
-if (clickCount === 33) {
-  showAchievement("Tomorrow Comes");
-  showOverlay("ex33-overlay");
-}
-  if (clickCount === 35) showAchievement("人要沒了兄弟!");
-  if (clickCount === 50) showAchievement("HIRE ME!");
-  if (clickCount === 65) showAchievement("您...真狠");
-  if (clickCount === 100) showAchievement("還是算了我沒了");
-}
+    if (clickCount === 3) showAchievement("coding人生online");
+    if (clickCount === 10) showAchievement("esc鍵去了！");
+    if (clickCount === 15) {
+      showAchievement("error在哪裡!");
+      showShameImage();
+    }
+    if (clickCount === 23) showAchievement("天好黑風好大");
+    if (clickCount === 35) showAchievement("人要沒了兄弟!");
+    if (clickCount === 50) showAchievement("HIRE ME!");
+    if (clickCount === 65) showAchievement("您...真狠");
+    if (clickCount === 100) showAchievement("還是算了我沒了");
+  }
 
   function showClickCount() {
     const countEl = document.createElement("div");
@@ -833,33 +830,25 @@ if (clickCount === 33) {
     document.body.appendChild(countEl);
     setTimeout(() => countEl.remove(), 1000);
   }
-</script>
 
-<script>
-function showOverlay(id) {
-  const overlay = document.getElementById(id);
-  if (!overlay) {
-    console.warn("❌ Overlay not found:", id);
-    return;
+  function showAchievement(text) {
+    const ach = document.createElement("div");
+    ach.className = "achievement";
+    ach.textContent = `🏆 成就達成：${text}`;
+    document.body.appendChild(ach);
+    setTimeout(() => ach.remove(), 2500);
   }
 
-  overlay.style.display = "block";
-  overlay.style.opacity = "1";
-
-  overlay.onclick = () => {
-    overlay.style.opacity = "0";
-    setTimeout(() => overlay.style.display = "none", 400);
-  };
-
-  setTimeout(() => {
-    if (overlay.style.display === "block") {
-      overlay.style.opacity = "0";
-      setTimeout(() => overlay.style.display = "none", 400);
+  function showShameImage() {
+    const shame = document.getElementById("shame-overlay");
+    if (shame) {
+      shame.style.display = "block";
+      setTimeout(() => {
+        shame.style.display = "none";
+      }, 3500);
     }
-  }, 2500);
-}
+  }
 </script>
-
 <script>
 
   window.addEventListener("scroll", () => {
@@ -877,8 +866,8 @@ function showOverlay(id) {
     });
   });
 </script>
-<img id="shame-overlay" src="images/shame.png" class="full-overlay" style="display:none;" />
-<img id="ex33-overlay" src="images/ex33.png" class="full-overlay" style="display:none;" />
+<img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+
 
 <script>
   const cssTrigger = document.querySelector('.css-trigger-card');
