@@ -15,9 +15,9 @@ body {
 
 .intro-section {
   max-width: 50px;               /* 稍微縮小寬度 */
-  margin: 10px auto 10px auto;    /* 上 40px、下 20px，讓上下空間不壓迫 */
+  margin: 40px auto 20px auto;    /* 上 40px、下 20px，讓上下空間不壓迫 */
   padding: 20px 20px;             /* 內距稍減，整體更緊湊 */
-  border-radius: 16px;
+  border-radius: 8px;
   background-color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06); /* 陰影柔和一點 */
 }
@@ -30,7 +30,7 @@ body {
 }
 
 .intro-photo img {
-  width: 160px;
+  width: 100px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
