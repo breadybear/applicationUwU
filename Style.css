@@ -1397,39 +1397,34 @@ body::before {
   height: 60px; /* 導覽列高度 */
 }
 
+/* 導覽列浮在 banner 上，貼底、加圓角 */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.88);
-  padding: 16px 30px;
-  border-radius: 0 0 20px 20px;
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  margin-top: 0; /* ❗移除 margin-top */
-}
-
-
-
-body {
-  padding-top: 70px;  /* 根據 navbar 高度調整 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 20px 20px;
+  padding: 20px 40px; /* 調整上下空間 */
+  display: flex;
+  justify-content: center;
 }
 
 .navbar ul {
   display: flex;
-  justify-content: center;
   list-style: none;
+  gap: 40px;
   margin: 0;
   padding: 0;
-  gap: 30px;
 }
-
 
 .navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 8px 12px;
+  font-size: 1.1rem;
+  padding: 6px 12px;
   border-radius: 8px;
   transition: background 0.3s ease;
 }
@@ -1437,6 +1432,7 @@ body {
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 
 section {
   scroll-margin-top: 80px;  /* 預留導覽列高度 */
