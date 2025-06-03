@@ -1323,36 +1323,38 @@ html {
 .reveal-fade {
   animation: fadeInUp 0.6s ease;
 }
-
 .navbar {
   position: sticky;
   top: 0;
-  background-color: #ffffff;  /* 背景顏色可自訂 */
-  z-index: 1000;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.85); /* 黑底透明感 */
   padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 0;
+  backdrop-filter: blur(4px); /* 若支援，可加模糊效果 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .navbar ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  list-style: none;
   margin: 0;
   padding: 0;
+  gap: 25px;
 }
 
 .navbar a {
+  color: white;
   text-decoration: none;
-  color: #333;
   font-weight: bold;
-  transition: color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #5865f2;  /* 滑過變色，可調整為你網站色系 */
+  background-color: rgba(255, 255, 255, 0.2);
 }
-
 section {
-  scroll-margin-top: 80px;  /* 預留導覽列高度 */
+  scroll-margin-top: 100px; /* 調整至導覽列高度 */
 }
