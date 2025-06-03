@@ -10,8 +10,9 @@
 .intro-section {
   background-image: url("images/season.gif");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
@@ -19,50 +20,6 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1;
-}
-
-.intro-section {
-  background-image: url("images/season.gif");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #e0e0e0; /* fallback */
-  min-height: 500px;         /* 測試期間強制高度 */
-  position: relative;
-  z-index: 1;
-}
-
-
-/* 🌫️ 文字區加白底半透明遮罩，讓文字清楚 */
-.intro-content {
-  background-color: rgba(255, 255, 255, 0.88);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.intro-photo img {
-  max-width: 220px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.intro-text {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
-
-.intro-section {
-  background-image: url("images/season.gif");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 
