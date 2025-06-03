@@ -798,30 +798,33 @@ window.addEventListener("click", function (e) {
 <script>
   let clickCount = 0;
 
-  function handleGameClick() {
-    const clickImg = document.getElementById("clickImg");
+function handleGameClick() {
+  const clickImg = document.getElementById("clickImg");
 
-    // 切換爆炸圖
-    clickImg.src = "images/export(1).png";
-    setTimeout(() => {
-      clickImg.src = "images/export.png";
-    }, 200);
+  clickImg.src = "images/export(1).png";
+  setTimeout(() => {
+    clickImg.src = "images/export.png";
+  }, 200);
 
-    clickCount++;
-    showClickCount();
+  clickCount++;
+  showClickCount();
 
-    if (clickCount === 3) showAchievement("coding人生online");
-    if (clickCount === 10) showAchievement("esc鍵去了！");
-    if (clickCount === 15) {
-      showAchievement("error在哪裡!");
-      showShameImage();
-    }
-    if (clickCount === 23) showAchievement("天好黑風好大");
-    if (clickCount === 35) showAchievement("人要沒了兄弟!");
-    if (clickCount === 50) showAchievement("HIRE ME!");
-    if (clickCount === 65) showAchievement("您...真狠");
-    if (clickCount === 100) showAchievement("還是算了我沒了");
+  if (clickCount === 3) showAchievement("coding人生online");
+  if (clickCount === 10) showAchievement("esc鍵去了！");
+  if (clickCount === 15) {
+    showAchievement("error在哪裡!");
+    showShameImage();
   }
+  if (clickCount === 23) showAchievement("天好黑風好大");
+  if (clickCount === 33) {
+    showAchievement("Tomorrow Comes");
+    showEX33Image();
+  }
+  if (clickCount === 35) showAchievement("人要沒了兄弟!");
+  if (clickCount === 50) showAchievement("HIRE ME!");
+  if (clickCount === 65) showAchievement("您...真狠");
+  if (clickCount === 100) showAchievement("還是算了我沒了");
+}
 
   function showClickCount() {
     const countEl = document.createElement("div");
@@ -850,6 +853,21 @@ window.addEventListener("click", function (e) {
   }
 </script>
 <script>
+function showEX33Image() {
+  const ex33 = document.getElementById("ex33-overlay");
+  if (ex33) {
+    ex33.style.display = "block";
+    ex33.onclick = () => ex33.style.display = "none";
+    setTimeout(() => {
+      if (ex33.style.display === "block") ex33.style.display = "none";
+    }, 3000);
+  } else {
+    console.log("⚠️ 無法找到 ex33-overlay");
+  }
+}
+</script>
+
+<script>
 
   window.addEventListener("scroll", () => {
     if (document.documentElement.scrollTop > 300) {
@@ -867,7 +885,9 @@ window.addEventListener("click", function (e) {
   });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
-
+<img id="ex33-overlay" src="images/ex33.png"
+     style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh;
+            object-fit:contain; background:black; z-index:9999; cursor:pointer;" />
 
 <script>
   const cssTrigger = document.querySelector('.css-trigger-card');
