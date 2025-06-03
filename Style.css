@@ -1691,19 +1691,14 @@ body {
   color: #444;
   line-height: 1.8;
 }
-.language-card .details {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease;
+/* ✅ Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* 滑鼠移上時顯示說明 */
-.language-card:hover .details {
-  max-height: 500px; /* 給足夠高度以顯示全部內容 */
-  opacity: 1;
-}
-/* 藍色背景區塊 */
+/* ✅ 卡片區背景 */
 .language-hover-section {
   background-color: #d8f0ff;
   padding: 60px 20px;
@@ -1712,33 +1707,33 @@ body {
   margin: 40px auto;
 }
 
-/* 四個紅色卡片區域 */
+/* ✅ 卡片容器 */
 .language-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 30px;
   justify-items: center;
+  position: relative;
+  overflow: visible;
 }
 
+/* ✅ 單張卡片 */
 .language-box {
   position: relative;
-  background-color: #5d84b3; /* 較柔和的藍色 */
-  color: #fff;
-  width: 160px;
-  height: 110px;
-  border-radius: 20px; /* ⬅️ 圓角更大更可愛 */
+  width: 200px;
+  height: 140px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
   font-weight: bold;
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* ⬅️ 立體陰影 */
-}
-
-.language-box:hover {
-  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .language-box:hover {
@@ -1751,139 +1746,73 @@ body {
   100% { transform: scale(1.05); }
 }
 
-/* 說明內容清單 */
-.popup ul {
-  padding-left: 20px;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* 彈窗基礎樣式 */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-  display: block;
-  margin: 80px auto;
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #000;
-}
-
-.close {
+.language-box::after {
+  content: "";
   position: absolute;
-  top: 40px;
-  right: 60px;
-  color: white;
-  font-size: 36px;
-  font-weight: bold;
-  cursor: pointer;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  border-radius: 20px;
 }
 
-/* 彈窗觸發按鈕 */
-.language-box .popup button {
-  margin-top: 10px;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  background-color: #9b9999;
-  color: #658cda;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-    /* ✅ 新增這行，改文字顏色 */
-  color: #000000;
+.language-box .label {
+  z-index: 2;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
 
-
-.language-box .popup button:hover {
-  background-color: #222;
-}
-/* 初始隱藏 */
+/* ✅ popup：初始隱藏 */
 .language-box .popup {
   display: none;
   position: absolute;
-  bottom: -180px;
+  bottom: -190px;
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
-  background-color: #fff8b3;
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  width: 260px;
+  height: 200px;
+  overflow-y: auto;
+  background-color: #fff9c4;
+  color: #333;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
   z-index: 10;
 }
 
-/* 點擊後顯示（由 JS 控制 .active 類別） */
+/* ✅ 點擊後顯示 */
 .language-box.active .popup {
   display: block;
 }
 
-.language-box {
-  position: relative;
+/* ✅ popup 內按鈕 */
+.language-box .popup button {
+  background-color: #bfc3e2;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.language-grid {
-  overflow: visible;
-  position: relative;
-}
-
-.intro-section {
-  background-color: #ffffff;  /* ✨ 與 language 區相近，但略淺 */
-  padding: 60px 20px;
-  border-radius: 20px;
-  max-width: 1000px;
-  margin: 40px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+.language-box .popup button:hover {
+  background-color: #aab0d3;
 }
 
 .language-box .popup p,
 .language-box .popup li {
   color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-.language-box .popup button {
-  color: #fff;
+.popup ul {
+  padding-left: 20px;
 }
 
-
-.project-box p {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: auto;
-}
-.language-box .popup {
-  min-height: 180px;          /* ✔ 最小高度統一 */
-  width: 260px;
-  background-color: #fff9c4;
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 1rem;
-  position: absolute;
-  bottom: -190px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  display: none;
-
-  /* ⛔ 移除 flex 設定，避免錯誤展開 */
-}
-.language-box .popup {
-  height: 200px;         /* 固定高度 */
-  overflow-y: auto;      /* 太多內容可以捲動 */
-}
-
-
+/* ✅ Project 區 */
 .project-section {
   background-color: #dff2ff;
   padding: 60px 20px;
@@ -1924,12 +1853,24 @@ body {
 .project-box img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* ⚠️ 讓圖片完整顯示不裁切 */
+  object-fit: contain;
   border-radius: 20px;
   padding: 10px;
 }
 
+.project-box p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: auto;
+}
+
 .project-section h2 {
+  text-align: left;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
   /* 原本是置中 */
   /* text-align: center; */
 
