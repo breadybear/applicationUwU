@@ -52,6 +52,16 @@ body {
 
 
 /* Banner 區 */
+.banner img {
+  animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
 .banner {
   width: 100%;
   max-height: 400px;
