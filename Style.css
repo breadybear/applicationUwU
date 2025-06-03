@@ -1861,7 +1861,8 @@ section#experience.experience-section {
   height: 140px;
   background-size: cover;
   background-position: center;
-  color: #fff;
+  color: #000 !important;  /* 強制黑色字體 */
+  text-shadow: none !important;  /* 移除可能影響清晰度的白色陰影 */
   font-weight: bold;
   font-size: 1.3rem;
   text-align: center;
