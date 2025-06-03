@@ -1,5 +1,5 @@
 /* Reset */
-* {
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -919,7 +919,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 20px;
   z-index: 1;
 }
@@ -932,8 +932,8 @@ body {
 .card.habit-preview-card span {
   z-index: 2;
   position: relative;
-  color: #222;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+  color: # 111;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
 }
 / Hover 預覽說明區塊 /
 .habit-preview {
