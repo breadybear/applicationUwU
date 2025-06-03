@@ -2184,7 +2184,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.2; /* 🌫️ 想更明顯可以調 0.12～0.2 */
+  opacity: 0.4; /* 🌫️ 想更明顯可以調 0.12～0.2 */
   z-index: -1;
   pointer-events: none; /* 避免影響互動 */
 }
