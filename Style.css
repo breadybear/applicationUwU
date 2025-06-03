@@ -75,6 +75,16 @@ body {
   display: block;
 }
 
+@media (max-width: 600px) {
+  .intro-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-photo img {
+    width: 100px;
+  }
+}
+
 
 /* 導覽列 */
 .nav-bar {
