@@ -55,12 +55,11 @@ body {
 }
 
 /* Banner 區 */
-/* Banner 區域貼滿最上方 */
 .banner {
   position: relative;
   width: 100%;
   height: 300px;
-  margin: 0;        /* 確保沒空隙 */
+  margin: 0;
   padding: 0;
 }
 
