@@ -1352,3 +1352,7 @@ html {
 .navbar a:hover {
   color: #5865f2;  /* 滑過變色，可調整為你網站色系 */
 }
+
+section {
+  scroll-margin-top: 80px;  /* 預留導覽列高度 */
+}
