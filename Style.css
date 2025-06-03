@@ -898,60 +898,37 @@ body {
 }
 
 /* 卡片基本樣式 + 背景圖 */
-.card.habit-preview-card {
-  width: 200px;
-  height: 150px;
-  font-size: 1.2rem;
+.habit-preview-card {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 20px;
   font-weight: bold;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  transition: transform 0.3s ease;
+  text-align: center;
 }
 
-/* ✅ 更透明的白色遮罩（讓背景更清楚） */
-.card.habit-preview-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 20px;
-  z-index: 1;
-  transition: background-color 0.3s ease;
+.habit-preview-card:hover {
+  transform: translateY(-5px);
 }
 
-/* ✅ 黑色文字，清晰可見 */
-.card.habit-preview-card span {
-  position: relative;
-  z-index: 2;
-  color: #000;
-  text-shadow: none;
-  font-weight: 600;
-}
-
-/* 🎯 Hover 預覽彈出框 */
 .habit-preview {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #fff8dc;
   padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 99;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   text-align: left;
+  z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
 .habit-preview img {
@@ -961,56 +938,18 @@ body {
   margin-bottom: 8px;
 }
 
-/* ==== Hover 時顯示預覽 ==== */
-.card.habit-preview-card:hover .habit-preview {
-  display: block;
+.habit-preview p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
 }
 
-/* 🎯 顯示預覽框的觸發 */
-.card.habit-preview-card:hover .habit-preview {
-  display: block;
+.habit-preview-card:hover .habit-preview {
+  visibility: visible;
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
 }
 
-/* 卡片 Hover 效果 */
-.card.habit-preview-card:hover {
-  transform: translateY(-5px); /* 輕微上浮 */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.card.habit-preview-card:hover::before {
-  background-color: rgba(255, 255, 255, 0.9); /* hover時遮罩更明顯 */
-}
-
-/* 📐 預覽框的小三角箭頭 */
-.habit-preview::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #ffffff;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-/* 響應式設計 - 手機版調整 */
-@media (max-width: 768px) {
-  .card-container {
-    gap: 30px;
-  }
-  
-  .habit-preview {
-    width: 250px;
-    padding: 12px;
-  }
-  
-  .habit-preview img {
-    height: 100px;
-  }
-}
 /* Banner 區 */
 .banner {
   position: relative;
