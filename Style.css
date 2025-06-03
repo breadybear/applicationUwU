@@ -230,16 +230,18 @@ footer {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-size: cover;         /* ⬅️ 讓背景填滿 */
+  background-position: center;    /* ⬅️ 圖片置中 */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  background-size: cover;
-  background-position: center;
+  transition: transform 0.3s ease;
 }
 
+/* 加個暗色遮罩，避免背景圖太亮文字看不清 */
 .language-box::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* 黑色遮罩 */
+  background-color: rgba(0, 0, 0, 0.25); 
   z-index: 1;
 }
 
