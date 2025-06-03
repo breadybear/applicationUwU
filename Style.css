@@ -6005,23 +6005,15 @@ body {
 }
 
 
-#ex33-overlay {
-  display: none;
+.full-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: contain;
-  background: black;
-  z-index: 999999 !important; /* ← 強制拉到最上面 */
-  opacity: 1;
-}
-#ex33-overlay {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
-}
-#ex33-overlay.show {
-  display: block !important;
-  opacity: 1 !important;
+  background-color: black;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 0.4s ease;
 }
