@@ -223,32 +223,36 @@ footer {
   height: 120px;
   border-radius: 20px;
   overflow: hidden;
-  color: white;
-  font-weight: bold;
-  font-size: 1.3rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-size: cover;         /* ⬅️ 讓背景填滿 */
-  background-position: center;    /* ⬅️ 圖片置中 */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 
-/* 加個暗色遮罩，避免背景圖太亮文字看不清 */
+/* 背景圖遮罩：確保字不會被吃掉 */
 .language-box::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.25); 
+  background-color: rgba(0, 0, 0, 0.35); /* ⬅️ 可調深淺 */
   z-index: 1;
+  border-radius: 20px;
 }
 
+/* 文字區塊要在遮罩上面 */
 .language-box .label {
   position: relative;
   z-index: 2;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
 }
+
 
 
 .language-box:hover {
