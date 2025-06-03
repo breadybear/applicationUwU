@@ -906,7 +906,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   text-align: center;
-  color: #fff; / 白字會清楚 /
   cursor: pointer;
   background-size: cover;
   background-position: center;
@@ -914,14 +913,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; / 確保在遮罩上 /
 }
 / ✅ 這是黑色遮罩（背景變暗，文字顯眼） /
 .card.habit-preview-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.35); / ⬅️ 可調整深度 /
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
   z-index: 1;
 }
