@@ -6004,3 +6004,17 @@ body {
   padding-top: 80px;
 }
 
+
+#ex33-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: black;
+  z-index: 999999 !important; /* ← 強制拉到最上面 */
+  opacity: 1;
+}
+
