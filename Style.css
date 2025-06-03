@@ -1463,15 +1463,23 @@ body {
 }
 
 .logo-gap {
-  margin-top: 80px;    /* ✅ 推開固定導覽列的高度 */
+  margin-top: 80px;         /* 避開固定導覽列 */
   width: 100%;
   text-align: center;
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .logo-gap img {
-  max-height: 80px;
+  max-width: 160px;         /* ✅ 控制最大寬度 */
+  max-height: 160px;        /* ✅ 控制最大高度 */
   width: auto;
+  height: auto;
+  object-fit: contain;
   opacity: 0.95;
   animation: fadeIn 1s ease-in-out;
 }
+.logo-gap img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
