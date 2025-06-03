@@ -1360,3 +1360,40 @@ html {
   animation: fadeInUp 0.6s ease;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.85); /* 黑底透明感 */
+  padding: 10px 20px;
+  border-radius: 0;
+  backdrop-filter: blur(4px); /* 若支援，可加模糊效果 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+section {
+  scroll-margin-top: 80px;  /* 預留導覽列高度 */
+}
+
