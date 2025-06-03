@@ -1454,48 +1454,28 @@ body::before {
 }
 
 /* ✅ Banner 圖片 */
-.banner-img {
+/* ✅ 新合併圖 Banner 設定 */
+.banner-combined {
   width: 100%;
-  height: auto;
+  max-height: 500px;
+  object-fit: cover;
   display: block;
-  margin-top: 10px; /* 與logo留一點距離 */
+  margin-top: 80px; /* 導覽列高度 */
+  border-radius: 0 0 20px 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* ✅ 為了不被 navbar 擋住，補上 padding */
+/* ✅ 避免 intro 區塊被導覽列遮擋 */
 body {
-  padding-top: 150px;
+  padding-top: 140px;
 }
 
-/* 滾動對齊修正 */
+/* ✅ 滾動對齊修正 */
 section {
   scroll-margin-top: 100px;
 }
 
-.hero-banner {
-  position: relative;
-  text-align: center;
-  margin-top: 0px; /* 導覽列已預留空間，這裡設為0即可 */
-}
-
-/* ✅ 家徽圖 */
-.logo-overlay {
-  max-width: 120px;
-  width: 70%;
-  height: auto;
-  margin-bottom: 6px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* ✅ Banner 圖片 */
-.banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 0 0 20px 20px;
-}
-
-/* ✅ 動畫（可略） */
+/* ✅ 動畫 */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1507,3 +1487,10 @@ section {
   }
 }
 
+/* 🔧 確保舊家徽與原 Banner 不再出現 */
+.logo-center,
+.logo-gap,
+.logo-overlay,
+.banner-img {
+  display: none !important;
+}
