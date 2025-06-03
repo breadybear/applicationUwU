@@ -1398,8 +1398,7 @@ body::before {
   height: 60px; /* 導覽列高度 */
 }
 
-/* ✅ 導覽列浮在 Banner 上方 */
-/* 固定導覽列 */
+
 /* ✅ 導覽列固定設定 */
 .navbar {
   position: fixed;
@@ -1460,29 +1459,32 @@ section {
   }
 }
 
-/* ✅ 家徽 */
-.logo-center {
+
+/* === ✨ 自定義 LOGO + BANNER 顯示區域 === */
+.logo-wrapper {
   text-align: center;
-  margin: 20px 0 10px;
-}
-.logo-center img {
-  width: 100px;
-  height: auto;
-  opacity: 0.95;
-  transition: transform 0.3s ease;
-}
-.logo-center img:hover {
-  transform: scale(1.05);
+  margin-top: 100px;
+  margin-bottom: 10px;
 }
 
-/* ✅ Banner */
-.banner-container {
-  text-align: center;
+.logo-alone {
+  width: 120px;
+  height: auto;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-in-out;
 }
+
+.logo-alone:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 .banner-img {
   width: 100%;
-  max-height: 400px;
+  height: auto;
+  display: block;
   object-fit: cover;
   border-radius: 0 0 20px 20px;
+  animation: fadeIn 1s ease-in-out;
 }
 
