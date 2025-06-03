@@ -1382,7 +1382,7 @@ html {
 }
 
 .navbar {
-  position: fixed;               /* ✅ 固定在畫面頂部 */
+  position: sticky;               /* ✅ 固定在畫面頂部 */
   top: 0;
   left: 0;
   width: 100%;                   /* 讓它佔滿整個畫面寬度 */
