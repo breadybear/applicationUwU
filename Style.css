@@ -1906,10 +1906,13 @@ section#experience.experience-section {
 
 .card.habit-preview-card .card-text {
   color: #000 !important;
-  position: relative;
   z-index: 2;
-  text-shadow: none !important;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6); /* 白邊描邊效果 */
+  font-weight: bold;
+  font-size: 1.3rem;
 }
+
 
 /* ✅ 顯示 Tooltip */
 .habit-tooltip:hover .tooltip-text {
