@@ -1735,29 +1735,66 @@ section#experience.experience-section {
 }
 
 .card {
-  font-size: 1.3rem; /* ✅ 字體變大（預設大約是 1rem） */
+  font-size: 1.3rem;
   font-weight: bold;
-  background-color: #ffffff;
   border-radius: 20px;
   padding: 20px;
+  width: 200px;
+  height: 140px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   text-align: center;
   color: #222;
-  cursor: default;
-  min-width: 120px; /* 可加：避免被壓太小 */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* fallback 色 */
 }
 
+/* 滑鼠懸停動畫 */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+
+/* 卡片文字 */
+.card-title {
+  position: relative;
+  z-index: 2;
 }
+
+/* 白色遮罩，讓文字不被背景吃掉 */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* ⬅️ 可調透明度 */
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* 每張卡片背景圖 */
+.card.lit {
+  background-image: url("images/li.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card.mag {
+  background-image: url("images/mag.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card.hist {
+  background-image: url("images/his.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 /* 控制 Habits 區塊的卡片間距 */
 #habits .card-container {
   display: flex;
