@@ -1437,33 +1437,6 @@ body::before {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* ✅ 中央家徽設定 */
-.logo-center {
-  margin-top: 90px; /* navbar底下的空間 */
-  text-align: center;
-}
-
-.logo-center img {
-  width: 120px;   /* 控制大小 */
-  height: auto;
-  opacity: 0.9;
-  transition: transform 0.3s ease;
-}
-.logo-center img:hover {
-  transform: scale(1.05);
-}
-
-/* ✅ Banner 圖片 */
-/* ✅ 新合併圖 Banner 設定 */
-.banner-combined {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  display: block;
-  margin-top: 80px; /* 導覽列高度 */
-  border-radius: 0 0 20px 20px;
-  animation: fadeIn 1s ease-in-out;
-}
 
 /* ✅ 避免 intro 區塊被導覽列遮擋 */
 body {
@@ -1487,10 +1460,29 @@ section {
   }
 }
 
-/* 🔧 確保舊家徽與原 Banner 不再出現 */
-.logo-center,
-.logo-gap,
-.logo-overlay,
-.banner-img {
-  display: none !important;
+/* ✅ 家徽 */
+.logo-center {
+  text-align: center;
+  margin: 20px 0 10px;
 }
+.logo-center img {
+  width: 100px;
+  height: auto;
+  opacity: 0.95;
+  transition: transform 0.3s ease;
+}
+.logo-center img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Banner */
+.banner-container {
+  text-align: center;
+}
+.banner-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+}
+
