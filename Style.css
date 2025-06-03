@@ -1796,6 +1796,7 @@ section#experience.experience-section {
 }
 
 /* 🌟 Habits 區主體樣式 */
+/* 🌟 Habits 區主體樣式 */
 .habits-section {
   background-color: #d8f0ff;
   padding: 60px 20px;
@@ -1828,14 +1829,14 @@ section#experience.experience-section {
   display: inline-block;
 }
 
-/* 🌸 卡片樣式（有背景圖、圓角、文字置中） */
+/* 🌸 卡片樣式 */
 .card.habit-preview-card {
   width: 200px;
   height: 140px;
   background-size: cover;
   background-position: center;
-  color: #000 !important;  /* 強制黑色字體 */
-  text-shadow: none !important;  /* 移除可能影響清晰度的白色陰影 */
+  color: #000 !important;
+  text-shadow: none !important;
   font-weight: bold;
   font-size: 1.3rem;
   text-align: center;
@@ -1850,22 +1851,32 @@ section#experience.experience-section {
   overflow: hidden;
 }
 
-/* 🌸 Hover 效果 */
 .card.habit-preview-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 💬 預覽浮出 tooltip 說明 */
+/* ✅ 卡片中文字樣式 */
+.card.habit-preview-card .card-text {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.6),
+    0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 💬 tooltip 內容樣式 */
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
   width: 260px;
+  max-height: 300px;
   background-color: #fff8dc;
   color: #333;
   text-align: left;
   border-radius: 10px;
-  padding: 12px;
+  padding: 14px;
   position: absolute;
   z-index: 10;
   bottom: 110%;
@@ -1873,49 +1884,36 @@ section#experience.experience-section {
   transform: translateX(-50%);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.5;
-}
-
-.tooltip-text img {
-  width: 100%;
-  height: auto;               /* ✅ 保持原始比例 */
-  max-height: 140px;
-  object-fit: contain;        /* ✅ 不裁切，整張圖會顯示完整 */
-  border-radius: 8px;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.tooltip-text {
-  max-height: 300px;
   overflow-y: auto;
 }
 
-.tooltip-text {
-  width: 260px;
-  padding: 14px;
-  font-size: 0.95rem;
-}
-
+/* ✅ tooltip 內的圖片樣式 */
 .tooltip-text img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover; /* 或改成 contain 視需求 */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
   transition: opacity 0.4s ease;
   opacity: 0.95;
 }
-.habit-tooltip:hover .tooltip-text img {
+
+.habit-tooltip:hover .tooltip-text {
+  visibility: visible;
   opacity: 1;
 }
 
-.card.habit-preview-card .card-text {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;
-  text-shadow:
-    0 0 2px rgba(0, 0, 0, 0.6),
-    0 0 4px rgba(0, 0, 0, 0.4); /* ✅ 黑色描邊讓白字更清楚 */
+
+object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
+
+.habit-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
-
-
 
 /* ✅ 顯示 Tooltip */
 .habit-tooltip:hover .tooltip-text {
