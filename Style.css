@@ -1543,3 +1543,50 @@ section {
   border-radius: 0 0 20px 20px;
   animation: fadeIn 1s ease-in-out;
 }
+/* ✅ 導覽列設定：避免額外空間 */
+.navbar {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 如你原本有陰影可保留 */
+}
+
+/* ✅ 家徽區塊：移除上下 margin */
+.logo-wrapper {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ 家徽圖片尺寸與動畫 */
+.logo-alone {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease;
+}
+.logo-alone:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Banner 圖片區塊：消除可能產生空隙 */
+.banner-container {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 0;  /* ⬅️ 消除圖片下方可能出現的 4px 空隙 */
+}
+
+/* ✅ Banner 圖片 */
+.banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 0 20px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
