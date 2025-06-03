@@ -1892,6 +1892,19 @@ section#experience.experience-section {
   overflow-y: auto;
 }
 
+.tooltip-text {
+  width: 260px;
+  padding: 14px;
+  font-size: 0.95rem;
+}
+
+.tooltip-text img {
+  transition: opacity 0.4s ease;
+  opacity: 0.95;
+}
+.habit-tooltip:hover .tooltip-text img {
+  opacity: 1;
+}
 
 .card.habit-preview-card .card-text {
   position: relative;
