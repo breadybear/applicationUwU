@@ -854,12 +854,15 @@ window.addEventListener("click", function (e) {
     }
   }
 function showEX33Image() {
-const ex33 = document.getElementById("ex33-overlay");
+  const ex33 = document.getElementById("ex33-overlay");
   if (ex33) {
+    console.log("✅ showEX33Image triggered");
     ex33.style.display = "block";
     setTimeout(() => {
       ex33.style.display = "none";
-    }, 2000); // 顯示 2 秒
+    }, 2000);
+  } else {
+    console.log("⚠️ ex33-overlay not found");
   }
 }
 
@@ -883,7 +886,8 @@ const ex33 = document.getElementById("ex33-overlay");
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
 <img id="ex33-overlay" src="images/EX33.png"
-     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
+     style="display:none !important; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:99999 !important;" />
+
 
 <script>
   const cssTrigger = document.querySelector('.css-trigger-card');
