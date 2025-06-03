@@ -701,41 +701,51 @@ section[id]::before {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   justify-items: center;
 }
 
-/* 卡片樣式 */
 .experience-card {
   position: relative;
+  width: 200px;
+  height: 160px;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
-  width: 220px;
-  height: 150px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   cursor: default;
-  overflow: visible !important;  /* 🔧 關鍵：不要被隱藏 */
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  color: white;
-  font-size: 1.2rem;
+  transition: transform 0.3s ease;
 }
 
+.experience-card:hover {
+  transform: translateY(-5px);
+}
+
+.experience-card .label {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+/* Tooltip */
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
   width: 260px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: #fff8dc;
   color: #333;
   text-align: left;
   border-radius: 10px;
   padding: 12px;
   position: absolute;
-  z-index: 999;
+  z-index: 10;
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
