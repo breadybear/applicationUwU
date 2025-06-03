@@ -907,7 +907,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   text-align: center;
-  color: #fff; /* 白字會清楚 */
   cursor: pointer;
   background-size: cover;
   background-position: center;
@@ -915,63 +914,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* 確保在遮罩上 */
 }
 
-/* ✅ 這是黑色遮罩（背景變暗，文字顯眼） */
+/* ✅ 更透明的白色遮罩（讓背景更清楚） */
 .card.habit-preview-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.35); /* ⬅️ 可調整深度 */
+  background-color: rgba(255, 255, 255, 0.85); /* 白色遮罩，透明度85% */
   border-radius: 20px;
   z-index: 1;
 }
 
-/* ✅ 讓文字浮在遮罩之上 */
+/* ✅ 黑色文字，清晰可見 */
 .card.habit-preview-card span {
   position: relative;
   z-index: 2;
+  color: #000; /* 純黑色文字 */
+  text-shadow: none; /* 移除文字陰影 */
+  font-weight: 600; /* 稍微加粗 */
 }
 
-
-/* 文字浮於遮罩之上 */
-.card.habit-preview-card span {
-  z-index: 2;
-  position: relative;
-  color: #222;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+/* Hover 效果 - 遮罩變更透明 */
+.card.habit-preview-card:hover::before {
+  background-color: rgba(255, 255, 255, 0.75); /* hover時稍微降低透明度 */
 }
 
 /* Hover 預覽說明區塊 */
-.habit-preview {
-  display: none;
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 240px;
-  background-color: #ffffff;
-  color: #333;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  text-align: left;
-}
-
-.habit-preview img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.card.habit-preview-card:hover .habit-preview {
-  display: block;
-}
-
-/* Hover 預覽說明 */
 .habit-preview {
   display: none;
   position: absolute;
