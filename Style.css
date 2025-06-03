@@ -1374,8 +1374,14 @@ html {
   animation: fadeInUp 0.6s ease;
 }
 
+body::before {
+  content: "";
+  display: block;
+  height: 60px; /* 導覽列高度 */
+}
+
 .navbar {
-  position: sticky;               /* ✅ 固定在畫面頂部 */
+  position: fixed;               /* ✅ 固定在畫面頂部 */
   top: 0;
   left: 0;
   width: 100%;                   /* 讓它佔滿整個畫面寬度 */
