@@ -1401,13 +1401,14 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.88); /* 黑底＋透明感 */
-  padding: 16px 30px;                  /* 上下加厚 */
-  border-radius: 0 0 20px 20px;        /* 下方圓角 */
+  background-color: rgba(0, 0, 0, 0.88);
+  padding: 16px 30px;
+  border-radius: 0 0 20px 20px;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  margin-top: -8px;                   /* 抵銷可能的間隙 */
+  margin-top: 0; /* ❗移除 margin-top */
 }
+
 
 
 body {
