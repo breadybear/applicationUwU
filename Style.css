@@ -1869,12 +1869,10 @@ section#experience.experience-section {
 }
 
 .card.habit-preview-card .card-text {
-  color: #000 !important;
-  z-index: 2;
   position: relative;
-  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.6); /* 白邊描邊效果 */
-  font-weight: bold;
-  font-size: 1.3rem;
+  z-index: 2;
+  color: #fff; /* 文字可改白 */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* 黑色描邊陰影 */
 }
 
 
