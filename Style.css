@@ -223,6 +223,7 @@ footer {
   height: 120px;
   border-radius: 20px;
   overflow: hidden;
+  background-color: transparent; /* ✅ 清除預設底色 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
