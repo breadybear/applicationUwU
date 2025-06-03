@@ -861,59 +861,24 @@ window.addEventListener("load", () => {
 function showEX33Image() {
   const ex33 = document.getElementById("ex33-overlay");
   if (ex33) {
-    console.log("✅ showex33Image triggered - Showing ex33.png");
-    console.log("Image src:", ex33.src); // Debug: check if image source is correct
-    
-    // Make sure the image is loaded properly
-    ex33.onload = function() {
-      console.log("✅ ex33.png loaded successfully");
+    console.log("✅ showEX33Image triggered - Showing ex33.png");
+
+    ex33.classList.add("show");
+
+    ex33.onclick = function () {
+      console.log("🧼 User clicked to close EX33");
+      ex33.classList.remove("show");
+      setTimeout(() => ex33.style.display = "none", 500); // 等待動畫淡出
     };
-    
-    ex33.onerror = function() {
-      console.log("❌ Failed to load ex33.png - check file path");
-    };
-    
-    // Show the overlay
-    ex33.style.display = "block";
-    ex33.style.opacity = "1"; // Ensure it's visible
-    
-    // Add click to close functionality
-    ex33.onclick = function() {
-      console.log("Closing ex33 overlay via click");
-      ex33.style.display = "none";
-      ex33.onclick = null; // Remove event listener
-    };
-    
-    // Auto-hide after 2 seconds
+
     setTimeout(() => {
-      if (ex33.style.display === "block") {
-        console.log("Auto-hiding ex33 overlay after 2 seconds");
-        ex33.style.display = "none";
-        ex33.onclick = null; // Remove event listener
-      }
+      ex33.classList.remove("show");
+      setTimeout(() => ex33.style.display = "none", 500);
     }, 2000);
-    
   } else {
-    console.log("⚠️ ex33-overlay element not found in DOM!");
+    console.log("⚠️ ex33-overlay not found!");
   }
 }
-</script>
-<script>
-
-  window.addEventListener("scroll", () => {
-    if (document.documentElement.scrollTop > 300) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  });
-
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
 <img id="ex33-overlay" src="images/ex33.png"
