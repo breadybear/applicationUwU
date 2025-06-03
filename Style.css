@@ -1400,7 +1400,7 @@ body::before {
 
 /* ✅ 導覽列浮在 Banner 上方 */
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
