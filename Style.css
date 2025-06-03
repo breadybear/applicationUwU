@@ -44,22 +44,24 @@ body {
 }
 
 /* Banner 區 */
-.banner img {
-  animation: fadeIn 1.2s ease;
-}
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(1.05); }
   to { opacity: 1; transform: scale(1); }
 }
 
+.banner img {
+  animation: fadeIn 1.2s ease;
+}
 
 /* Banner 區 */
+/* Banner 區域貼滿最上方 */
 .banner {
   position: relative;
   width: 100%;
-  height: 300px; /* 可依需求微調 */
-  overflow: hidden;
+  height: 300px;
+  margin: 0;        /* 確保沒空隙 */
+  padding: 0;
 }
 
 .banner img {
