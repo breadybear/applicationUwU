@@ -920,14 +920,14 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   z-index: 1;
 }
 
-.card.habit-preview-card > * {
-  position: relative;
-  z-index: 2;
+.card.habit-preview-card {
+  color: #222 !important; /* 強制文字保持深色 */
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7); /* 給點描邊讓字浮起來 */
 }
 
 /* Hover 預覽說明 */
