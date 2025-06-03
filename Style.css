@@ -1400,17 +1400,18 @@ body::before {
 
 /* ✅ 導覽列浮在 Banner 上方 */
 .navbar {
-  position: fixed;
+  position: fixed; /* ✅ 固定在畫面最上方 */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 9999;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
   border-radius: 0 0 20px 20px;
   padding: 18px 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 .navbar ul {
   display: flex;
