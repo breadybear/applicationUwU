@@ -1398,31 +1398,34 @@ body::before {
 }
 
 /* 導覽列浮在 banner 上，貼底、加圓角 */
+/* 導覽列懸浮在上面（固定上方） */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 20px 20px;
-  padding: 20px 40px; /* 調整上下空間 */
+  padding: 20px 40px;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
+/* 選單排版 */
 .navbar ul {
   display: flex;
+  gap: 30px;
   list-style: none;
-  gap: 40px;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .navbar a {
   color: white;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   font-size: 1.1rem;
   padding: 6px 12px;
   border-radius: 8px;
