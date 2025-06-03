@@ -1323,4 +1323,47 @@ html {
 .reveal-fade {
   animation: fadeInUp 0.6s ease;
 }
+/* 最上層 header 控制整體排版 */
+.top-header {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* 家徽貼近導覽列 */
+.logo-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 8px 0;  /* 可微調空間 */
+}
+
+.logo-alone {
+  max-width: 100px;
+  height: auto;
+  opacity: 0.95;
+  animation: fadeIn 1s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.logo-alone:hover {
+  transform: scale(1.05);
+}
+
+/* Banner 接著家徽 */
+.banner-container {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
 
