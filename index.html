@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -748,7 +749,6 @@ window.addEventListener("click", function (e) {
 
 
 
-
 <script>
 function openHabitModal(id) {
   const modal = document.getElementById(id);
@@ -793,14 +793,8 @@ window.addEventListener("click", function (e) {
     });
   });
 </script>
-<script>
-window.addEventListener("load", () => {
-  const img = new Image();
-  img.onload = () => console.log("✔️ ex33.png 預載成功");
-  img.onerror = () => console.warn("❌ ex33.png 無法預載，請檢查路徑");
-  img.src = "images/ex33.png";
-});
-</script>
+
+
 <script>
   let clickCount = 0;
 
@@ -816,18 +810,15 @@ window.addEventListener("load", () => {
     clickCount++;
     showClickCount();
 
-    if (clickCount === 3) showAchievement("coding人生online");
+    if (clickCount === 5) showAchievement("coding人生online");
     if (clickCount === 10) showAchievement("esc鍵去了！");
     if (clickCount === 15) {
       showAchievement("error在哪裡!");
       showShameImage();
     }
     if (clickCount === 20) showAchievement("天好黑風好大");
-    if (clickCount === 33) {
-      showAchievement("Tomorrow Comes");
-      showEX33Image();
-                }
-    if (clickCount === 40) showAchievement("人要沒了兄弟!");
+    if (clickCount === 25) showAchievement("再上去沒了");
+    if (clickCount === 35) showAchievement("人要沒了兄弟!");
     if (clickCount === 50) showAchievement("HIRE ME!");
     if (clickCount === 65) showAchievement("您...真狠");
     if (clickCount === 100) showAchievement("還是算了我沒了");
@@ -858,32 +849,25 @@ window.addEventListener("load", () => {
       }, 3500);
     }
   }
-function showEX33Image() {
-  const ex33 = document.getElementById("ex33-overlay");
-  if (ex33) {
-    console.log("✅ showEX33Image triggered - Showing ex33.png");
+</script>
+<script>
 
-    ex33.classList.add("show");
+  window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 300) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
 
-    ex33.onclick = function () {
-      console.log("🧼 User clicked to close EX33");
-      ex33.classList.remove("show");
-      setTimeout(() => ex33.style.display = "none", 500); // 等待動畫淡出
-    };
-
-    setTimeout(() => {
-      ex33.classList.remove("show");
-      setTimeout(() => ex33.style.display = "none", 500);
-    }, 2000);
-  } else {
-    console.log("⚠️ ex33-overlay not found!");
-  }
-}
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
 </script>
 <img id="shame-overlay" src="images/shame.png" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:contain; background:black; z-index:9999;" />
-<img id="ex33-overlay" src="images/ex33.png"
-     style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; 
-            object-fit:contain; background:rgba(0,0,0,0.95); z-index:9999; cursor:pointer;" />
 
 
 <script>
@@ -909,8 +893,6 @@ function showEX33Image() {
     }
   });
 </script>
-
-<button onclick="showEX33Image()" style="position:fixed; bottom:10px; right:10px; z-index:9999;">測試 EX33 圖片</button>
 
 
 
