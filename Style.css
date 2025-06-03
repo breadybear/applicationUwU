@@ -879,7 +879,7 @@ body {
   background-color: #f8f9fa;
 }
 
-/* Habits 區副標（小字說明） */
+/* 副標說明文字 */
 .habits-section .habit-subtext {
   font-size: 1rem;
   color: #444;
@@ -896,13 +896,12 @@ body {
   gap: 60px;
 }
 
-/* 卡片樣式（會加上背景圖） */
+/* 卡片基本樣式 + 背景圖 */
 .card.habit-preview-card {
   width: 200px;
   height: 150px;
   font-size: 1.2rem;
   font-weight: bold;
-  background-color: #ffffff;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
@@ -913,21 +912,55 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 確保卡片文字浮在背景圖之上 */
-.card.habit-preview-card::after {
+/* 半透明遮罩，讓文字更清楚 */
+.card.habit-preview-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   z-index: 1;
 }
 
-.card.habit-preview-card {
-  color: #222 !important; /* 強制文字保持深色 */
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.7); /* 給點描邊讓字浮起來 */
+/* 文字浮於遮罩之上 */
+.card.habit-preview-card span {
+  z-index: 2;
+  position: relative;
+  color: #222;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* Hover 預覽說明區塊 */
+.habit-preview {
+  display: none;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  text-align: left;
+}
+
+.habit-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.card.habit-preview-card:hover .habit-preview {
+  display: block;
 }
 
 /* Hover 預覽說明 */
