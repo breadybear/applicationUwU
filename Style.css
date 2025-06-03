@@ -1408,4 +1408,10 @@ html {
 section {
   scroll-margin-top: 80px;  /* 預留導覽列高度 */
 }
-
+section[id]::before {
+  content: "";
+  display: block;
+  height: 80px;           /* 導覽列高度 */
+  margin-top: -80px;      /* 抵銷滾動位置 */
+  visibility: hidden;
+}
