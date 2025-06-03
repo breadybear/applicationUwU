@@ -1904,6 +1904,13 @@ section#experience.experience-section {
   line-height: 1.5;
 }
 
+.card.habit-preview-card .card-text {
+  color: #000 !important;
+  position: relative;
+  z-index: 2;
+  text-shadow: none !important;
+}
+
 /* ✅ 顯示 Tooltip */
 .habit-tooltip:hover .tooltip-text {
   visibility: visible;
