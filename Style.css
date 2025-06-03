@@ -3042,9 +3042,9 @@ section#experience.experience-section {
 }
 
 .card {
-  font-size: 1.3rem; /* ✅ 字體變大（預設大約是 1rem） */
+  position: relative; /* ✅ 加上以便使用 ::before */
+  font-size: 1.3rem;
   font-weight: bold;
-  background-color: #ffffff;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
@@ -3052,7 +3052,27 @@ section#experience.experience-section {
   text-align: center;
   color: #222;
   cursor: default;
-  min-width: 120px; /* 可加：避免被壓太小 */
+  min-width: 120px;
+  width: 220px;            /* ✅ 統一寬度 */
+  height: 120px;           /* ✅ 統一高度 */
+  background-size: contain;      /* ✅ 縮放圖片但不裁切 */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* ✅ 讓文字顯示在上層 */
+}
+
+/* 半透明遮罩，提升文字可讀性 */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* 白色半透明 */
+  border-radius: 20px;
+  z-index: 0;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card:hover {
