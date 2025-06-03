@@ -2168,7 +2168,26 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   object-fit: cover;
   max-height: 100%;
 }
+/* 🎨 背景圖片淡化效果 */
+.behind-section {
+  position: relative; /* 為 ::before 奠定定位基準 */
+  z-index: 0;
+  overflow: hidden;
+}
 
+/* ::before 背景層 */
+.behind-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/applicationUwU/images/ex33.png'); /* ←✅ 根據 GitHub Pages 的正式網址修正路徑 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08; /* 🌫️ 想更明顯可以調 0.12～0.2 */
+  z-index: -1;
+  pointer-events: none; /* 避免影響互動 */
+}
 /* 保留 hover 出現連結功能 */
 .image-hover-wrapper {
   position: relative;
@@ -6018,24 +6037,4 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/*behind-the-scenes-section*/
-
-.behind-section {
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-}
-
-/* 背景圖淡化效果 */
-.behind-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('./images/ex33.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.1;         /* 調整這個值控制淡化程度 */
-  z-index: -1;
-}
 
