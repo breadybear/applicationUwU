@@ -14,12 +14,12 @@ body {
 }
 
 .intro-section {
-  max-width: 1100px;         /* ✅ 跟導覽區寬度對齊 */
-  margin: 40px auto;         /* ✅ 置中 */
-  padding: 30px;             /* ✅ 統一內距 */
-  border-radius: 16px;
+  max-width: 720px;              /* ✅ 控制最大寬度 */
+  margin: 40px auto;             /* ✅ 置中 */
+  padding: 40px 30px;
+  border-radius: 20px;
   background-color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 .intro-content {
   display: flex;
@@ -27,11 +27,9 @@ body {
   align-items: center;
   gap: 24px;
 }
-
 .intro-photo img {
-  width: 120px;                   /* ✅ 照片寬度適中 */
+  width: 160px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .intro-text {
