@@ -1399,29 +1399,27 @@ body::before {
   height: 60px; /* 導覽列高度 */
 }
 
-/* 導覽列浮在 banner 上，貼底、加圓角 */
-/* 導覽列懸浮在上面（固定上方） */
+/* ✅ 導覽列浮在 Banner 上方 */
 .navbar {
-  position: sticky;
+  position: absolute;
   top: 0;
-  z-index: 9999;
+  left: 0;
+  width: 100%;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 20px 20px;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: center;
-  margin: 0;
+  padding: 18px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* 選單排版 */
 .navbar ul {
   display: flex;
-  gap: 30px;
+  justify-content: center;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  gap: 30px;
 }
 
 .navbar a {
@@ -1437,7 +1435,6 @@ body::before {
 .navbar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
 
 section {
   scroll-margin-top: 80px;  /* 預留導覽列高度 */
