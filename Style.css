@@ -58,7 +58,12 @@
   color: #333;
 }
 
-
+.intro-section {
+  background-image: url("images/season.gif");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
 
 /* 字體與整體風格 */
