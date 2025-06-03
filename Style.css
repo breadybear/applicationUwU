@@ -1876,20 +1876,32 @@ section#experience.experience-section {
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
 .tooltip-text img {
   width: 100%;
+  height: auto;               /* ✅ 保持原始比例 */
   max-height: 140px;
-  object-fit: cover;
+  object-fit: contain;        /* ✅ 不裁切，整張圖會顯示完整 */
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: block;
 }
+
+.tooltip-text {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+
 .card.habit-preview-card .card-text {
   position: relative;
   z-index: 2;
-  color: #fff; /* 文字可改白 */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* 黑色描邊陰影 */
+  color: #ffffff;
+  text-shadow:
+    0 0 2px rgba(0, 0, 0, 0.6),
+    0 0 4px rgba(0, 0, 0, 0.4); /* ✅ 黑色描邊讓白字更清楚 */
 }
+
 
 
 /* ✅ 顯示 Tooltip */
