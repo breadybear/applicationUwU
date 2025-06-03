@@ -220,18 +220,18 @@ footer {
 .language-box {
   position: relative;
   width: 200px;
-  height: 120px;
+  height: 140px;
   border-radius: 20px;
-  overflow: hidden;
-  background-color: transparent; /* ✅ 清除預設底色 */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
   transition: transform 0.3s ease;
 }
 
@@ -247,14 +247,44 @@ footer {
 
 /* 文字區塊要在遮罩上面 */
 .language-box .label {
-  position: relative;
   z-index: 2;
-  color: white;
-  font-weight: bold;
-  font-size: 1.3rem;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
 }
-
-
+.language-box .popup {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff8dc;
+  color: #333;
+  padding: 12px;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+.language-box.active .popup {
+  visibility: visible;
+  opacity: 1;
+}
+.language-box .popup button {
+  background-color: #bfc3e2;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.language-box .popup button:hover {
+  background-color: #aab0d3;
+}
 
 .language-box:hover {
   transform: scale(1.05);
