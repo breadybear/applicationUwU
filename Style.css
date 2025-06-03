@@ -1822,6 +1822,7 @@ section#experience.experience-section {
   background-color: #d8f0ff !important;
 }
 
+/* 🌟 Habits 區主體樣式 */
 .habits-section {
   background-color: #d8f0ff;
   padding: 60px 20px;
@@ -1840,100 +1841,80 @@ section#experience.experience-section {
   color: #333;
 }
 
-/* 卡片樣式 */
+.habit-subtext {
+  font-size: 1rem;
+  color: #444;
+  margin-left: 20px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+/* 🌸 卡片外層 tooltip 結構 */
+.habit-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* 🌸 卡片樣式（有背景圖、圓角、文字置中） */
 .card.habit-preview-card {
   width: 200px;
   height: 140px;
-  border-radius: 20px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #111; /* 更深文字色 */
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
   background-size: cover;
   background-position: center;
-  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  overflow: hidden;
 }
 
-/* 淡白色遮罩：讓背景略暗但文字可讀 */
-.card.habit-preview-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.25); /* ✅ 控制透明度，太高會看不到圖 */
-  z-index: 1;
-}
-
-/* 文字浮在遮罩上方 */
-.card.habit-preview-card span {
-  position: relative;
-  z-index: 2;
-  color: #111;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7); /* 提高清晰度 */
-}
-
-/* Hover 效果 */
+/* 🌸 Hover 效果 */
 .card.habit-preview-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 卡片容器排版 */
-#habits .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 150px;
-}
-
-/* Hover 預覽視窗 */
-.habit-preview {
-  display: none;
+/* 💬 預覽浮出 tooltip 說明 */
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 260px;
+  background-color: #fff8dc;
+  color: #333;
+  text-align: left;
+  border-radius: 10px;
+  padding: 12px;
   position: absolute;
+  z-index: 10;
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
-  background-color: #ffffff;
-  color: #333;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.habit-preview img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 8px;
+/* ✅ 顯示 Tooltip */
+.habit-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
-.card.habit-preview-card:hover .habit-preview {
-  display: block;
-}
-
-/* Modal 彈窗樣式 */
-.habit-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+/* 🧱 卡片排列方式 */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 60px;
 }
 
 .recommendation-section {
