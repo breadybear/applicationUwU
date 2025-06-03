@@ -2113,6 +2113,36 @@ section[id]::before {
   margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
+.experience-tooltip {
+  position: relative;
+  overflow: visible;
+}
+
+.experience-tooltip .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 260px;
+  background-color: #fff8dc;
+  color: #333;
+  text-align: left;
+  border-radius: 10px;
+  padding: 12px;
+  position: absolute;
+  z-index: 10;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+.experience-tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
 
 section#experience.experience-section {
   background-color: #d8f0ff !important;
