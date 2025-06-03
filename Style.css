@@ -76,6 +76,21 @@ body {
     width: 100px;
   }
 }
+@media (max-width: 768px) {
+  .intro-section {
+    margin: 100px 20px 30px;  /* 小螢幕左右留空 */
+    padding: 20px;
+  }
+
+  .intro-content {
+    flex-direction: column;  /* 圖片與文字上下排 */
+    text-align: center;
+  }
+
+  .intro-photo {
+    margin-bottom: 20px;
+  }
+}
 
 
 /* 導覽列 */
