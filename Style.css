@@ -889,6 +889,7 @@ body {
 }
 
 /* 卡片容器 */
+/* 卡片容器 */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -905,7 +906,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
   cursor: pointer;
   background-size: cover;
@@ -921,54 +922,107 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.85); /* 白色遮罩，透明度85% */
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
   z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
 /* ✅ 黑色文字，清晰可見 */
 .card.habit-preview-card span {
   position: relative;
   z-index: 2;
-  color: #000; /* 純黑色文字 */
-  text-shadow: none; /* 移除文字陰影 */
-  font-weight: 600; /* 稍微加粗 */
+  color: #000;
+  text-shadow: none;
+  font-weight: 600;
 }
 
-/* Hover 效果 - 遮罩變更透明 */
-.card.habit-preview-card:hover::before {
-  background-color: rgba(255, 255, 255, 0.75); /* hover時稍微降低透明度 */
-}
-
-/* Hover 預覽說明區塊 */
+/* 🎯 Hover 預覽彈出框 */
 .habit-preview {
   display: none;
   position: absolute;
-  bottom: 110%;
+  bottom: 110%; /* 在卡片上方顯示 */
   left: 50%;
   transform: translateX(-50%);
-  width: 240px;
+  width: 280px; /* 稍微加寬 */
   background-color: #ffffff;
   color: #333;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 100; /* 確保在最上層 */
   text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  
+  /* 添加動畫效果 */
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none; /* 防止意外點擊 */
 }
 
+/* 預覽框內的圖片 */
 .habit-preview img {
   width: 100%;
-  height: auto;
+  height: 120px; /* 固定高度 */
+  object-fit: cover; /* 保持比例裁切 */
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
+/* 預覽框內的文字 */
+.habit-preview p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0;
+  color: #555;
+}
+
+/* 🎯 顯示預覽框的觸發 */
 .card.habit-preview-card:hover .habit-preview {
   display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
 }
 
+/* 卡片 Hover 效果 */
+.card.habit-preview-card:hover {
+  transform: translateY(-5px); /* 輕微上浮 */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
 
+.card.habit-preview-card:hover::before {
+  background-color: rgba(255, 255, 255, 0.9); /* hover時遮罩更明顯 */
+}
+
+/* 📐 預覽框的小三角箭頭 */
+.habit-preview::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* 響應式設計 - 手機版調整 */
+@media (max-width: 768px) {
+  .card-container {
+    gap: 30px;
+  }
+  
+  .habit-preview {
+    width: 250px;
+    padding: 12px;
+  }
+  
+  .habit-preview img {
+    height: 100px;
+  }
+}
 /* Banner 區 */
 .banner {
   position: relative;
