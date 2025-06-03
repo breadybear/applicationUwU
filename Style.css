@@ -1382,15 +1382,20 @@ html {
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;               /* ✅ 固定在畫面頂部 */
   top: 0;
+  left: 0;
+  width: 100%;                   /* 讓它佔滿整個畫面寬度 */
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.85); /* 黑底透明感 */
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 10px 20px;
-  border-radius: 0;
-  backdrop-filter: blur(4px); /* 若支援，可加模糊效果 */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
+body {
+  padding-top: 70px;  /* 根據 navbar 高度調整 */
+}
+
 
 .navbar ul {
   display: flex;
