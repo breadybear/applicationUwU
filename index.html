@@ -811,15 +811,15 @@ function handleGameClick() {
 
   if (clickCount === 3) showAchievement("coding人生online");
   if (clickCount === 10) showAchievement("esc鍵去了！");
-  if (clickCount === 15) {
-    showAchievement("error在哪裡!");
-    showShameImage();
-  }
+if (clickCount === 15) {
+  showAchievement("error在哪裡!");
+  showOverlay("shame-overlay");
+}
   if (clickCount === 23) showAchievement("天好黑風好大");
-  if (clickCount === 33) {
-    showAchievement("Tomorrow Comes");
-    showEX33Image();
-  }
+if (clickCount === 33) {
+  showAchievement("Tomorrow Comes");
+  showOverlay("ex33-overlay");
+}
   if (clickCount === 35) showAchievement("人要沒了兄弟!");
   if (clickCount === 50) showAchievement("HIRE ME!");
   if (clickCount === 65) showAchievement("您...真狠");
@@ -833,37 +833,30 @@ function handleGameClick() {
     document.body.appendChild(countEl);
     setTimeout(() => countEl.remove(), 1000);
   }
-
-  function showAchievement(text) {
-    const ach = document.createElement("div");
-    ach.className = "achievement";
-    ach.textContent = `🏆 成就達成：${text}`;
-    document.body.appendChild(ach);
-    setTimeout(() => ach.remove(), 2500);
-  }
-
-  function showShameImage() {
-    const shame = document.getElementById("shame-overlay");
-    if (shame) {
-      shame.style.display = "block";
-      setTimeout(() => {
-        shame.style.display = "none";
-      }, 3500);
-    }
-  }
 </script>
+
 <script>
-function showEX33Image() {
-  const ex33 = document.getElementById("ex33-overlay");
-  if (ex33) {
-    ex33.style.display = "block";
-    ex33.onclick = () => ex33.style.display = "none";
-    setTimeout(() => {
-      if (ex33.style.display === "block") ex33.style.display = "none";
-    }, 3000);
-  } else {
-    console.log("⚠️ 無法找到 ex33-overlay");
+function showOverlay(id) {
+  const overlay = document.getElementById(id);
+  if (!overlay) {
+    console.warn("❌ Overlay not found:", id);
+    return;
   }
+
+  overlay.style.display = "block";
+  overlay.style.opacity = "1";
+
+  overlay.onclick = () => {
+    overlay.style.opacity = "0";
+    setTimeout(() => overlay.style.display = "none", 400);
+  };
+
+  setTimeout(() => {
+    if (overlay.style.display === "block") {
+      overlay.style.opacity = "0";
+      setTimeout(() => overlay.style.display = "none", 400);
+    }
+  }, 2500);
 }
 </script>
 
