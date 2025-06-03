@@ -6017,4 +6017,11 @@ body {
   z-index: 999999 !important; /* ← 強制拉到最上面 */
   opacity: 1;
 }
-
+#ex33-overlay {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+}
+#ex33-overlay.show {
+  display: block !important;
+  opacity: 1 !important;
+}
