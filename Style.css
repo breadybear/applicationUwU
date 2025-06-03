@@ -55,14 +55,16 @@ body {
 
 
 .banner {
+  position: relative;
   width: 100%;
-  max-height: 400px;
+  height: 300px; /* 根據你的設計調整高度 */
   overflow: hidden;
+  margin: 0; /* 確保沒多餘空隙 */
 }
 
 .banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
