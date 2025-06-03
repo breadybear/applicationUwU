@@ -1400,17 +1400,18 @@ body::before {
 
 /* ✅ 導覽列浮在 Banner 上方 */
 .navbar {
-  position: fixed; /* ✅ 固定在畫面最上方 */
+  position: fixed;             /* ✅ 永遠固定在畫面上方 */
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
+  z-index: 10000;              /* ✅ 確保在所有內容之上 */
+  background-color: rgba(0, 0, 0, 0.9); /* 黑底透明可調整 */
+  backdrop-filter: blur(4px);  /* 模糊背景效果可選 */
   border-radius: 0 0 20px 20px;
   padding: 18px 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 
 
 .navbar ul {
@@ -1445,4 +1446,17 @@ section[id]::before {
   height: 80px;           /* 導覽列高度 */
   margin-top: -80px;      /* 抵銷滾動位置 */
   visibility: hidden;
+}
+
+
+body {
+  padding-top: 100px; /* ✅ 根據 navbar 高度讓出空間 */
+}
+
+.banner img {
+  margin-top: 0;      /* 避免額外推動內容 */
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
