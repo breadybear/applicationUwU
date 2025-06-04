@@ -2273,40 +2273,46 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   max-width: 1100px;
   margin: 40px auto;
   z-index: 1;
-  border-radius: 20px; /* ✅ 確保背景圖模糊邊界一致 */
-  overflow: hidden;
 }
 
-/* 背景圖層 */
 .education-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/plat.jpg"); /* ← 這裡確認改對 */
+  background-image: url("images/plat.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.3;
   filter: blur(4px);
   z-index: 0;
   border-radius: 20px;
 }
 
-
-/* 白色半透明卡片 */
+/* 共用卡片樣式 */
 .education-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 40px;
+  margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 40px;
   z-index: 1;
   color: #000;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.4); /* ✅ 提高文字可讀性 */
+  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-/* 文字內容樣式 */
+/* CYCU 卡片樣式 */
+.card-cycu {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 自學卡片樣式（可略淡） */
+.card-selflearn {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 文字排版 */
 .education-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2331,6 +2337,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   font-style: italic;
   color: #444;
 }
+
 
 
 
