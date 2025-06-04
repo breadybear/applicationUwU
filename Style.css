@@ -7190,5 +7190,40 @@ body {
   100% { left: -100%; }
 }
 
+.behind-section {
+  background-color: #d8f0ff;
+  padding: 60px 20px;
+  border-radius: 16px;
+  max-width: 1100px;
+  margin: 40px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  /* ✅ 下面是新增的背景圖設定 */
+  background-image: url('images/ex33.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+
+  /* ✅ 模糊遮罩 */
+  position: relative;
+  overflow: hidden;
+}
+
+.behind-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: inherit;
+  backdrop-filter: blur(8px);
+  opacity: 0.3; /* 透明度可再調 */
+  z-index: 0;
+}
+
+/* ✅ 讓內容層浮在模糊圖層上 */
+.behind-section > * {
+  position: relative;
+  z-index: 1;
+}
 
 
