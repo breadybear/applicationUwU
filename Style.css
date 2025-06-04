@@ -7241,7 +7241,7 @@ body {
   background-repeat: no-repeat;
   opacity: 0.15; /* ✅ 霧面感 */
   z-index: 0;
-  filter: blur(4px); /* ✅ 模糊程度 */
+  filter: blur(0.15px); /* ✅ 模糊程度 */
 }
 
 /* 讓原本內容在上方 */
