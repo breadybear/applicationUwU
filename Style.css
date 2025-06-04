@@ -2284,16 +2284,17 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/plat.jpg");
+  background-image: url("images/plat.jpg");     /* 你目前的背景圖 */
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.85); /* ✅ 加強白色透明遮罩 */
-  background-blend-mode: lighten;              /* ✅ 混合白色與圖片 */
-  filter: blur(7px);                           /* ✅ 再增加一點模糊 */
-  opacity: 1.0;                                /* ✅ 整體背景圖偏淡 */
+  background-color: rgba(255, 255, 255, 0.9);   /* ✅ 加強白色遮罩：再淡一半以上 */
+  background-blend-mode: lighten;              /* ✅ 亮化圖片與白色疊加 */
+  filter: blur(6px);                           /* ✅ 模糊值再加深 */
+  opacity: 0.85;                               /* ✅ 淡化圖片整體不干擾文字 */
   z-index: -1;
   border-radius: 20px;
 }
+
 
 
 /* 內容基本樣式 */
