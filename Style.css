@@ -2273,28 +2273,27 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   border-radius: 20px;
   max-width: 1100px;
   margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  z-index: 0;
+  background: rgba(255, 255, 255, 0.3);   /* ✅ 半透明白色卡片 */
+  backdrop-filter: blur(10px);           /* ✅ 毛玻璃模糊效果 */
+  -webkit-backdrop-filter: blur(10px);   /* ✅ Safari支援 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* ✅ 微陰影立體感 */
+  z-index: 1;
+  color: #000; /* 保證文字保持深色，清楚易讀 */
 }
 
-/* 白色遮罩讓文字保持清晰 */
-/* ✅ 背景圖層 */
+/* 背景圖層放在 ::before */
 .education-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/plat.jpg");     /* 你目前的背景圖 */
+  background-image: url("images/plat.jpg");
   background-size: cover;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.9);   /* ✅ 加強白色遮罩：再淡一半以上 */
-  background-blend-mode: lighten;              /* ✅ 亮化圖片與白色疊加 */
-  filter: blur(6px);                           /* ✅ 模糊值再加深 */
-  opacity: 0.85;                               /* ✅ 淡化圖片整體不干擾文字 */
+  opacity: 0.5;                  /* ✅ 留一半，保持辨識但不搶眼 */
   z-index: -1;
+  filter: blur(4px);            /* ✅ 背景模糊柔化 */
   border-radius: 20px;
 }
-
 
 
 /* 內容基本樣式 */
