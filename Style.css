@@ -6139,7 +6139,7 @@ body {
   font-size: 1rem;
   color: #333;
   font-family: 'Arial', 'Noto Sans TC', sans-serif;
-  animation: marquee-move 10s linear infinite;
+  animation: marquee-move 13s linear infinite;
 }
 
 @keyframes marquee-move {
