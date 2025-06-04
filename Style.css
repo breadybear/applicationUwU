@@ -2661,7 +2661,7 @@ html {
 /* 圖片樣式（縮小到不落出） */
 .ai-card img {
   width: 100%;
-  max-width: 150px;     /* ✅ 再次縮小 */
+  max-width: 120px;      /* ✅ 原來約 240px，現在縮小一半 */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
