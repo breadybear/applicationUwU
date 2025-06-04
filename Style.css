@@ -2643,13 +2643,15 @@ html {
 
 /* ===== 右欄位（AI圖片） ===== */
 .contact-right {
-  flex: 1 1 280px;
-  max-width: 240px;                      /* ✅ 限制最大寬度防止溢出 */
+  flex: 1 1 240px;
+  max-width: 220px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: flex-end;                 /* ✅ 圖片向右靠齊 */
-  padding-right: 10px;                   /* ✅ 圖片右側留點空間避免太貼 */
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;          /* ✅ 如果太多，允許滾動 */
+  max-height: 420px;         /* ✅ 圖片總高度不超過紅線（你可依照畫面再調） */
 }
 
 /* ===== AI 卡片外框 ===== */
@@ -2661,7 +2663,8 @@ html {
 /* ===== AI 圖片樣式與效果 ===== */
 .ai-card img {
   width: 100%;
-  max-width: 220px;                      /* ✅ 控制圖片大小 */
+  max-width: 180px;          /* ✅ 更小圖片寬度 */
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
