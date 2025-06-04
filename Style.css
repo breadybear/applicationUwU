@@ -2235,15 +2235,40 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   gap: 30px; /* 原本可能是 40px，略微縮小 */
 }
 
+
+
 .education-section {
-  background-color: #d8f0ff; /* ← 改為藍色 */
+  background-color: #d8f0ff;
   padding: 60px 20px;
   border-radius: 16px;
-  max-width: 1000px;
-  margin-top: 20px;  /* ✅ 或 10px 看視覺效果 */
-  margin-bottom: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
 }
+
+/* 背景模糊圖片層 */
+.education-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('images/plat.jpg'); /* ✅ 圖片位置正確 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.12;       /* ✅ 霧面透明感，可調整 */
+  filter: blur(6px);   /* ✅ 模糊程度，可微調 */
+  z-index: 0;
+}
+
+/* 將內容浮在背景之上 */
+.education-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 
 .recommend-img-row {
