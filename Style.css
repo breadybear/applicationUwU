@@ -2606,6 +2606,7 @@ html {
   line-height: 1.8;
 }
 
+/* section 內 h2 標題 */
 .contact-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2615,6 +2616,7 @@ html {
   gap: 10px;
 }
 
+/* 聯絡資訊 ICON 樣式 */
 .EMAIL::before {
   content: "✉ ";
   margin-right: 8px;
@@ -2624,27 +2626,30 @@ html {
   margin-right: 8px;
 }
 
+/* 整體左右欄 FLEX */
 .contact-flex {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;   /* ✅ 讓左右兩欄一樣高 */
+  gap: 40px;
 }
 
-/* 左欄文字 */
+/* 左側文字欄 */
 .contact-left {
   flex: 2 1 600px;
-}
-
-/* 右欄圖片卡片容器 */
-.contact-right {
-  flex: 1 1 280px;
-  max-width: 280px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
+}
+
+/* 右側圖片欄 */
+.contact-right {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* ✅ 圖片平均分散整個高度 */
   align-items: center;
+  max-width: 220px;
 }
 
 /* 單一圖片卡片 */
@@ -2653,10 +2658,10 @@ html {
   width: 100%;
 }
 
-/* 縮小圖片 + 置中 */
+/* 圖片樣式（縮小到不落出） */
 .ai-card img {
   width: 100%;
-  max-width: 180px; /* ✅ 控制大小在紅線之上 */
+  max-width: 150px;     /* ✅ 再次縮小 */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
@@ -2664,17 +2669,20 @@ html {
   margin: 0 auto;
 }
 
+/* 滑入放大效果 */
 .ai-card img:hover {
   transform: scale(1.05);
 }
 
+/* 說明文字 */
 .ai-card p {
   margin-top: 6px;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: #333;
-  line-height: 1.5;
+  line-height: 1.4;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
 
 
 
