@@ -2282,7 +2282,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("../images/plat.jpg"); /* ← 路徑根據你上傳的結構修正 */
+  background-image: url("images/plat.jpg"); /* ← 這裡確認改對 */
   background-size: cover;
   background-position: center;
   opacity: 0.35;
@@ -2290,6 +2290,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   z-index: 0;
   border-radius: 20px;
 }
+
 
 /* 白色半透明卡片 */
 .education-card {
