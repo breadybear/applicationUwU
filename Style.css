@@ -2240,7 +2240,8 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   padding: 60px 20px;
   border-radius: 16px;
   max-width: 1000px;
-  margin: 20px auto;
+  margin-top: 20px;  /* ✅ 或 10px 看視覺效果 */
+  margin-bottom: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
