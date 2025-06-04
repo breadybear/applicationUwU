@@ -2270,10 +2270,9 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 /* 保持教育區獨立控制排版與寬度 */
 .education-section {
   position: relative;
-  padding: 60px 20px;
+  padding-bottom: 40px;
   margin: 40px auto;
   max-width: 1100px;
-  min-height: 600px;
   overflow: hidden;
   border-radius: 20px;
   background-color: transparent;
@@ -2287,13 +2286,14 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/plat.jpg"); /* ✅ 路徑已正確 */
+  background-image: url("images/plat.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.4;
-  filter: blur(8px) brightness(0.8);
+  opacity: 0.6;               /* 透明度 */
+  filter: blur(2px) brightness(1); /* 適度模糊 + 保持亮度 */
   z-index: -1;
 }
+
 .education-card {
   position: relative;
   z-index: 1;
