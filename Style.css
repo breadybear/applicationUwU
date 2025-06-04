@@ -2289,8 +2289,8 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   background-position: center;
   background-color: rgba(255, 255, 255, 0.85); /* ✅ 加強白色透明遮罩 */
   background-blend-mode: lighten;              /* ✅ 混合白色與圖片 */
-  filter: blur(5px);                           /* ✅ 再增加一點模糊 */
-  opacity: 0.9;                                /* ✅ 整體背景圖偏淡 */
+  filter: blur(7px);                           /* ✅ 再增加一點模糊 */
+  opacity: 1.0;                                /* ✅ 整體背景圖偏淡 */
   z-index: -1;
   border-radius: 20px;
 }
