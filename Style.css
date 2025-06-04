@@ -2269,87 +2269,26 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 /* 教育區塊容器設定 */
 .education-section {
   position: relative;
+  min-height: 600px;
   padding: 60px 20px;
-  max-width: 1100px;
   margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
-  min-height: 600px; /* ✅ 加這行讓背景圖顯示 */
+  max-width: 1100px;
 }
 
 .education-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://breadybear.github.io/applicationUwU/images/plat.jpg");
+  background-image: url("images/plat.jpg"); /* 或你自己的 GitHub 完整網址 */
   background-size: cover;
   background-position: center;
-  opacity: 0.4;
+  opacity: 0.5;
   filter: blur(8px) brightness(0.8);
   z-index: -1;
 }
-/* 共用卡片樣式 */
-.education-card {
-  position: relative;
-  padding: 40px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.5); /* 半透明玻璃感 */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  color: #000;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.6); /* 讓文字白影浮出 */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 1;
-}
 
-/* 標題樣式 */
-.education-section h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  position: relative; /* 讓它出現在模糊層之上 */
-  z-index: 2;
-}
-
-/* 文字區塊排版 */
-.edu-info .school-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.edu-info .degree {
-  font-size: 1.2rem;
-  margin-top: 4px;
-}
-
-.edu-info .duration {
-  margin-top: 6px;
-  font-style: italic;
-  color: #444;
-}
-
-/* 手機版調整 */
-@media (max-width: 768px) {
-  .education-card {
-    padding: 24px;
-    font-size: 0.95rem;
-  }
-
-  .education-section h2 {
-    font-size: 1.5rem;
-  }
-}
-.card-cycu {
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.card-selflearn {
-  background: rgba(255, 255, 255, 0.4);
-}
 
 
 
