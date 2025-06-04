@@ -2597,16 +2597,15 @@ html {
 /* ===== Contact 區塊外觀樣式 ===== */
 .contact-section {
   background-color: #d8f0ff;
-  padding: 60px 40px;
+  padding: 60px 20px;
   border-radius: 20px;
-  max-width: 1000px;                     /* ✅ 縮小區塊寬度讓左右不擠邊 */
-  margin: 40px auto;                     /* ✅ 自動置中整個 Contact 區塊 */
+  max-width: 1100px;
+  margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   font-size: 1.1rem;
   line-height: 1.8;
 }
 
-/* ===== Contact 區塊標題樣式 ===== */
 .contact-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2616,75 +2615,67 @@ html {
   gap: 10px;
 }
 
-/* ===== ICON 樣式：Email 與 Tel ===== */
 .EMAIL::before {
   content: "✉ ";
   margin-right: 8px;
 }
-
 .TEL::before {
   content: "📱 ";
   margin-right: 8px;
 }
 
-/* ===== 左右欄容器彈性排版設定 ===== */
 .contact-flex {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   justify-content: space-between;
-  align-items: flex-start;               /* ✅ 上對齊 */
+  align-items: flex-start;
 }
 
-/* ===== 左欄位（聯絡資訊與目標文字） ===== */
+/* 左欄文字 */
 .contact-left {
   flex: 2 1 600px;
 }
 
-/* ===== 右欄位（AI圖片） ===== */
+/* 右欄圖片卡片容器 */
 .contact-right {
-  flex: 1 1 240px;
-  max-width: 220px;
+  flex: 1 1 280px;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  justify-content: flex-start;
-  overflow-y: auto;          /* ✅ 如果太多，允許滾動 */
-  max-height: 420px;         /* ✅ 圖片總高度不超過紅線（你可依照畫面再調） */
 }
 
-/* ===== AI 卡片外框 ===== */
+/* 單一圖片卡片 */
 .ai-card {
-  text-align: right;
+  text-align: center;
   width: 100%;
 }
 
-/* ===== AI 圖片樣式與效果 ===== */
+/* 縮小圖片 + 置中 */
 .ai-card img {
   width: 100%;
-  max-width: 180px;          /* ✅ 更小圖片寬度 */
-  height: auto;
+  max-width: 180px; /* ✅ 控制大小在紅線之上 */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
 }
 
-/* 滑入圖片放大 */
 .ai-card img:hover {
   transform: scale(1.05);
 }
 
-/* 圖片底部說明文字 */
 .ai-card p {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 0.95rem;
   color: #333;
   line-height: 1.5;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
 
 
 
