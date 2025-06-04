@@ -7235,14 +7235,15 @@ body {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url('images/ex33.png'); /* ✅ 確認圖檔在 images 資料夾 */
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('images/ex33.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.15; /* ✅ 霧面感 */
+  opacity: 0.8;                  /* ✅ 提高圖片清晰度 */
+  filter: blur(4px) brightness(1); /* ✅ 降低模糊，保留清晰度 */
   z-index: 0;
-  filter: blur(0.15px); /* ✅ 模糊程度 */
 }
+
 
 /* 讓原本內容在上方 */
 .behind-section > * {
