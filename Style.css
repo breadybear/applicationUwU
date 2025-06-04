@@ -2270,18 +2270,24 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 .education-section {
   position: relative;
   padding: 60px 20px;
-  border-radius: 20px;
   max-width: 1100px;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.3);   /* ✅ 半透明白色卡片 */
-  backdrop-filter: blur(10px);           /* ✅ 毛玻璃模糊效果 */
-  -webkit-backdrop-filter: blur(10px);   /* ✅ Safari支援 */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* ✅ 微陰影立體感 */
   z-index: 1;
-  color: #000; /* 保證文字保持深色，清楚易讀 */
 }
 
-/* 背景圖層放在 ::before */
+/* 白色半透明卡片設定在 education-card */
+.education-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  z-index: 1;
+}
+
+/* 背景圖層放在 section 的 ::before */
 .education-section::before {
   content: "";
   position: absolute;
@@ -2289,11 +2295,12 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   background-image: url("images/plat.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.5;                  /* ✅ 留一半，保持辨識但不搶眼 */
-  z-index: -1;
-  filter: blur(4px);            /* ✅ 背景模糊柔化 */
+  opacity: 0.35;
+  filter: blur(4px);
+  z-index: 0;
   border-radius: 20px;
 }
+
 
 
 /* 內容基本樣式 */
@@ -2325,6 +2332,12 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   margin-top: 6px;
   font-style: italic;
   color: #444;
+}
+.education-section h2,
+
+.education-card {
+  color: #000;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
 }
 
 
