@@ -2592,18 +2592,19 @@ html {
 .css-modal img {
   transition: opacity 0.5s ease-in-out;
 }
-
+/* Contact 區塊整體外觀 */
 .contact-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 20px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  font-size: 1.1rem;
-  line-height: 1.8;
+  background-color: #d8f0ff;                 /* 淡藍色背景 */
+  padding: 60px 20px;                        /* 內距 */
+  border-radius: 20px;                       /* 圓角 */
+  max-width: 1100px;                         /* 最大寬度 */
+  margin: 40px auto;                         /* 上下間距、置中 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 柔和陰影 */
+  font-size: 1.1rem;                         /* 基本文字大小 */
+  line-height: 1.8;                          /* 行距 */
 }
 
+/* h2 標題樣式 */
 .contact-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2613,50 +2614,62 @@ html {
   gap: 10px;
 }
 
+/* ICON 標籤：信箱和電話 */
 .EMAIL::before {
   content: "✉ ";
   margin-right: 8px;
 }
+
 .TEL::before {
   content: "📱 ";
   margin-right: 8px;
 }
 
+/* 父層：左右兩欄彈性排版 */
 .contact-flex {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  flex-wrap: wrap;             /* 窄螢幕換行 */
+  gap: 40px;                   /* 欄距 */
   justify-content: space-between;
 }
 
-/* 左欄：聯絡與Goal文字 */
+/* 左欄：文字內容區 */
 .contact-left {
-  flex: 2 1 600px;
+  flex: 2 1 600px;             /* 彈性寬度，基底 600px */
 }
 
-/* 右欄：AI 圖片敘述卡片 */
+/* 右欄：AI圖片敘述區 */
 .contact-right {
-  flex: 1 1 300px;
+  flex: 1 1 300px;             /* 彈性寬度，基底 300px */
+  max-width: 260px;            /* ✅ 限制圖片欄最大寬度避免太大 */
   display: flex;
-  flex-direction: column;
+  flex-direction: column;     /* 直排圖片卡片 */
   gap: 20px;
+  align-items: center;        /* ✅ 卡片置中對齊 */
 }
 
+/* 每張圖片與敘述卡片包裝 */
 .ai-card {
   text-align: center;
 }
 
+/* 卡片內圖片樣式 */
 .ai-card img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease;
+  width: 100%;                /* 寬度全滿容器 */
+  max-width: 240px;           /* ✅ 限制實際寬度避免過大 */
+  border-radius: 12px;        /* 圓角 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* 陰影 */
+  transition: transform 0.3s ease; /* 滑入放大 */
+  margin: 0 auto;             /* ✅ 確保圖片在 container 置中 */
+  display: block;
 }
 
+/* 滑鼠移到圖片時放大效果 */
 .ai-card img:hover {
   transform: scale(1.05);
 }
 
+/* 每張圖下方的說明文字 */
 .ai-card p {
   margin-top: 8px;
   font-size: 0.95rem;
@@ -2664,6 +2677,7 @@ html {
   line-height: 1.5;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
 
 
 
