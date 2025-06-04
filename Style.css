@@ -2266,28 +2266,18 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 
 
 
-/* 教育區塊背景圖設定 */
+/* 教育區塊容器設定 */
 .education-section {
   position: relative;
   padding: 60px 20px;
   max-width: 1100px;
   margin: 40px auto;
   z-index: 1;
+  border-radius: 20px; /* ✅ 確保背景圖模糊邊界一致 */
+  overflow: hidden;
 }
 
-/* 白色半透明卡片設定在 education-card */
-.education-card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  z-index: 1;
-}
-
-/* 背景圖層放在 section 的 ::before */
+/* 背景圖層 */
 .education-section::before {
   content: "";
   position: absolute;
@@ -2301,14 +2291,21 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   border-radius: 20px;
 }
 
-
-
-/* 內容基本樣式 */
+/* 白色半透明卡片 */
 .education-card {
   position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  padding: 40px;
   z-index: 1;
+  color: #000;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.4); /* ✅ 提高文字可讀性 */
 }
 
+/* 文字內容樣式 */
 .education-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2333,12 +2330,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   font-style: italic;
   color: #444;
 }
-.education-section h2,
 
-.education-card {
-  color: #000;
-  text-shadow: 0 1px 3px rgba(255,255,255,0.4);
-}
 
 
 
