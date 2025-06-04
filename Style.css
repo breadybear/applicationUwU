@@ -7247,7 +7247,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 1.5;                  /* ✅ 提高圖片清晰度 */
+  opacity: 1.0;                  /* ✅ 提高圖片清晰度 */
   filter: blur(4px) brightness(1); /* ✅ 降低模糊，保留清晰度 */
   z-index: 0;
 }
