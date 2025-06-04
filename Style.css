@@ -2260,14 +2260,15 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('images/plat.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url('images/plat.jpg'); /* ✅ 加白色透明遮罩 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 1;                         /* 圖片本體完全呈現 */
-  filter: blur(3px) brightness(0.9);  /* 淡霧但清晰，稍微壓暗背景 */
+  opacity: 1;
+  filter: blur(2px) brightness(1.05) contrast(1.05); /* ✅ 模糊淡化，亮度+對比拉高 */
   z-index: 0;
 }
+
 
 
 /* 將內容浮在背景之上 */
