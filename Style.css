@@ -2269,10 +2269,6 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 /* 教育區塊背景圖設定 */
 .education-section {
   position: relative;
-  background-image: url('images/plat.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
@@ -2283,14 +2279,19 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 }
 
 /* 白色遮罩讓文字保持清晰 */
+/* ✅ 背景圖層 */
 .education-section::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.6);  /* ✅ 淡白遮罩 */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("images/plat.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;           /* ✅ 透明度 */
+  filter: blur(4px);      /* ✅ 模糊 */
   z-index: -1;
-  border-radius: 20px;
 }
+
 
 /* 內容基本樣式 */
 .education-card {
