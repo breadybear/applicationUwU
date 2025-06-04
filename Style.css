@@ -2264,13 +2264,72 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   gap: 30px; /* 原本可能是 40px，略微縮小 */
 }
 
+
+
+/* 教育區塊背景圖設定 */
 .education-section {
-  background-color: #d8f0ff; /* ← 改為藍色 */
+  position: relative;
+  background-image: url('images/plat.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1000px;
+  border-radius: 20px;
+  max-width: 1100px;
   margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* 白色遮罩讓文字保持清晰 */
+.education-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.6);  /* ✅ 淡白遮罩 */
+  z-index: -1;
+  border-radius: 20px;
+}
+
+/* 內容基本樣式 */
+.education-card {
+  position: relative;
+  z-index: 1;
+}
+
+.education-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-info .school-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.edu-info .degree {
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+.edu-info .duration {
+  margin-top: 6px;
+  font-style: italic;
+  color: #444;
+}
+
+.education-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.75); /* ← 原本是 0.6，這裡變更為 0.75 */
+  z-index: -1;
+  border-radius: 20px;
 }
 
 
@@ -6149,68 +6208,3 @@ body {
 
 
 
-/* 教育區塊背景圖設定 */
-.education-section {
-  position: relative;
-  background-image: url('images/plat.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 60px 20px;
-  border-radius: 20px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  z-index: 0;
-}
-
-/* 白色遮罩讓文字保持清晰 */
-.education-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.6);  /* ✅ 淡白遮罩 */
-  z-index: -1;
-  border-radius: 20px;
-}
-
-/* 內容基本樣式 */
-.education-card {
-  position: relative;
-  z-index: 1;
-}
-
-.education-section h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.edu-info .school-name {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.edu-info .degree {
-  font-size: 1.2rem;
-  margin-top: 4px;
-}
-
-.edu-info .duration {
-  margin-top: 6px;
-  font-style: italic;
-  color: #444;
-}
-
-.education-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.75); /* ← 原本是 0.6，這裡變更為 0.75 */
-  z-index: -1;
-  border-radius: 20px;
-}
