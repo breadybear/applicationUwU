@@ -2596,17 +2596,17 @@ html {
 
 /* ===== Contact 區塊外觀樣式 ===== */
 .contact-section {
-  background-color: #d8f0ff;                 /* 淡藍色背景 */
-  padding: 60px 20px;                        /* 內距 */
-  border-radius: 20px;                       /* 圓角 */
-  max-width: 1100px;                         /* 最大寬度 */
-  margin: 40px auto;                         /* 上下間距、置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* 柔和陰影 */
-  font-size: 1.1rem;                         /* 基本文字大小 */
-  line-height: 1.8;                          /* 行距 */
+  background-color: #d8f0ff;
+  padding: 60px 40px;
+  border-radius: 20px;
+  max-width: 1000px;                     /* ✅ 縮小區塊寬度讓左右不擠邊 */
+  margin: 40px auto;                     /* ✅ 自動置中整個 Contact 區塊 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-/* ===== Contact 標題樣式 ===== */
+/* ===== Contact 區塊標題樣式 ===== */
 .contact-section h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -2616,7 +2616,7 @@ html {
   gap: 10px;
 }
 
-/* ===== ICON樣式：Email 與 Tel ===== */
+/* ===== ICON 樣式：Email 與 Tel ===== */
 .EMAIL::before {
   content: "✉ ";
   margin-right: 8px;
@@ -2627,52 +2627,54 @@ html {
   margin-right: 8px;
 }
 
-/* ===== 左右區塊父容器排版設定 ===== */
+/* ===== 左右欄容器彈性排版設定 ===== */
 .contact-flex {
   display: flex;
-  flex-wrap: wrap;             /* ✅ 小螢幕自動換行 */
-  gap: 40px;                   /* 區塊間距 */
+  flex-wrap: wrap;
+  gap: 40px;
   justify-content: space-between;
+  align-items: flex-start;               /* ✅ 上對齊 */
 }
 
-/* ===== 左欄位（聯絡與說明） ===== */
+/* ===== 左欄位（聯絡資訊與目標文字） ===== */
 .contact-left {
-  flex: 2 1 600px;             /* 基底寬度600px，允許彈性縮放 */
+  flex: 2 1 600px;
 }
 
-/* ===== 右欄位（圖片） ===== */
+/* ===== 右欄位（AI圖片） ===== */
 .contact-right {
-  flex: 1 1 300px;
-  max-width: 260px;            /* 限制圖片欄最大寬度 */
+  flex: 1 1 280px;
+  max-width: 240px;                      /* ✅ 限制最大寬度防止溢出 */
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center;
-  justify-content: flex-start; /* ✅ 靠上對齊 */
+  align-items: flex-end;                 /* ✅ 圖片向右靠齊 */
+  padding-right: 10px;                   /* ✅ 圖片右側留點空間避免太貼 */
 }
 
-/* ===== AI 圖片卡片包裝盒 ===== */
+/* ===== AI 卡片外框 ===== */
 .ai-card {
-  text-align: center;
+  text-align: right;
+  width: 100%;
 }
 
 /* ===== AI 圖片樣式與效果 ===== */
 .ai-card img {
-  width: 100%;                          /* 填滿容器寬度 */
-  max-width: 240px;                     /* 限制實際圖片最大寬度 */
-  border-radius: 12px;                  /* 圓角外觀 */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* 陰影效果 */
-  transition: transform 0.3s ease;      /* 動畫效果 */
-  margin: 0 auto;                       /* 水平置中 */
+  width: 100%;
+  max-width: 220px;                      /* ✅ 控制圖片大小 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  margin: 0 auto;
   display: block;
 }
 
-/* ===== 滑入圖片放大效果 ===== */
+/* 滑入圖片放大 */
 .ai-card img:hover {
   transform: scale(1.05);
 }
 
-/* ===== 圖片底部文字描述 ===== */
+/* 圖片底部說明文字 */
 .ai-card p {
   margin-top: 8px;
   font-size: 0.95rem;
@@ -2680,6 +2682,7 @@ html {
   line-height: 1.5;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
 
 
 
