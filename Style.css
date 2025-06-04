@@ -2274,21 +2274,20 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   margin: 40px auto;
   border-radius: 20px;
   overflow: hidden;
-  /* ❌ 移除這行會遮住背景圖：z-index: 1; */
+  min-height: 600px; /* ✅ 加這行讓背景圖顯示 */
 }
 
 .education-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://breadybear.github.io/applicationUwU/images/plat.jpg"); /* ✅ 確認路徑正確 */
+  background-image: url("https://breadybear.github.io/applicationUwU/images/plat.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.4;
   filter: blur(8px) brightness(0.8);
-  z-index: -1; /* ✅ 關鍵：確保背景圖層在最底層 */
+  z-index: -1;
 }
-
 /* 共用卡片樣式 */
 .education-card {
   position: relative;
