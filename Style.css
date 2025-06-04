@@ -6047,4 +6047,16 @@ body {
   transition: opacity 0.4s ease;
 }
 
+.network-hint {
+  background-color: #e2dbf7; /* 淡紫色 */
+  color: #333;
+  font-size: 1rem;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 90%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', 'Noto Sans TC', sans-serif;
+}
 
