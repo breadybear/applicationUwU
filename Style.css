@@ -2594,13 +2594,12 @@ html {
 }
 
 .contact-section {
-  background-color: #d8f0ff; /* 或你想要的柔和底色 */
+  background-color: #d8f0ff;
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
   margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  text-align: left;
   font-size: 1.1rem;
   line-height: 1.8;
 }
@@ -2614,19 +2613,30 @@ html {
   gap: 10px;
 }
 
-.contact-section .EMAIL::before {
+.EMAIL::before {
   content: "✉ ";
   margin-right: 8px;
 }
-
-.contact-section .TEL📱::before {
+.TEL::before {
   content: "📱 ";
   margin-right: 8px;
 }
 
-.contact-image-text {
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* 左欄：聯絡與Goal文字 */
+.contact-left {
+  flex: 2 1 600px;
+}
+
+/* 右欄：AI 圖片敘述卡片 */
+.contact-right {
   flex: 1 1 300px;
-  max-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2639,7 +2649,7 @@ html {
 .ai-card img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
 
@@ -2651,8 +2661,8 @@ html {
   margin-top: 8px;
   font-size: 0.95rem;
   color: #333;
+  line-height: 1.5;
   font-family: 'Noto Sans TC', sans-serif;
-  line-height: 1.4;
 }
 
 
