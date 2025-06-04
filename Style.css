@@ -2282,7 +2282,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/plat.jpg");
+  background-image: url("../images/plat.jpg"); /* ← 路徑根據你上傳的結構修正 */
   background-size: cover;
   background-position: center;
   opacity: 0.35;
