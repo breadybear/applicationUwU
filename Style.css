@@ -2031,8 +2031,15 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+}
+
+/* ✅ hover 放大效果 */
+.recommendation-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .recommendation-card img {
