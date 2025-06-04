@@ -2283,14 +2283,18 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
 .education-section::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background-image: url("images/plat.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.15;           /* ✅ 透明度 */
-  filter: blur(4px);      /* ✅ 模糊 */
+  background-color: rgba(255, 255, 255, 0.75); /* 白色遮罩疊在圖片上 */
+  background-blend-mode: lighten; /* ✅ 混合模式，讓圖片與白色融合 */
+  filter: blur(4px);              /* 模糊 */
+  opacity: 0.2;                   /* 透明度微調 */
   z-index: -1;
+  border-radius: 20px;
 }
+
 
 
 /* 內容基本樣式 */
@@ -2324,14 +2328,7 @@ object-fit: cover;  /* 裁切一點圖，但比例不會怪異 */
   color: #444;
 }
 
-.education-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.75); /* ← 原本是 0.6，這裡變更為 0.75 */
-  z-index: -1;
-  border-radius: 20px;
-}
+
 
 
 .recommend-img-row {
