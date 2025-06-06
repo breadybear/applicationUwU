@@ -7452,3 +7452,29 @@ section, header, footer {
   opacity: 1 !important;
 }
 
+/* === Experience 各職位背景 === */
+.experience-ta {
+  background-image: url('images/ta.jpg');
+}
+.experience-tea {
+  background-image: url('images/tea.jpg');
+}
+.experience-steak {
+  background-image: url('images/steak.png');
+}
+.experience-zoo {
+  background-image: url('images/zoo.jpg');
+}
+
+/* === Dark Mode 補強：卡片調暗不刺眼 === */
+.dark-mode .experience-card {
+  background-color: #1e1e1e;
+  background-blend-mode: multiply;
+  filter: brightness(0.85) contrast(1.1);
+}
+
+/* === 卡片文字顏色與陰影 === */
+.experience-card .label {
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
