@@ -667,6 +667,17 @@ footer {
   justify-content: center;
   align-items: center;
 }
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ✅ 這一行關鍵：讓內容水平置中 */
+  gap: 30px;
+}
+.skill-box {
+  padding: 10px;
+}
+
+
 
 .modal-wrapper {
   background-color: #fff;
