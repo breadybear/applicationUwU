@@ -531,21 +531,6 @@ body.dark-mode {
   <!-- ✅ JavaScript（唯一版本） -->
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("darkModeToggle");
-
-  toggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    document.documentElement.classList.toggle("dark-mode"); // ✅ 加這行讓 <html> 也變暗
-
-    const isDark = document.body.classList.contains("dark-mode");
-    toggleButton.textContent = isDark ? "☀️ 淡色模式" : "🌙 深色模式";
-  });
-});
-</script>
-
-
-<script>
 window.addEventListener('scroll', () => {
   const scrollTop = document.documentElement.scrollTop;
   const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
