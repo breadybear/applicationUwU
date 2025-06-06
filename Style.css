@@ -674,7 +674,9 @@ footer {
   gap: 30px;
 }
 .skill-box {
-  padding: 10px;
+  flex: 0 1 120px;
+  display: flex;
+  justify-content: center;
 }
 
 
