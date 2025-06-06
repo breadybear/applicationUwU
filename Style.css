@@ -20,6 +20,34 @@
   background-image: url('images/zoo.jpg');
 }
 
+/*箭頭*/
+
+
+/* 🔗 小箭頭樣式 */
+.hover-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  color: white;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+
+.project-box,
+.experience-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-box:hover .hover-icon,
+.experience-card:hover .hover-icon {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 
 
 /* 🌳 Intro 區塊背景設定 */
