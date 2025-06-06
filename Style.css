@@ -95,6 +95,45 @@ main section {
   margin: auto;
 }
 
+nav a {
+  color: white;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffe066;
+}
+
+nav a.active {
+  color: #a0a8ff;
+  border-bottom: 2px solid #a0a8ff;
+}
+
+
+nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #ffe066;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+
+
 /* Footer */
 footer {
   background-color: #222;
