@@ -7271,7 +7271,7 @@ body {
   z-index: 99999;
 }
 
-/* ========= 變數設計 ========= */
+/* ========= CSS 變數 ========= */
 :root {
   --bg-color: #f0f4fa;
   --text-color: #222222;
@@ -7289,41 +7289,47 @@ body.dark-mode {
   --modal-bg: #2e2e2e;
 }
 
-/* ========= 全站背景與文字 ========= */
+/* ========= 背景與文字色 ========= */
 html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-section,
-header,
-footer {
+section, header, footer {
   background-color: var(--section-bg);
   color: var(--text-color);
 }
 
-/* ========= 導覽列與按鈕 ========= */
+/* ========= NAV 永遠黑色 ========= */
 .navbar {
-  background-color: var(--card-bg);
+  background-color: #111 !important;
+  color: white;
 }
-#backToTop,
-#darkModeToggle {
-  background-color: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.navbar a {
+  color: white;
+  transition: color 0.3s;
 }
-#darkModeToggle:hover {
-  background-color: #444;
+.navbar a:hover {
+  color: #ffe066;
 }
-.dark-mode #scrollProgressBar {
-  background-color: #4cd4b0;
+.navbar a.active {
+  color: #a0a8ff;
+  border-bottom: 2px solid #a0a8ff;
 }
-.dark-mode #backToTop {
-  background-color: #2e2e2e;
-  color: #eaeaea;
-  border: 1px solid #666;
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: #ffe066;
+  transition: width 0.3s ease;
+}
+.navbar a:hover::after {
+  width: 100%;
 }
 
-/* ========= 卡片類元件 ========= */
+/* ========= 卡片與內容背景 ========= */
 .language-box,
 .project-box,
 .skill-box,
@@ -7338,15 +7344,14 @@ footer {
   color: var(--text-color);
 }
 
-/* ========= 模態窗與提示框 ========= */
-.tooltip-text,
-.modal-content,
-.modal-wrapper {
-  background-color: var(--tooltip-bg) !important;
+/* 特別處理 Contact 區塊內白底問題 */
+.contact-section .contact-left,
+.contact-section .contact-right {
+  background-color: var(--section-bg) !important;
   color: var(--text-color);
 }
 
-/* ========= 深色模式區塊補強 ========= */
+/* ========= 深色模式專屬樣式強化 ========= */
 .dark-mode .language-hover-section,
 .dark-mode .project-section,
 .dark-mode .skills-section,
@@ -7360,65 +7365,63 @@ footer {
   color: var(--text-color);
 }
 
-/* ========= Skills 區塊 ========= */
-.dark-mode .skill-grid {
-  background-color: transparent;
-  white-space: nowrap;
+/* ========= Skills 區塊不改卡片樣式 ========= */
+.skill-box {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .dark-mode .skill-box {
-  background-color: var(--card-bg);
-  box-shadow: none;
-}
-.dark-mode .skill-circle {
-  background-color: #668dbb;
-  color: #fff;
+  background-color: #1e1e1e !important;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
 }
 
-/* ========= 強化文字可讀性 ========= */
-.dark-mode h2,
-.dark-mode .language-intro,
-.dark-mode .project-intro p,
-.dark-mode .label,
-.dark-mode .habit-subtext,
-.dark-mode .edu-card,
-.dark-mode .contact-left,
-.dark-mode .contact-right {
+/* ========= Experience 區塊夜間補強 ========= */
+.dark-mode .experience-section .experience-tooltip {
+  background-color: #1e1e1e !important;
+  border: 1px solid #444;
+}
+
+/* ========= Contact 區塊白色卡片跟著背景變 ========= */
+.contact-section .contact-left,
+.contact-section .contact-right {
+  background-color: var(--section-bg) !important;
+}
+.dark-mode .contact-section .contact-left,
+.dark-mode .contact-section .contact-right {
+  background-color: var(--card-bg) !important;
+}
+
+/* ========= Language 區塊標籤維持白色文字 ========= */
+.language-box .label {
+  color: white !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+/* ========= Tooltip 與模態窗 ========= */
+.tooltip-text,
+.modal-content,
+.modal-wrapper {
+  background-color: var(--tooltip-bg) !important;
   color: var(--text-color);
 }
-
-.dark-mode p,
-.dark-mode .contact-right p,
-.dark-mode .contact-right div,
-.dark-mode .habit-tooltip .tooltip-text,
-.dark-mode .habit-tooltip p,
-.dark-mode .image-text-block p {
-  color: var(--text-color) !important;
-  opacity: 1 !important;
-}
-
-/* ========= 深色模式提示框 ========= */
-.dark-mode .language-box .label,
-.dark-mode .popup,
-.dark-mode .skill-circle,
-.dark-mode .tooltip-text {
+.dark-mode .tooltip-text,
+.dark-mode .popup {
+  background-color: #333 !important;
   color: #fff;
-}
-.dark-mode .popup,
-.dark-mode .tooltip-text {
-  background-color: #333;
   border: 1px solid #555;
 }
 
-/* ========= Projects 預覽圖效果 ========= */
-.dark-mode .project-box img {
-  filter: brightness(0.8) contrast(1.1);
-  transition: filter 0.3s ease;
+/* ========= 專案圖片濾鏡效果 ========= */
+.dark-mode .project-box img,
+.dark-mode .recommendation-card img {
+  background-color: #1e1e1e !important;
+  filter: brightness(0.9) contrast(1.1);
+  border-radius: 8px;
 }
 .dark-mode .project-box:hover img {
   filter: brightness(1);
 }
 
-/* ========= Intro 區塊背景遮罩 ========= */
+/* ========= Intro 遮罩 ========= */
 .dark-mode .intro-section::before {
   content: "";
   position: absolute;
@@ -7431,29 +7434,21 @@ footer {
   z-index: 1;
 }
 
-/* ========= 教育與經歷卡片柔化 ========= */
+/* ========= 文字強化 ========= */
+.dark-mode h2,
+.dark-mode .label,
+.dark-mode p,
+.dark-mode .habit-subtext,
 .dark-mode .edu-card,
-.dark-mode .experience-tooltip {
-  background-color: #242424 !important;
-  border: 1px solid #444;
+.dark-mode .contact-left,
+.dark-mode .contact-right,
+.dark-mode .tooltip-text,
+.dark-mode .popup,
+.dark-mode .skill-circle,
+.dark-mode .habit-tooltip .tooltip-text,
+.dark-mode .habit-tooltip p,
+.dark-mode .image-text-block p {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
 }
 
-/* ========= 淺色模式專用修正 ========= */
-.language-box .label {
-  color: white !important;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
-/* ========= 修正圖片容器背景避免透出 ========= */
-.dark-mode .experience-tooltip,
-.dark-mode .habit-preview-card,
-.dark-mode .recommendation-card img,
-.dark-mode .project-box img {
-  background-color: #1e1e1e !important;
-}
-
-/* ========= 推薦人圖片風格修正 ========= */
-.dark-mode .recommendation-card img {
-  filter: brightness(0.9) contrast(1.1);
-  border-radius: 8px;
-}
