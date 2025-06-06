@@ -531,6 +531,29 @@ body.dark-mode {
 
 
   <!-- ✅ JavaScript（唯一版本） -->
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("darkModeToggle");
+
+  toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const isDark = document.body.classList.contains("dark-mode");
+    toggleButton.textContent = isDark ? "☀️ 淺色模式" : "🌙 深色模式";
+  });
+});
+</script>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const progress = (scrollTop / scrollHeight) * 100;
+  document.getElementById('scrollProgressBar').style.width = `${progress}%`;
+});
+</script>
+
   <script>
     function openModal() {
       document.getElementById("certificateModal").style.display = "block";
@@ -963,24 +986,8 @@ window.addEventListener("click", function (e) {
     }
   });
 </script>
-<script>
-const toggleButton = document.getElementById("darkModeToggle");
 
-toggleButton.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
 
-  const isDark = document.body.classList.contains("dark-mode");
-  toggleButton.textContent = isDark ? "☀️ 淺色模式" : "🌙 深色模式";
-});
-</script>
-<script>
-window.addEventListener('scroll', () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const progress = (scrollTop / scrollHeight) * 100;
-  document.getElementById('scrollProgressBar').style.width = `${progress}%`;
-});
-</script>
 
 
 </body>
