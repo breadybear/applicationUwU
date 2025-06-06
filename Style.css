@@ -108,7 +108,9 @@ body {
   width: 100%;
 }
 
-
+.navbar a.active {
+  color: #ffe066; /* 顯示選中的文字色 */
+}
 
 
 
