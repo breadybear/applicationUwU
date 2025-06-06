@@ -7286,7 +7286,6 @@ body {
   z-index: 1;
 }
 
-
 /* ========= 黑暗模式切換按鈕 ========= */
 #darkModeToggle {
   position: fixed;
@@ -7337,13 +7336,12 @@ body.dark-mode {
 }
 
 /* ========= 全站背景與文字 ========= */
-body {
+html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-section,
-header,
-footer {
+
+section, header, footer {
   background-color: var(--section-bg);
   color: var(--text-color);
 }
@@ -7352,11 +7350,10 @@ footer {
 .navbar {
   background-color: var(--card-bg);
 }
-#backToTop,
-#darkModeToggle {
+#backToTop, #darkModeToggle {
   background-color: var(--card-bg);
   color: var(--text-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 #darkModeToggle:hover {
   background-color: #444;
@@ -7371,24 +7368,15 @@ footer {
 }
 
 /* ========= 卡片類元件 ========= */
-.language-box,
-.project-box,
-.skill-box,
-.experience-tooltip,
-.habit-preview-card,
-.edu-card,
-.contact-left,
-.contact-right,
-.behind-card,
-.image-hover-wrapper {
+.language-box, .project-box, .skill-box, .experience-tooltip,
+.habit-preview-card, .edu-card, .contact-left, .contact-right,
+.behind-card, .image-hover-wrapper {
   background-color: var(--card-bg) !important;
   color: var(--text-color);
 }
 
 /* ========= 模態窗與提示框 ========= */
-.tooltip-text,
-.modal-content,
-.modal-wrapper {
+.tooltip-text, .modal-content, .modal-wrapper {
   background-color: var(--tooltip-bg) !important;
   color: var(--text-color);
 }
@@ -7401,14 +7389,18 @@ footer {
 .dark-mode .recommendation-section,
 .dark-mode .education-section,
 .dark-mode .habits-section,
-.dark-mode .behind-section {
+.dark-mode .behind-section,
+.dark-mode .experience-section {
   background-color: var(--section-bg);
   color: var(--text-color);
 }
 
-.dark-mode .skill-grid {
-  background-color: transparent;
-  white-space: nowrap;
+/* ========= 技能區塊修正 ========= */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
 .dark-mode .skill-box {
   background-color: var(--card-bg);
@@ -7420,15 +7412,21 @@ footer {
 }
 
 /* ========= 強化文字可讀性 ========= */
-.dark-mode h2,
+.dark-mode h2, .dark-mode p,
 .dark-mode .language-intro,
 .dark-mode .project-intro p,
 .dark-mode .label,
 .dark-mode .habit-subtext,
 .dark-mode .edu-card,
 .dark-mode .contact-left,
-.dark-mode .contact-right {
-  color: var(--text-color);
+.dark-mode .contact-right,
+.dark-mode .contact-right p,
+.dark-mode .contact-right div,
+.dark-mode .habit-tooltip .tooltip-text,
+.dark-mode .habit-tooltip p,
+.dark-mode .image-text-block p {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
 }
 
 /* ========= 深色模式提示框 ========= */
@@ -7473,35 +7471,14 @@ footer {
   border: 1px solid #444;
 }
 
-
-/* ========= 深色模式補強：段落與標題 ========= */
-.dark-mode p,
-.dark-mode .contact-right p,
-.dark-mode .contact-right div,
-.dark-mode .habit-tooltip .tooltip-text,
-.dark-mode .habit-tooltip p,
-.dark-mode .image-text-block p {
-  color: var(--text-color) !important;
-  opacity: 1 !important;
-}
-
-/* ========= 深色模式補強：圖片容器避免透明背景透出 ========= */
+/* ========= 深色模式圖片背景處理 ========= */
 .dark-mode .experience-tooltip,
 .dark-mode .habit-preview-card,
 .dark-mode .recommendation-card img,
 .dark-mode .project-box img {
   background-color: #1e1e1e !important;
 }
-
-/* ========= 修正推薦人圖片背景過亮或看不清 ========= */
 .dark-mode .recommendation-card img {
   filter: brightness(0.9) contrast(1.1);
   border-radius: 8px;
 }
-
-/* ========= 修正背景沒變黑（包含 body 周圍未覆蓋區）========= */
-html,
-body {
-  background-color: var(--bg-color);
-}
-
