@@ -6,6 +6,22 @@
 }
 /*INTRO*/
 
+/*EXP*/
+.experience-ta {
+  background-image: url('images/ta.jpg');
+}
+.experience-tea {
+  background-image: url('images/tea.jpg');
+}
+.experience-steak {
+  background-image: url('images/steak.png');
+}
+.experience-zoo {
+  background-image: url('images/zoo.jpg');
+}
+
+
+
 /* 🌳 Intro 區塊背景設定 */
 /* 🎨 Intro 區背景：慢速貼齊且全區一致 */
 .intro-section {
