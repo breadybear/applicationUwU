@@ -7283,3 +7283,12 @@ body {
   z-index: 1;
 }
 
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #1abc9c;
+  width: 0%;
+  z-index: 99999;
+}
