@@ -60,61 +60,30 @@ body {
   filter: brightness(80%);
 }
 
-/* 導覽列固定樣式（不受主題切換） */
-.nav-bar {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
+/* 永遠黑色導覽列 */
+.navbar {
+  background-color: #111 !important;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.nav-bar ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  background-color: rgba(0, 0, 0, 0.85); /* 更深黑 */
-  padding: 10px 24px;
-  border-radius: 12px;
-  backdrop-filter: blur(6px); /* 顯高級感 */
-}
-
-.nav-bar a {
-  position: relative;
-  color: #ffffff;
+/* 導覽列中的連結文字 */
+.navbar a {
+  color: white !important;
   font-weight: bold;
-  text-decoration: none;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
-.nav-bar a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background-color: #ffd700;
-  transition: width 0.3s ease;
+.navbar a:hover {
+  color: #ffe066 !important;
 }
 
-.nav-bar a:hover {
-  color: #ffd700;
+.navbar a.active {
+  color: #a0a8ff !important;
+  border-bottom: 2px solid #a0a8ff;
 }
 
-.nav-bar a:hover::after {
-  width: 100%;
-}
-
-/* active 狀態下用亮紫色做標記 */
-.nav-bar a.active {
-  color: #a0a8ff;
-}
-
-.nav-bar a.active::after {
-  width: 100%;
-  background-color: #a0a8ff;
-}
 
 
 
