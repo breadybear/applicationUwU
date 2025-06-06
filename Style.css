@@ -7287,37 +7287,7 @@ body {
 }
 
 
-/* 黑暗模式 */
-.dark-mode-btn {
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  z-index: 9999;
-  padding: 10px 16px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 12px;
-  background-color: #333;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease;
-}
-.dark-mode-btn:hover {
-  background-color: #555;
-}
-
-#scrollProgressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background-color: #1abc9c;
-  width: 0%;
-  z-index: 99999;
-}
-
-
+/* ========= 黑暗模式切換按鈕 ========= */
 #darkModeToggle {
   position: fixed;
   bottom: 100px;
@@ -7336,38 +7306,169 @@ body {
 #darkModeToggle:hover {
   background-color: #555;
 }
-/* 深色模式補強 */
 
+/* ========= 卷軸進度條 ========= */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #1abc9c;
+  width: 0%;
+  z-index: 99999;
+}
+
+/* ========= 變數設計 ========= */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #222222;
+  --card-bg: #ffffff;
+  --section-bg: #e0f4ff;
+  --tooltip-bg: #fff8dc;
+  --modal-bg: #ffffff;
+}
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --card-bg: #1e1e1e;
+  --section-bg: #1a1a1a;
+  --tooltip-bg: #2a2a2a;
+  --modal-bg: #2e2e2e;
+}
+
+/* ========= 全站背景與文字 ========= */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+section,
+header,
+footer {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+}
+
+/* ========= 導覽列與按鈕 ========= */
+.navbar {
+  background-color: var(--card-bg);
+}
+#backToTop,
+#darkModeToggle {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+#darkModeToggle:hover {
+  background-color: #444;
+}
+.dark-mode #scrollProgressBar {
+  background-color: #4cd4b0;
+}
+.dark-mode #backToTop {
+  background-color: #2e2e2e;
+  color: #eaeaea;
+  border: 1px solid #666;
+}
+
+/* ========= 卡片類元件 ========= */
+.language-box,
+.project-box,
+.skill-box,
+.experience-tooltip,
+.habit-preview-card,
+.edu-card,
+.contact-left,
+.contact-right,
+.behind-card,
+.image-hover-wrapper {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color);
+}
+
+/* ========= 模態窗與提示框 ========= */
+.tooltip-text,
+.modal-content,
+.modal-wrapper {
+  background-color: var(--tooltip-bg) !important;
+  color: var(--text-color);
+}
+
+/* ========= 深色模式區塊補強 ========= */
 .dark-mode .language-hover-section,
 .dark-mode .project-section,
-.dark-mode .slogan-rotator {
-  background-color: #1e1e1e;
-  color: #eaeaea;
+.dark-mode .skills-section,
+.dark-mode .contact-section,
+.dark-mode .recommendation-section,
+.dark-mode .education-section,
+.dark-mode .habits-section,
+.dark-mode .behind-section {
+  background-color: var(--section-bg);
+  color: var(--text-color);
 }
 
-.dark-mode .language-box {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+.dark-mode .skill-grid {
+  background-color: transparent;
+  white-space: nowrap;
+}
+.dark-mode .skill-box {
+  background-color: var(--card-bg);
+  box-shadow: none;
+}
+.dark-mode .skill-circle {
+  background-color: #668dbb;
+  color: #fff;
 }
 
+/* ========= 強化文字可讀性 ========= */
 .dark-mode h2,
 .dark-mode .language-intro,
 .dark-mode .project-intro p,
-.dark-mode .label {
-  color: #f0f0f0;
+.dark-mode .label,
+.dark-mode .habit-subtext,
+.dark-mode .edu-card,
+.dark-mode .contact-left,
+.dark-mode .contact-right {
+  color: var(--text-color);
 }
 
-/* 深色模式下強化卡片字體顯示 */
+/* ========= 深色模式提示框 ========= */
 .dark-mode .language-box .label,
 .dark-mode .popup,
 .dark-mode .skill-circle,
 .dark-mode .tooltip-text {
   color: #fff;
 }
-
-/* 彈出框背景也要暗 */
 .dark-mode .popup,
 .dark-mode .tooltip-text {
   background-color: #333;
   border: 1px solid #555;
 }
 
+/* ========= Projects 預覽圖效果 ========= */
+.dark-mode .project-box img {
+  filter: brightness(0.8) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+.dark-mode .project-box:hover img {
+  filter: brightness(1);
+}
+
+/* ========= Intro 區塊背景遮罩 ========= */
+.dark-mode .intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.intro-section {
+  position: relative !important;
+  z-index: 1;
+}
+
+/* ========= 教育與經歷卡片柔化 ========= */
+.dark-mode .edu-card,
+.dark-mode .experience-tooltip {
+  background-color: #242424 !important;
+  border: 1px solid #444;
+}
