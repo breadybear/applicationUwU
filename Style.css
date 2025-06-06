@@ -60,75 +60,60 @@ body {
   filter: brightness(80%);
 }
 
-/* 導覽列 */
+/* 導覽列固定樣式（不受主題切換） */
 .nav-bar {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 999;
 }
 
 .nav-bar ul {
   display: flex;
   gap: 30px;
   list-style: none;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.85); /* 更深黑 */
+  padding: 10px 24px;
   border-radius: 12px;
+  backdrop-filter: blur(6px); /* 顯高級感 */
 }
 
 .nav-bar a {
-  color: #fff;
-  text-decoration: none;
+  position: relative;
+  color: #ffffff;
   font-weight: bold;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-bar a:hover {
-  color: #ffcc00;
-}
-
-/* 區塊樣式 */
-main section {
-  padding: 60px 20px;
-  max-width: 960px;
-  margin: auto;
-}
-
-nav a {
-  color: white;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffe066;
-}
-
-nav a.active {
-  color: #a0a8ff;
-  border-bottom: 2px solid #a0a8ff;
-}
-
-
-nav a {
-  position: relative;
-  color: white;
-  text-decoration: none;
-}
-
-nav a::after {
+.nav-bar a::after {
   content: "";
   position: absolute;
   width: 0%;
   height: 2px;
   left: 0;
-  bottom: -5px;
-  background-color: #ffe066;
+  bottom: -4px;
+  background-color: #ffd700;
   transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+.nav-bar a:hover {
+  color: #ffd700;
+}
+
+.nav-bar a:hover::after {
   width: 100%;
+}
+
+/* active 狀態下用亮紫色做標記 */
+.nav-bar a.active {
+  color: #a0a8ff;
+}
+
+.nav-bar a.active::after {
+  width: 100%;
+  background-color: #a0a8ff;
 }
 
 
