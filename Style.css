@@ -7336,4 +7336,38 @@ body {
 #darkModeToggle:hover {
   background-color: #555;
 }
+/* 深色模式補強 */
+
+.dark-mode .language-hover-section,
+.dark-mode .project-section,
+.dark-mode .slogan-rotator {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+.dark-mode .language-box {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h2,
+.dark-mode .language-intro,
+.dark-mode .project-intro p,
+.dark-mode .label {
+  color: #f0f0f0;
+}
+
+/* 深色模式下強化卡片字體顯示 */
+.dark-mode .language-box .label,
+.dark-mode .popup,
+.dark-mode .skill-circle,
+.dark-mode .tooltip-text {
+  color: #fff;
+}
+
+/* 彈出框背景也要暗 */
+.dark-mode .popup,
+.dark-mode .tooltip-text {
+  background-color: #333;
+  border: 1px solid #555;
+}
 
