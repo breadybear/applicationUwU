@@ -7452,7 +7452,7 @@ section, header, footer {
   opacity: 1 !important;
 }
 
-/* === Experience 各職位背景 === */
+/* === Experience 各職位背景圖片 === */
 .experience-ta {
   background-image: url('images/ta.jpg');
 }
@@ -7466,15 +7466,24 @@ section, header, footer {
   background-image: url('images/zoo.jpg');
 }
 
-/* === Dark Mode 補強：卡片調暗不刺眼 === */
+/* === 維持卡片樣式不變，但支援深色變暗效果 === */
+.experience-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* === 卡片內文字樣式統一 === */
+.experience-card .label {
+  color: white;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* === 深色模式時卡片自動變暗（圖片不刺眼）=== */
 .dark-mode .experience-card {
   background-color: #1e1e1e;
   background-blend-mode: multiply;
   filter: brightness(0.85) contrast(1.1);
-}
-
-/* === 卡片文字顏色與陰影 === */
-.experience-card .label {
-  color: white;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
 }
