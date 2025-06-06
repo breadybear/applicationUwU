@@ -7321,3 +7321,27 @@ body {
   z-index: 1;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.dark-mode .experience-section,
+.dark-mode .skills-section,
+.dark-mode .contact-section,
+.dark-mode .habit-tooltip,
+.dark-mode .recommendation-section,
+.dark-mode .education-section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .experience-tooltip,
+.dark-mode .tooltip-text {
+  background-color: #2c2c2c;
+  color: #ddd;
+}
+
+.dark-mode a {
+  color: #99ccff;
+}
