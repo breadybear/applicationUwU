@@ -597,11 +597,12 @@ footer {
 }
 
 .skills-section {
-  background-color: #f6f8fa;
+  background-color: #dff1ff; /* 你原本的藍色系可保留 */
   padding: 60px 20px;
   border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
+  max-width: 1100px;
+  margin: 40px auto; /* ✅ 關鍵：左右 auto 即可置中 */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skills-section h2 {
