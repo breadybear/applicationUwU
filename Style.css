@@ -7472,3 +7472,36 @@ footer {
   background-color: #242424 !important;
   border: 1px solid #444;
 }
+
+
+/* ========= 深色模式補強：段落與標題 ========= */
+.dark-mode p,
+.dark-mode .contact-right p,
+.dark-mode .contact-right div,
+.dark-mode .habit-tooltip .tooltip-text,
+.dark-mode .habit-tooltip p,
+.dark-mode .image-text-block p {
+  color: var(--text-color) !important;
+  opacity: 1 !important;
+}
+
+/* ========= 深色模式補強：圖片容器避免透明背景透出 ========= */
+.dark-mode .experience-tooltip,
+.dark-mode .habit-preview-card,
+.dark-mode .recommendation-card img,
+.dark-mode .project-box img {
+  background-color: #1e1e1e !important;
+}
+
+/* ========= 修正推薦人圖片背景過亮或看不清 ========= */
+.dark-mode .recommendation-card img {
+  filter: brightness(0.9) contrast(1.1);
+  border-radius: 8px;
+}
+
+/* ========= 修正背景沒變黑（包含 body 周圍未覆蓋區）========= */
+html,
+body {
+  background-color: var(--bg-color);
+}
+
