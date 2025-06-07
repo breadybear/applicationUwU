@@ -1061,6 +1061,18 @@ document.querySelectorAll(".toggle-btn").forEach(btn => {
   });
 });
 </script>
+<script>
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === "block";
+      content.style.display = isVisible ? "none" : "block";
+      btn.innerHTML = isVisible 
+        ? btn.innerHTML.replace("⮝", "⮟") 
+        : btn.innerHTML.replace("⮟", "⮝");
+    });
+  });
+</script>
 
 
 
