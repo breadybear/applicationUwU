@@ -7361,15 +7361,14 @@ body {
   z-index: 99999;
 }
 
-
-.bios-notes {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  background-color: #f1f3fe;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+.bios-note {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+
 
 .note-day {
   margin-bottom: 20px;
