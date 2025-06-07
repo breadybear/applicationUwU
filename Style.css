@@ -7361,51 +7361,26 @@ body {
   z-index: 99999;
 }
 
+
+/*NOTE*/
 .bios-note {
   margin-top: 20px;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-
+/* 每一個 Day 的外框間距 */
 .note-day {
   margin-bottom: 20px;
 }
 
+/* 點擊展開的按鈕樣式 */
 .toggle-btn {
   background-color: #bfc3e2;
   color: #fff;
   padding: 12px 20px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 12px;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.toggle-btn:hover {
-  background-color: #aeb2d4;
-}
-
-.note-content {
-  display: none;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  margin-top: 10px;
-  line-height: 1.6;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-
-.toggle-btn {
-  background-color: #bfc3e2;
-  color: #fff;
-  padding: 10px 20px;
   font-size: 1.1rem;
   border: none;
   border-radius: 12px;
@@ -7420,10 +7395,13 @@ body {
   background-color: #aeb2d4;
 }
 
+/* 展開後的筆記內容卡片 */
 .note-content {
   display: none;
-  background: #ffffff;
-  border-radius: 16px;
+  background-color: #ffffff;
   padding: 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  line-height: 1.6;
+  margin-top: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
