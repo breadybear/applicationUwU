@@ -1052,7 +1052,14 @@ window.addEventListener("click", function (e) {
     }
   });
 </script>
-
+<script>
+document.querySelectorAll(".toggle-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  });
+});
+</script>
 
 
 
