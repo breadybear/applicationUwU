@@ -1056,18 +1056,17 @@ window.addEventListener("click", function (e) {
 
 // ===== BIOS 筆記下拉選單切換 =====
 <script>
-
-  const biosDaySelector = document.getElementById("bios-day");
-  if (biosDaySelector) {
-    biosDaySelector.addEventListener("change", function () {
-      const selected = this.value;
-      document.querySelectorAll(".bios-note").forEach(note => {
-        note.style.display = "none";
-      });
-      const selectedNote = document.getElementById(selected);
-      if (selectedNote) selectedNote.style.display = "block";
+  // ===== BIOS 筆記展開折疊功能 =====
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      const isVisible = content.style.display === "block";
+      content.style.display = isVisible ? "none" : "block";
+      btn.innerHTML = isVisible
+        ? btn.innerHTML.replace("⮝", "⮟")
+        : btn.innerHTML.replace("⮟", "⮝");
     });
-  }
+  });
 </script>
 
 
