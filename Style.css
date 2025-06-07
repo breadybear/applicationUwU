@@ -7401,3 +7401,30 @@ body {
   line-height: 1.6;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
+
+.toggle-btn {
+  background-color: #bfc3e2;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #aeb2d4;
+}
+
+.note-content {
+  display: none;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
