@@ -1052,36 +1052,23 @@ window.addEventListener("click", function (e) {
     }
   });
 </script>
-<script>
-document.querySelectorAll(".toggle-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const content = btn.nextElementSibling;
-    content.style.display = content.style.display === "block" ? "none" : "block";
-  });
-});
-</script>
-<script>
-  document.querySelectorAll(".toggle-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const content = btn.nextElementSibling;
-      const isVisible = content.style.display === "block";
-      content.style.display = isVisible ? "none" : "block";
-      btn.innerHTML = isVisible 
-        ? btn.innerHTML.replace("⮝", "⮟") 
-        : btn.innerHTML.replace("⮟", "⮝");
-    });
-  });
-</script>
-<script>
-  document.getElementById("bios-day").addEventListener("change", function() {
-    const selected = this.value;
-    document.querySelectorAll(".bios-note").forEach(note => {
-      note.style.display = "none";
-    });
-    document.getElementById(selected).style.display = "block";
-  });
-</script>
 
+
+// ===== BIOS 筆記下拉選單切換 =====
+<script>
+
+  const biosDaySelector = document.getElementById("bios-day");
+  if (biosDaySelector) {
+    biosDaySelector.addEventListener("change", function () {
+      const selected = this.value;
+      document.querySelectorAll(".bios-note").forEach(note => {
+        note.style.display = "none";
+      });
+      const selectedNote = document.getElementById(selected);
+      if (selectedNote) selectedNote.style.display = "block";
+    });
+  }
+</script>
 
 
 </body>
