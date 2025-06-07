@@ -563,24 +563,22 @@ body.dark-mode {
   </div>
 </section>
 
-<section class="bios-notes-section">
+<section class="bios-notes">
   <h2>BIOS 學習筆記</h2>
-  <p>這一區紀錄了我對 BIOS 系統的學習過程與知識整理，從開機流程到實作模擬，每一段都是我努力成長的證明。</p>
 
-  <div class="bios-card">
-    <h3>Day 1：BIOS 開機流程</h3>
-    <ul>
-      <li><strong>Power ON：</strong>電腦通電後，CPU 從 BIOS 開始執行。</li>
-      <li><strong>POST：</strong>執行加電自我測試，檢查記憶體、鍵盤、顯示卡等硬體。</li>
-      <li><strong>啟動順序：</strong>根據設定尋找開機裝置（如 SSD、USB）。</li>
-      <li><strong>載入 bootloader：</strong>如 GRUB、Windows Boot Manager。</li>
-      <li><strong>交棒給作業系統：</strong>開始進入 OS 運作。</li>
-    </ul>
-    <p><em>練習題：</em> BIOS 的開機順序是什麼？（答案：POST → 裝置偵測 → bootloader）</p>
-  </div>
-
-  <div class="bios-coming">
-    <p>📌 持續更新中：Day 2 將介紹 BIOS 儲存位置與更新方式（ROM、Flash 等）</p>
+  <div class="note-day">
+    <button class="toggle-btn">Day 1：BIOS 開機流程 ⮟</button>
+    <div class="note-content">
+      <ul>
+        <li><strong>Power ON：</strong>電腦通電後，CPU 從 BIOS 開始執行。</li>
+        <li><strong>POST：</strong>執行加電自我測試，檢查記憶體、鍵盤、顯示卡等硬體。</li>
+        <li><strong>啟動順序：</strong>根據設定尋找開機裝置（如 SSD、USB）。</li>
+        <li><strong>載入 bootloader：</strong>如 GRUB、Windows Boot Manager。</li>
+        <li><strong>交棒給作業系統：</strong>開始進入 OS 運作。</li>
+      </ul>
+      <em>練習題：BIOS 的開機順序是什麼？（答案：POST → 裝置偵測 → bootloader）</em><br>
+      📌 持續更新中：Day 2 將介紹 BIOS 儲存位置與更新方式（ROM、Flash 等）
+    </div>
   </div>
 </section>
 
