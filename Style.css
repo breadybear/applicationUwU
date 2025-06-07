@@ -7398,10 +7398,10 @@ body {
 /* 展開後的筆記內容卡片 */
 .note-content {
   display: none;
-  background-color: #ffffff;
+  background-color: white;
   padding: 20px;
-  border-radius: 16px;
-  line-height: 1.6;
   margin-top: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  line-height: 1.6;
 }
