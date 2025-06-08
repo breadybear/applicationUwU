@@ -606,6 +606,35 @@ body.dark-mode {
         📌 Day 3 將介紹 BIOS 與 CMOS 的關係
       </div>
     </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 3：BIOS 與 CMOS 的關係（2025/06/10） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <ul>
+      <li><strong>BIOS：</strong>是一段儲存在主機板上的韌體，用來在電腦開機時初始化硬體與啟動作業系統。</li>
+      <li><strong>CMOS：</strong>是一塊使用電池供電的記憶體，用來<strong>保存 BIOS 設定值</strong>（如開機順序、時間、電壓等）。</li>
+      <li><strong>兩者關係：</strong>
+        <ul>
+          <li>BIOS 是程式、CMOS 是儲存設定的地方。</li>
+          <li>你在 BIOS 畫面設定的內容（如時間、開機順序），實際儲存在 CMOS。</li>
+        </ul>
+      </li>
+      <li><strong>CMOS 電池沒電會怎樣？</strong>
+        <ul>
+          <li>時間會歸零</li>
+          <li>BIOS 設定會被重設為預設值</li>
+        </ul>
+      </li>
+      <li><strong>啟動流程中誰先執行？</strong> → CPU 先執行 BIOS → BIOS 從 CMOS 讀取設定 → 執行 POST → 找開機裝置</li>
+    </ul>
+    <em>練習題：BIOS 和 CMOS 有什麼不同？哪個會因電池沒電失效？</em><br>
+    答：BIOS 是執行程式，不會因沒電消失；CMOS 是設定資料，會因電池沒電而失效。<br><br>
+    📌 持續更新中：Day 4 將介紹 POST 詳細流程與錯誤訊號（Beep code）
+  </div>
+</div>
+
+
+
+
   </div>
 </section>
 
