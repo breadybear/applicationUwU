@@ -566,43 +566,47 @@ body.dark-mode {
 <section class="bios-notes">
   <h2>BIOS 學習筆記</h2>
 
-  <div class="note-day">
-    <button class="toggle-btn">Day 1：BIOS 開機流程 ⮟</button>
-    <div class="note-content" style="display: none;">
-      <ul>
-        <li><strong>Power ON：</strong>電腦通電後，CPU 從 BIOS 開始執行。</li>
-        <li><strong>POST：</strong>執行加電自我測試，檢查記憶體、鍵盤、顯示卡等硬體。</li>
-        <li><strong>啟動順序：</strong>根據設定尋找開機裝置（如 SSD、USB）。</li>
-        <li><strong>載入 bootloader：</strong>如 GRUB、Windows Boot Manager。</li>
-        <li><strong>交棒給作業系統：</strong>開始進入 OS 運作。</li>
-<li>EEPROM（Electrically-Erasable Programmable Read-Only Memory，電子抹除式可複寫唯讀記憶體）是一種非揮發性記憶體，可以通過電子方式多次擦除和複寫，</li>
-      </ul>
+  <button class="expand-all-btn">🔽 看更多</button>
+
+  <div class="notes-container" style="display: none;">
+    <!-- Day 1 -->
+    <div class="note-day">
+      <button class="toggle-btn">Day 1：BIOS 開機流程 ⮟</button>
+      <div class="note-content" style="display: none;">
+        <ul>
+          <li><strong>Power ON：</strong>電腦通電後，CPU 從 BIOS 開始執行。</li>
+          <li><strong>POST：</strong>執行加電自我測試，檢查記憶體、鍵盤、顯示卡等硬體。</li>
+          <li><strong>啟動順序：</strong>根據設定尋找開機裝置（如 SSD、USB）。</li>
+          <li><strong>載入 bootloader：</strong>如 GRUB、Windows Boot Manager。</li>
+          <li><strong>交棒給作業系統：</strong>開始進入 OS 運作。</li>
+        </ul>
+      </div>
     </div>
-  </div>
-<!-- Day 2 -->
-  <div class="note-day">
-    <button class="toggle-btn">Day 2：BIOS 儲存與更新方式 ⮟</button>
-    <div class="note-content" style="display: none;">
-      <ul>
-        <li><strong>早期 BIOS 儲存在 ROM：</strong>穩定但無法更新，需更換整顆晶片。</li>
-        <li><strong>現代 BIOS 使用 Flash Memory：</strong>可重寫的 EEPROM，如 SPI Flash、NOR Flash。</li>
-        <li><strong>更新方式：</strong>
-          <ul>
-            <li>廠商軟體（如 ASUS EZ Flash、MSI M-Flash）</li>
-            <li>BIOS 內建工具更新</li>
-            <li>USB 開機更新（需 FAT32 格式）</li>
-          </ul>
-        </li>
-        <li><strong>更新風險：</strong>斷電或版本錯誤會導致主機板無法啟動。</li>
-        <li><strong>建議更新時機：</strong>新增 CPU 相容性、修正安全性漏洞、有明確異常時。</li>
-      </ul>
-      <em>練習題：為何現代 BIOS 要使用 Flash 儲存？</em><br>
-      答：因為 Flash 可重寫、容量大，更適合現代系統的更新需求。<br><br>
-      📌 持續更新中：Day 3 將介紹 BIOS 與 CMOS 的關係（誰執行設定？哪個可更動？）
+
+    <!-- Day 2 -->
+    <div class="note-day">
+      <button class="toggle-btn">Day 2：BIOS 儲存與更新方式 ⮟</button>
+      <div class="note-content" style="display: none;">
+        <ul>
+          <li><strong>早期 BIOS 儲存在 ROM：</strong>穩定但無法更新，需更換整顆晶片。</li>
+          <li><strong>現代 BIOS 使用 Flash Memory：</strong>可重寫的 EEPROM，如 SPI Flash、NOR Flash。</li>
+          <li><strong>更新方式：</strong>
+            <ul>
+              <li>廠商軟體（如 ASUS EZ Flash、MSI M-Flash）</li>
+              <li>BIOS 內建工具更新</li>
+              <li>USB 開機更新（需 FAT32 格式）</li>
+            </ul>
+          </li>
+          <li><strong>更新風險：</strong>斷電或版本錯誤會導致主機板無法啟動。</li>
+          <li><strong>建議更新時機：</strong>新增 CPU 相容性、修正安全性漏洞、有明確異常時。</li>
+        </ul>
+        <em>練習題：為何現代 BIOS 要使用 Flash 儲存？</em><br>
+        答：因為 Flash 可重寫、容量大，更適合現代系統的更新需求。<br><br>
+        📌 Day 3 將介紹 BIOS 與 CMOS 的關係
+      </div>
     </div>
   </div>
 </section>
-
 
   </main>
   <button id="backToTop" title="回到最上方">🔼</button>
@@ -1076,7 +1080,14 @@ window.addEventListener("click", function (e) {
 
 // ===== BIOS 筆記下拉選單切換 =====
 <script>
-  // ===== BIOS 筆記展開折疊功能 =====
+  // 展開全部筆記清單
+  document.querySelector(".expand-all-btn").addEventListener("click", () => {
+    const container = document.querySelector(".notes-container");
+    const isVisible = container.style.display === "block";
+    container.style.display = isVisible ? "none" : "block";
+  });
+
+  // 每日筆記 toggle
   document.querySelectorAll(".toggle-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const content = btn.nextElementSibling;
