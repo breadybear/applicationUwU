@@ -1827,10 +1827,17 @@ section[id]::before {
 }
 
 .experience-grid::-webkit-scrollbar {
-  display: none;                /* Chrome / Safari / Edge */
+  display: none;                /* Chrome / Safari */
 }
 
+.experience-card-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* 卡片樣式 */
 .experience-card {
   width: 160px;
   height: 160px;
@@ -1845,35 +1852,54 @@ section[id]::before {
   justify-content: center;
   color: white;
   font-weight: bold;
+  transition: transform 0.3s ease;
 }
 
-.tooltip-text {
-  visibility: hidden;
-  opacity: 0;
+.experience-card:hover {
+  transform: scale(1.05);
+}
+
+.experience-card::after {
+  content: "";
   position: absolute;
-  bottom: 130%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.experience-card .label {
+  position: relative;
+  z-index: 2;
+  font-size: 1.2rem;
+}
+
+/* Tooltip 提示文字 */
+.tooltip-text {
+  position: absolute;
+  bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
   width: 240px;
-  background-color: #ffffff;
+  background-color: #fff8dc;
   color: #333;
   padding: 10px 14px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
   font-size: 0.85rem;
   text-align: left;
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 3;
+  white-space: normal;
 }
 
-.experience-card:hover .tooltip-text {
-  visibility: visible;
+.experience-card-wrapper:hover .tooltip-text {
   opacity: 1;
 }
 
-
-/* 背景圖片 class */
+/* 背景圖片 */
 .experience-ta {
   background-image: url('images/ta.jpg');
 }
