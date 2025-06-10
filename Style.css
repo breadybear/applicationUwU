@@ -846,6 +846,7 @@ section[id]::before {
   color: #000;
   font-weight: bold;
 }
+
 .experience-grid {
   display: flex;
   gap: 20px;
@@ -855,25 +856,26 @@ section[id]::before {
   scroll-snap-type: x mandatory;
 }
 
-.experience-scroll-wrapper {
-  overflow-x: auto;
-  padding-bottom: 10px;
-}
-
-.experience-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  min-width: 640px; /* 💡 讓內容撐開到可捲動 */
-}
-
 .experience-card {
   flex: 0 0 140px;
   height: 140px;
   scroll-snap-align: start;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Tooltip 懸浮說明（可選） */
+/* Tooltip */
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
@@ -898,19 +900,12 @@ section[id]::before {
   opacity: 1;
 }
 
-/* 背景圖片 class */
-.experience-ta {
-  background-image: url('images/ta.jpg');
-}
-.experience-tea {
-  background-image: url('images/tea.jpg');
-}
-.experience-steak {
-  background-image: url('images/steak.png');
-}
-.experience-zoo {
-  background-image: url('images/zoo.jpg');
-}
+/* 背景圖片 */
+.experience-ta    { background-image: url('images/ta.jpg'); }
+.experience-tea   { background-image: url('images/tea.jpg'); }
+.experience-steak { background-image: url('images/steak.png'); }
+.experience-zoo   { background-image: url('images/zoo.jpg'); }
+
 
 
 /* Tooltip */
