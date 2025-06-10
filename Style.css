@@ -848,40 +848,30 @@ section[id]::before {
 }
 
 .experience-grid {
-  display: flex;
-  flex-wrap: nowrap;           /* ✅ 不換行！ */
-  overflow-x: auto;            /* ✅ 可橫滑 */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* ✅ 一排四張 */
   gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
+  justify-items: center;
+  align-items: center;
+  max-width: 800px;      /* ✅ 固定寬度，不讓它擠破 */
   margin: 0 auto;
-  justify-content: flex-start;
-
-}
-
-.experience-grid::-webkit-scrollbar {
-  height: 0px;
 }
 
 .experience-card {
-  flex: 0 0 140px;              /* ✅ 每張固定寬度 */
-  max-width: 140px;
+  width: 140px;
   height: 140px;
-  scroll-snap-align: start;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   font-size: 1rem;
   color: white;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
-
 
 /* Tooltip */
 .tooltip-text {
