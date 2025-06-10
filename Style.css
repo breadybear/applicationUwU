@@ -39,6 +39,7 @@
 }
 
 .project-box,
+
 .experience-card {
   position: relative;
   overflow: hidden;
@@ -828,35 +829,38 @@ section[id]::before {
   margin-top: -80px;      /* 抵銷滾動位置 */
   visibility: hidden;
 }
+
+
 .experience-section {
   background-color: var(--section-bg, #dff0ff);
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1200px;
   margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
 .experience-title {
   font-size: 2rem;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #000;
   font-weight: bold;
 }
 
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 固定四欄 */
-  gap: 20px; /* 間距略小一點讓四個排得下 */
-  justify-items: center;
-  align-items: center;
-  max-width: 800px; /* 限制區塊寬度讓居中更自然 */
-  margin: 0 auto;
+.experience-scroll-wrapper {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.experience-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  min-width: 640px; /* 💡 讓內容撐開到可捲動 */
 }
 
 .experience-card {
-  width: 140px; /* 稍微縮小寬度避免掉行 */
+  flex: 0 0 140px;
   height: 140px;
   background-size: cover;
   background-position: center;
@@ -870,7 +874,6 @@ section[id]::before {
   color: white;
   text-align: center;
   position: relative;
-  overflow: hidden;
 }
 
 /* Tooltip 懸浮說明（可選） */
