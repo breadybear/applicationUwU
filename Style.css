@@ -841,10 +841,10 @@ section[id]::before {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   gap: 30px;
-  justify-content: center; /* ✅ 這讓落單的最後一張也會置中 */
-  max-width: 800px;         /* ✅ 限制最大寬度避免左右空太多 */
+  justify-content: center;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
