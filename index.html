@@ -631,6 +631,67 @@ body.dark-mode {
     📌 持續更新中：Day 4 將介紹 POST 詳細流程與錯誤訊號（Beep code）
   </div>
 </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 4：POST 與 Beep Code（2025/06/11） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <ul>
+      <li><strong>POST：</strong> Power-On Self-Test 是 BIOS 加電後進行的自我檢查流程。</li>
+      <li><strong>檢查項目：</strong> CPU、記憶體、顯示卡、鍵盤、滑鼠、CMOS 設定與開機裝置。</li>
+      <li><strong>Beep Code（嗶嗶聲）：</strong> 若畫面無輸出，BIOS 會用聲音提示錯誤。
+        <ul>
+          <li>1 短嗶：正常開機</li>
+          <li>2 短嗶：記憶體問題</li>
+          <li>3 長嗶：鍵盤未接</li>
+          <li>5 短嗶：主機板錯誤</li>
+          <li>無聲：CPU 或主機板可能損壞</li>
+        </ul>
+      </li>
+      <li><strong>提醒：</strong> 各主機板 Beep Code 不同，請查詢官方手冊。</li>
+    </ul>
+    <em>練習題：POST 與 BIOS beep code 有什麼關係？</em><br>
+    答：POST 是 BIOS 開機流程的一部分，若檢查出錯，BIOS 會透過 beep code 傳達錯誤類型。<br><br>
+    📌 Day 5 預告：進入 BIOS 畫面後可以設定哪些參數？（如開機順序、XMP、AHCI）
+<h4>📊 Beep Code 對照表</h4>
+<table class="beep-table">
+  <thead>
+    <tr>
+      <th>嗶聲次數 / 範例</th>
+      <th>常見意義（AMI BIOS）</th>
+      <th>處理建議</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1 短嗶</td>
+      <td>正常開機</td>
+      <td>無需處理</td>
+    </tr>
+    <tr>
+      <td>2 短嗶</td>
+      <td>記憶體錯誤</td>
+      <td>重新插拔記憶體 / 更換記憶體</td>
+    </tr>
+    <tr>
+      <td>3 長嗶</td>
+      <td>鍵盤未接</td>
+      <td>檢查鍵盤連接線</td>
+    </tr>
+    <tr>
+      <td>5 短嗶</td>
+      <td>主機板錯誤</td>
+      <td>檢查主機板狀況或送修</td>
+    </tr>
+    <tr>
+      <td>無聲</td>
+      <td>CPU 或主機板損壞</td>
+      <td>檢查 CPU 安裝與主機板通電狀況</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+</div>
+
 
 
 
