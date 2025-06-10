@@ -831,55 +831,45 @@ section[id]::before {
 }
 
 
+
 .experience-section {
-  background-color: var(--section-bg, #dff0ff);
+  background-color: var(--section-bg);
   padding: 60px 20px;
   border-radius: 20px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 40px auto;
-  text-align: center;
-}
-
-.experience-title {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #000;
-  font-weight: bold;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 固定四欄 */
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
   justify-items: center;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .experience-card {
-  width: 140px;
-  height: 140px;
+  width: 160px;
+  height: 160px;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
+  position: relative;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
   color: white;
-  text-align: center;
+  font-weight: bold;
 }
 
-/* Tooltip */
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
   width: 240px;
-  background-color: var(--tooltip-bg, #fff);
-  color: var(--text-color, #333);
+  background-color: var(--tooltip-bg);
+  color: var(--text-color);
   text-align: left;
   border-radius: 10px;
   padding: 12px;
@@ -898,12 +888,19 @@ section[id]::before {
   opacity: 1;
 }
 
-/* 背景圖片 */
-.experience-ta    { background-image: url('images/ta.jpg'); }
-.experience-tea   { background-image: url('images/tea.jpg'); }
-.experience-steak { background-image: url('images/steak.png'); }
-.experience-zoo   { background-image: url('images/zoo.jpg'); }
-
+/* 背景圖片 class */
+.experience-ta {
+  background-image: url('images/ta.jpg');
+}
+.experience-tea {
+  background-image: url('images/tea.jpg');
+}
+.experience-steak {
+  background-image: url('images/steak.png');
+}
+.experience-zoo {
+  background-image: url('images/zoo.jpg');
+}
 
 
 /* Tooltip */
@@ -989,7 +986,6 @@ section[id]::before {
 section#experience.experience-section {
   background-color: #d8f0ff !important;
 }
-
 /* 🌟 區塊外觀 */
 .habits-section {
   background-color: #d8f0ff;
