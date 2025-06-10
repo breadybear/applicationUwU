@@ -830,29 +830,32 @@ section[id]::before {
 }
 
 .experience-section {
-  background-color: var(--section-bg);
+  background-color: var(--section-bg, #dff0ff); /* 可自訂背景色 */
   padding: 60px 20px;
   border-radius: 20px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* ✅ 一行固定四格 */
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-  justify-items: center;
+.experience-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #000;
 }
 
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ 一排四格 */
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
 
 .experience-card {
-  aspect-ratio: 1/1;               /* ✅ 保持正方形 */
-  width: 100%;                     /* 滿格即可 */
-  max-width: 160px;                /* 不要超過這個寬度 */
+  width: 160px;
+  height: 160px;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
@@ -860,10 +863,14 @@ section[id]::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-weight: bold;
+  font-size: 1rem;
+  color: white;
+  text-align: center;
+  position: relative;
   overflow: hidden;
 }
+
 
 
 .tooltip-text {
