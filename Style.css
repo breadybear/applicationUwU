@@ -849,15 +849,23 @@ section[id]::before {
 
 .experience-grid {
   display: flex;
+  flex-wrap: nowrap;           /* ✅ 不換行！ */
+  overflow-x: auto;            /* ✅ 可橫滑 */
   gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  justify-content: flex-start;
   scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  justify-content: flex-start;
+
+}
+
+.experience-grid::-webkit-scrollbar {
+  height: 0px;
 }
 
 .experience-card {
-  flex: 0 0 140px;
+  flex: 0 0 140px;              /* ✅ 每張固定寬度 */
+  max-width: 140px;
   height: 140px;
   scroll-snap-align: start;
   background-size: cover;
@@ -870,10 +878,10 @@ section[id]::before {
   font-weight: bold;
   font-size: 1rem;
   color: white;
-  text-align: center;
   position: relative;
   overflow: hidden;
 }
+
 
 /* Tooltip */
 .tooltip-text {
