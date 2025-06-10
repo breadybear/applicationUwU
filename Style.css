@@ -1809,10 +1809,11 @@ section[id]::before {
   visibility: hidden;
 }
 
+
 .experience-section {
-  background-color: #d8f0ff;
+  background-color: var(--section-bg);
   padding: 60px 20px;
-  border-radius: 16px;
+  border-radius: 20px;
   max-width: 1100px;
   margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -1820,45 +1821,65 @@ section[id]::before {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* ✅ 二欄固定 */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
   justify-items: center;
-  max-width: 700px;
-  margin: 0 auto;
 }
 
-@media (max-width: 600px) {
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-}
 .experience-card {
-  position: relative;
-  width: 200px;
+  width: 160px;
   height: 160px;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  cursor: default;
-  overflow: visible;
+  position: relative;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.experience-card:hover {
-  transform: translateY(-5px);
-}
-
-.experience-card .label {
   color: white;
   font-weight: bold;
-  font-size: 1.2rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  pointer-events: none;
 }
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 240px;
+  background-color: var(--tooltip-bg);
+  color: var(--text-color);
+  text-align: left;
+  border-radius: 10px;
+  padding: 12px;
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.experience-card:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 背景圖片 class */
+.experience-ta {
+  background-image: url('images/ta.jpg');
+}
+.experience-tea {
+  background-image: url('images/tea.jpg');
+}
+.experience-steak {
+  background-image: url('images/steak.png');
+}
+.experience-zoo {
+  background-image: url('images/zoo.jpg');
+}
+
 
 /* Tooltip */
 .tooltip-text {
@@ -1920,7 +1941,7 @@ section[id]::before {
   transform: translateX(-50%);
   width: 240px;
   background-color: #ffffff;
-  color: #111;
+  color: #333;
   padding: 10px 14px;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
