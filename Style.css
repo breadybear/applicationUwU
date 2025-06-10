@@ -849,11 +849,11 @@ section[id]::before {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* ✅ 一排四張 */
+  grid-template-columns: repeat(4, 1fr); /* 固定四欄 */
   gap: 20px;
   justify-items: center;
   align-items: center;
-  max-width: 800px;      /* ✅ 固定寬度，不讓它擠破 */
+  max-width: 800px;
   margin: 0 auto;
 }
 
