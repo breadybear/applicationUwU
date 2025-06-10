@@ -842,10 +842,11 @@ section[id]::before {
 }
 
 .experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  justify-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .experience-card {
