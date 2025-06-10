@@ -7448,3 +7448,8 @@ body {
   background-color: #eef0fa;
 }
 
+.centered-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px; /* 可選，避免太寬難讀 */
+}
