@@ -870,18 +870,7 @@ section[id]::before {
 .experience-card {
   flex: 0 0 140px;
   height: 140px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 1rem;
-  color: white;
-  text-align: center;
-  position: relative;
+  scroll-snap-align: start;
 }
 
 /* Tooltip 懸浮說明（可選） */
