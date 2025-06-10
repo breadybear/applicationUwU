@@ -19,12 +19,7 @@
 .experience-zoo {
   background-image: url('images/zoo.jpg');
 }
-.experience-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  justify-items: center; /* 卡片置中 */
-}
+
 
 
 /*箭頭*/
@@ -847,8 +842,9 @@ section[id]::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 30px;
-  justify-items: center;
+  justify-content: center; /* ✨ 加這行就能置中落單卡片 */
 }
+
 
 .experience-card {
   width: 160px;
