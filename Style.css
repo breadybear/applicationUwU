@@ -19,6 +19,13 @@
 .experience-zoo {
   background-image: url('images/zoo.jpg');
 }
+.experience-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  justify-items: center; /* 卡片置中 */
+}
+
 
 /*箭頭*/
 
