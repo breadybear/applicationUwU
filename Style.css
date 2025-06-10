@@ -7,7 +7,7 @@
 /*INTRO*/
 
 /*EXP*/
-.experience-ta {
+.erience-ta {
   background-image: url('images/ta.jpg');
 }
 .experience-tea {
@@ -841,28 +841,30 @@ section[id]::before {
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+  grid-template-columns: repeat(4, 1fr);  /* ✅ 一行固定四格 */
   gap: 30px;
-  justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
+  justify-items: center;
 }
 
+
 .experience-card {
-  width: 160px;
-  height: 160px;
+  aspect-ratio: 1/1;               /* ✅ 保持正方形 */
+  width: 100%;                     /* 滿格即可 */
+  max-width: 160px;                /* 不要超過這個寬度 */
   background-size: cover;
   background-position: center;
   border-radius: 16px;
-  position: relative;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
+  overflow: hidden;
 }
+
 
 .tooltip-text {
   visibility: hidden;
