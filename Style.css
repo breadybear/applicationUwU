@@ -847,6 +847,12 @@ section[id]::before {
   font-weight: bold;
 }
 
+.experience-grid {
+  max-width: none;
+  width: 700px; /* 或更大，例如 800px */
+  margin: 0 auto;
+}
+
 .experience-scroll-wrapper {
   overflow-x: auto;
   padding-bottom: 10px;
