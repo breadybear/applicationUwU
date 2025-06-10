@@ -828,9 +828,8 @@ section[id]::before {
   margin-top: -80px;      /* 抵銷滾動位置 */
   visibility: hidden;
 }
-
 .experience-section {
-  background-color: var(--section-bg, #dff0ff); /* 可自訂背景色 */
+  background-color: var(--section-bg, #dff0ff);
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1200px;
@@ -843,19 +842,22 @@ section[id]::before {
   font-size: 2rem;
   margin-bottom: 40px;
   color: #000;
+  font-weight: bold;
 }
 
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* ✅ 一排四格 */
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr); /* 固定四欄 */
+  gap: 20px; /* 間距略小一點讓四個排得下 */
   justify-items: center;
   align-items: center;
+  max-width: 800px; /* 限制區塊寬度讓居中更自然 */
+  margin: 0 auto;
 }
 
 .experience-card {
-  width: 160px;
-  height: 160px;
+  width: 140px; /* 稍微縮小寬度避免掉行 */
+  height: 140px;
   background-size: cover;
   background-position: center;
   border-radius: 16px;
@@ -871,14 +873,13 @@ section[id]::before {
   overflow: hidden;
 }
 
-
-
+/* Tooltip 懸浮說明（可選） */
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
   width: 240px;
-  background-color: var(--tooltip-bg);
-  color: var(--text-color);
+  background-color: var(--tooltip-bg, #fff);
+  color: var(--text-color, #333);
   text-align: left;
   border-radius: 10px;
   padding: 12px;
