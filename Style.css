@@ -846,11 +846,13 @@ section[id]::before {
   color: #000;
   font-weight: bold;
 }
-
 .experience-grid {
-  max-width: none;
-  width: 700px; /* 或更大，例如 800px */
-  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  justify-content: flex-start;
+  scroll-snap-type: x mandatory;
 }
 
 .experience-scroll-wrapper {
