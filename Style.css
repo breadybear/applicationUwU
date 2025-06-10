@@ -1817,11 +1817,19 @@ section[id]::before {
 }
 
 .experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  justify-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE 10+ */
 }
+
+.experience-grid::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari / Edge */
+}
+
 
 .experience-card {
   width: 160px;
@@ -1842,26 +1850,28 @@ section[id]::before {
 .tooltip-text {
   visibility: hidden;
   opacity: 0;
-  width: 240px;
-  background-color: var(--tooltip-bg);
-  color: var(--text-color);
-  text-align: left;
-  border-radius: 10px;
-  padding: 12px;
   position: absolute;
-  bottom: 110%;
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 240px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+  text-align: left;
+  pointer-events: none;
   transition: opacity 0.3s ease;
-  font-size: 0.9rem;
-  z-index: 10;
+  z-index: 3;
 }
 
 .experience-card:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
 }
+
 
 /* 背景圖片 class */
 .experience-ta {
