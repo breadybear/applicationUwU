@@ -124,47 +124,6 @@ body.dark-mode {
 
 
 </style>
-
-<style>
-.bios-notes-section {
-  background-color: #eef6ff;
-  padding: 40px 20px;
-  border-radius: 16px;
-  margin: 60px auto;
-  max-width: 900px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-.bios-notes-section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #1f4e79;
-}
-.bios-card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-.bios-card h3 {
-  color: #1d3557;
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-.bios-card ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-.bios-card ul li {
-  margin-bottom: 8px;
-}
-.bios-coming {
-  margin-top: 20px;
-  font-style: italic;
-  color: #3a3a3a;
-}
-</style>
-
 </head>
 <body>
     <div id="scrollProgressBar"></div>
@@ -174,7 +133,7 @@ body.dark-mode {
 
 <nav class="navbar">
   <ul class="nav-list">
-    <li><a href="#intro">Intro</a></li>
+<li><a href="#intro">Intro</a></li>
     <li><a href="#skills">Skills</a></li> 
     <li><a href="#languages">Languages</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -203,64 +162,19 @@ body.dark-mode {
   </div>
 
   <main>
-<section id="intro" class="intro-section">
-  <div class="intro-content">
-    <div class="intro-photo">
-      <img src="images/myphoto.JPG" alt="My Photo" />
-    </div>
-    <div class="intro-text">
+    <section id="intro" class="intro-section">
+      <div class="intro-content">
+        <div class="intro-photo">
+          <img src="images/myphoto.JPG" alt="My Photo" />
+        </div>
+        <div class="intro-text">
       <p>我是一位結合 <strong>電機背景</strong> 與 <strong>創意開發精神</strong> 的工程設計者。</p>
       <p>Hi! I'm Sanguis H. Lecter (何品淇), a graduate from CYCU Electrical Engineering. I enjoy bridging the gap between design and engineering, blending logic and aesthetics through interactive web development.</p>
       <p>This site was inspired by a professor's idea—originally imagined by an alumnus, but I was the first to make it fully functional after all these years.</p>
       <p class="habits-comment">// 小彩蛋：這網站還會繼續更新，每次加新功能都像在冒險 d(`･∀･)b</p>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<section>
-
-<section id="skills" class="skills-section content-section reveal-fade">
-  <h2>Skills</h2>
-  <div class="skill-grid">
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-c')" title="點我看 C 學習歷程">
-        C
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-python')" title="點我看 Python 學習歷程">
-        Python
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-html')" title="點我看 HTML 學習歷程">
-        HTML
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-css')" title="點我看 CSS 學習歷程">
-        CSS
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-matlab')" title="點我看 MATLAB 學習歷程">
-        MATLAB
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-    <div class="skill-box">
-      <div class="skill-circle" onclick="openModal('modal-and-so-on')" title="點我看更多技能">
-        ET CETERA
-        <span class="hover-icon">⬈</span>
-      </div>
-    </div>
-  </div>
-</section>
-</section>
 
 <section class="slogan-rotator">
   <p id="fade-text" class="slogan">Engineer. Dreamer. Problem-Solver.🖥️</p>
@@ -353,6 +267,48 @@ body.dark-mode {
   </section>
 <section>
 
+<section id="skills" class="skills-section content-section reveal-fade">
+  <h2>Skills</h2>
+  <div class="skill-grid">
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-c')" title="點我看 C 學習歷程">
+        C
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-python')" title="點我看 Python 學習歷程">
+        Python
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-html')" title="點我看 HTML 學習歷程">
+        HTML
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-css')" title="點我看 CSS 學習歷程">
+        CSS
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-matlab')" title="點我看 MATLAB 學習歷程">
+        MATLAB
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+    <div class="skill-box">
+      <div class="skill-circle" onclick="openModal('modal-and-so-on')" title="點我看更多技能">
+        ET CETERA
+        <span class="hover-icon">⬈</span>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
 
 
 <section id="experience" class="experience-section">
@@ -393,7 +349,6 @@ body.dark-mode {
 
   </div>
 </section>
-
 
 
     <!-- Habits Section -->
@@ -502,9 +457,9 @@ body.dark-mode {
       <div>老師對於很多人說過將CV線上化，每一屆都說，我是第一個實行的</div>
       <div>軟體前中後端都能學習，其中此頁面花約三天成型，學習力是沒問題的</div>
       <div>因為很好玩所以三天能成大約有一天超過10小時不停真的廢寢忘食在跟GPT對話並了解如何使用它</div>
-      <strong>我對於前端技術（HTML/CSS/JavaScript 等）與 BIOS 系統架構具有高度興趣與持續的學習動力。
-我樂於接受新的挑戰，並享受從學習中獲得成就的過程。只要是能學習、能貢獻的領域，我都願意全力以赴。</strong>
-      
+      <strong>對於前端(HTML/CSS/JS etc)、和BIOS有相當學習動力</strong>
+      <div>但!</div>
+      <strong>我只要有需要學習的我都很樂意，因為最快樂是學習的成就!</strong>
     </div>
 
     <!-- 右欄：三張圖片與描述 -->
@@ -560,142 +515,6 @@ body.dark-mode {
 <div class="css-modal" id="cssCrashModal" style="display:none;">
   <img id="cssCrashImg" class="modal-content" src="" alt="CSS災難圖">
 </div>
-
-  </div>
-</section>
-
-<section class="bios-notes">
-  <h2>BIOS 學習筆記</h2>
-
-  <button class="expand-all-btn">🔽 看更多</button>
-
-  <div class="notes-container" style="display: none;">
-    <!-- Day 1 -->
-    <div class="note-day">
-      <button class="toggle-btn">Day 1：BIOS 開機流程 ⮟</button>
-      <div class="note-content" style="display: none;">
-        <ul>
-          <li><strong>Power ON：</strong>電腦通電後，CPU 從 BIOS 開始執行。</li>
-          <li><strong>POST：</strong>執行加電自我測試，檢查記憶體、鍵盤、顯示卡等硬體。</li>
-          <li><strong>啟動順序：</strong>根據設定尋找開機裝置（如 SSD、USB）。</li>
-          <li><strong>載入 bootloader：</strong>如 GRUB、Windows Boot Manager。</li>
-          <li><strong>交棒給作業系統：</strong>開始進入 OS 運作。</li>
-<li>EEPROM（Electrically-Erasable Programmable Read-Only Memory，電子抹除式可複寫唯讀記憶體）是一種非揮發性記憶體，可以通過電子方式多次擦除和複寫</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Day 2 -->
-    <div class="note-day">
-      <button class="toggle-btn">Day 2：BIOS 儲存與更新方式 ⮟</button>
-      <div class="note-content" style="display: none;">
-        <ul>
-          <li><strong>早期 BIOS 儲存在 ROM：</strong>穩定但無法更新，需更換整顆晶片。</li>
-          <li><strong>現代 BIOS 使用 Flash Memory：</strong>可重寫的 EEPROM，如 SPI Flash、NOR Flash。</li>
-          <li><strong>更新方式：</strong>
-            <ul>
-              <li>廠商軟體（如 ASUS EZ Flash、MSI M-Flash）</li>
-              <li>BIOS 內建工具更新</li>
-              <li>USB 開機更新（需 FAT32 格式）</li>
-            </ul>
-          </li>
-          <li><strong>更新風險：</strong>斷電或版本錯誤會導致主機板無法啟動。</li>
-          <li><strong>建議更新時機：</strong>新增 CPU 相容性、修正安全性漏洞、有明確異常時。</li>
-        </ul>
-        <em>練習題：為何現代 BIOS 要使用 Flash 儲存？</em><br>
-        答：因為 Flash 可重寫、容量大，更適合現代系統的更新需求。<br><br>
-        📌 Day 3 將介紹 BIOS 與 CMOS 的關係
-      </div>
-    </div>
-<div class="note-day">
-  <button class="toggle-btn">Day 3：BIOS 與 CMOS 的關係（2025/06/10） ⮟</button>
-  <div class="note-content" style="display: none;">
-    <ul>
-      <li><strong>BIOS：</strong>是一段儲存在主機板上的韌體，用來在電腦開機時初始化硬體與啟動作業系統。</li>
-      <li><strong>CMOS：</strong>是一塊使用電池供電的記憶體，用來<strong>保存 BIOS 設定值</strong>（如開機順序、時間、電壓等）。</li>
-      <li><strong>兩者關係：</strong>
-        <ul>
-          <li>BIOS 是程式、CMOS 是儲存設定的地方。</li>
-          <li>你在 BIOS 畫面設定的內容（如時間、開機順序），實際儲存在 CMOS。</li>
-        </ul>
-      </li>
-      <li><strong>CMOS 電池沒電會怎樣？</strong>
-        <ul>
-          <li>時間會歸零</li>
-          <li>BIOS 設定會被重設為預設值</li>
-        </ul>
-      </li>
-      <li><strong>啟動流程中誰先執行？</strong> → CPU 先執行 BIOS → BIOS 從 CMOS 讀取設定 → 執行 POST → 找開機裝置</li>
-    </ul>
-    <em>練習題：BIOS 和 CMOS 有什麼不同？哪個會因電池沒電失效？</em><br>
-    答：BIOS 是執行程式，不會因沒電消失；CMOS 是設定資料，會因電池沒電而失效。<br><br>
-    📌 持續更新中：Day 4 將介紹 POST 詳細流程與錯誤訊號（Beep code）
-  </div>
-</div>
-<div class="note-day">
-  <button class="toggle-btn">Day 4：POST 與 Beep Code（2025/06/11） ⮟</button>
-  <div class="note-content" style="display: none;">
-    <ul>
-      <li><strong>POST：</strong> Power-On Self-Test 是 BIOS 加電後進行的自我檢查流程。</li>
-      <li><strong>檢查項目：</strong> CPU、記憶體、顯示卡、鍵盤、滑鼠、CMOS 設定與開機裝置。</li>
-      <li><strong>Beep Code（嗶嗶聲）：</strong> 若畫面無輸出，BIOS 會用聲音提示錯誤。
-        <ul>
-          <li>1 短嗶：正常開機</li>
-          <li>2 短嗶：記憶體問題</li>
-          <li>3 長嗶：鍵盤未接</li>
-          <li>5 短嗶：主機板錯誤</li>
-          <li>無聲：CPU 或主機板可能損壞</li>
-        </ul>
-      </li>
-      <li><strong>提醒：</strong> 各主機板 Beep Code 不同，請查詢官方手冊。</li>
-    </ul>
-    <em>練習題：POST 與 BIOS beep code 有什麼關係？</em><br>
-    答：POST 是 BIOS 開機流程的一部分，若檢查出錯，BIOS 會透過 beep code 傳達錯誤類型。<br><br>
-    📌 Day 5 預告：進入 BIOS 畫面後可以設定哪些參數？（如開機順序、XMP、AHCI）
-<h4>📊 Beep Code 對照表</h4>
-<table class="beep-table">
-  <thead>
-    <tr>
-      <th>嗶聲次數 / 範例</th>
-      <th>常見意義（AMI BIOS）</th>
-      <th>處理建議</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1 短嗶</td>
-      <td>正常開機</td>
-      <td>無需處理</td>
-    </tr>
-    <tr>
-      <td>2 短嗶</td>
-      <td>記憶體錯誤</td>
-      <td>重新插拔記憶體 / 更換記憶體</td>
-    </tr>
-    <tr>
-      <td>3 長嗶</td>
-      <td>鍵盤未接</td>
-      <td>檢查鍵盤連接線</td>
-    </tr>
-    <tr>
-      <td>5 短嗶</td>
-      <td>主機板錯誤</td>
-      <td>檢查主機板狀況或送修</td>
-    </tr>
-    <tr>
-      <td>無聲</td>
-      <td>CPU 或主機板損壞</td>
-      <td>檢查 CPU 安裝與主機板通電狀況</td>
-    </tr>
-  </tbody>
-</table>
-
-  </div>
-</div>
-
-
-
-
 
   </div>
 </section>
@@ -1170,27 +989,6 @@ window.addEventListener("click", function (e) {
 </script>
 
 
-// ===== BIOS 筆記下拉選單切換 =====
-<script>
-  // 展開全部筆記清單
-  document.querySelector(".expand-all-btn").addEventListener("click", () => {
-    const container = document.querySelector(".notes-container");
-    const isVisible = container.style.display === "block";
-    container.style.display = isVisible ? "none" : "block";
-  });
-
-  // 每日筆記 toggle
-  document.querySelectorAll(".toggle-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const content = btn.nextElementSibling;
-      const isVisible = content.style.display === "block";
-      content.style.display = isVisible ? "none" : "block";
-      btn.innerHTML = isVisible
-        ? btn.innerHTML.replace("⮝", "⮟")
-        : btn.innerHTML.replace("⮟", "⮝");
-    });
-  });
-</script>
 
 
 </body>
