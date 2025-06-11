@@ -7522,3 +7522,19 @@ body {
   margin: 0 auto;
   max-width: 800px; /* 可選，避免太寬難讀 */
 }
+
+.expand-all-btn {
+  background-color: #bfc3e2;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.expand-all-btn:hover {
+  background-color: #aeb2d4;
+}
