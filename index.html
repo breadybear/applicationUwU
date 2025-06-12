@@ -1089,16 +1089,13 @@ window.addEventListener("click", function (e) {
   let clickCount = 0;
 
   function handleGameClick() {
-const clickImg = document.getElementById("clickImg""); // 替換為實際圖片的 ID
+    const clickImg = document.getElementById("clickImg");
 
-clickImg.addEventListener("click", () => {
-  clickImg.src = "images/export.pon.png"; // 點擊後立即切成 PON
-
-  setTimeout(() => {
-    clickImg.src = "images/export.nor.png"; // 300 毫秒後切回 NOR
-  }, 300);
-});
-
+    // 切換爆炸圖
+    clickImg.src = "images/export.nor.png";
+    setTimeout(() => {
+      clickImg.src = "images/export.pon.png";
+    }, 200);
 
     clickCount++;
     showClickCount();
