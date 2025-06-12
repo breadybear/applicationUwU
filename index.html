@@ -691,6 +691,22 @@ body.dark-mode {
     📌 Day 6 將介紹 BIOS 實際操作畫面模擬與 POST 路徑。
   </div>
 </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 6：模擬 BIOS 開機流程（2025/06/13） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <ul>
+      <li><strong>Power ON：</strong>接通電源後，CPU 從 BIOS 開始執行。</li>
+      <li><strong>POST：</strong>執行加電自我測試，檢查 CPU、記憶體、顯示卡等基本硬體。</li>
+      <li><strong>硬體初始化：</strong>偵測鍵盤、滑鼠、硬碟等，設定環境。</li>
+      <li><strong>讀取 CMOS：</strong>讀取使用者設定，例如開機順序、時間、Secure Boot 狀態。</li>
+      <li><strong>載入 bootloader：</strong>找出開機裝置，將控制權交給 bootloader。</li>
+      <li><strong>交棒給 OS：</strong>載入作業系統核心，完成 BIOS 任務。</li>
+    </ul>
+    <em>練習題：BIOS 的任務到哪裡結束？什麼時候 CMOS 設定會生效？</em><br>
+    答：BIOS 任務在交棒給 bootloader 後結束，CMOS 設定在初始化階段會被讀取並應用。<br><br>
+    📌 明天 Day 7 將介紹傳統 BIOS 與現代 UEFI 的演進差異
+  </div>
+</div>
 
   </div>
 </section>
