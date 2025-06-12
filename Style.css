@@ -2563,6 +2563,8 @@ body {
   background-color: #cacde4; /* hover 更亮一些 */
   transform: scale(1.1);
 }
+
+
 #click-game {
   position: fixed;
   bottom: 30px;
@@ -2603,7 +2605,7 @@ body {
   border-radius: 12px;
   font-weight: bold;
   font-size: 16px;
-  z-index: 10001;
+  z-index: 15000;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -2619,7 +2621,7 @@ body {
   border-radius: 16px;
   font-size: 1.2rem;
   font-weight: bold;
-  z-index: 10002;
+  z-index: 16000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   animation: fadeAchievement 2.5s ease-out;
 }
@@ -2631,6 +2633,8 @@ body {
   90% { opacity: 1; }
   100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
 }
+
+
 .habit-subtext {
   display: block;
   margin-top: -5px;  /* 將這行往上拉靠近 h2 */
