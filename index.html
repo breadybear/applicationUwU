@@ -1086,20 +1086,18 @@ window.addEventListener("click", function (e) {
 
 
 <script>
-let isAnimating = false;
+  let clickCount = 0;
 
-function handleGameClick() {
-  if (isAnimating) return;
-  isAnimating = true;
+  function handleGameClick() {
+    const clickImg = document.getElementById("clickImg");
 
-  const clickImg = document.getElementById("clickImg");
-  clickImg.src = "images/export.pon.png";
-  setTimeout(() => {
+    // 切換爆炸圖
     clickImg.src = "images/export.nor.png";
-    isAnimating = false;
-  }, 300);
+    setTimeout(() => {
+      clickImg.src = "images/export.pon.png";
+    }, 200);
 
-  clickCount++;
+    clickCount++;
     showClickCount();
 
     if (clickCount === 3) showAchievement("coding人生online");
@@ -1144,6 +1142,8 @@ function handleGameClick() {
     }
   }
 </script>
+
+
 <script>
 
   window.addEventListener("scroll", () => {
