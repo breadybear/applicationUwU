@@ -1086,19 +1086,21 @@ window.addEventListener("click", function (e) {
 
 
 <script>
-  let clickCount = 0;
+let isAnimating = false;
 
-  function handleGameClick() {
-    const clickImg = document.getElementById("clickImg");
+function handleGameClick() {
+  if (isAnimating) return;
+  isAnimating = true;
 
-    // 切換爆炸圖
+  const clickImg = document.getElementById("clickImg");
+  clickImg.src = "images/export.pon.png";
+  setTimeout(() => {
     clickImg.src = "images/export.nor.png";
-    setTimeout(() => {
-      clickImg.src = "images/export.pon.png";
-    }, 300);
+    isAnimating = false;
+  }, 300);
 
-    clickCount++;
-    showClickCount();
+  clickCount++;
+  showClickCount();
 
     if (clickCount === 3) showAchievement("coding人生online");
     if (clickCount === 10) showAchievement("esc鍵去了！");
