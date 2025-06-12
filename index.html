@@ -1092,11 +1092,15 @@ window.addEventListener("click", function (e) {
     const clickImg = document.getElementById("clickImg");
 
     // 切換爆炸圖
-    clickImg.src = "images/export.nor.png";
-    setTimeout(() => {
-      clickImg.src = "images/export.pon.png";
-    }, 200);
+clickImg.src = "images/export.nor.png"; // 預設是 NOR
 
+clickImg.addEventListener("click", () => {
+  clickImg.src = "images/export.pon.png"; // 點擊時顯示 PON
+
+  setTimeout(() => {
+    clickImg.src = "images/export.nor.png"; // 300ms 後自動回復 NOR
+  }, 300);
+});
     clickCount++;
     showClickCount();
 
