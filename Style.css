@@ -2605,11 +2605,11 @@ body {
   border-radius: 12px;
   font-weight: bold;
   font-size: 16px;
-  z-index: 15000;
+  z-index: 20000;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid red;  /* ← ✅ debug 可見 */
 }
 
-/* 成就提示樣式 */
 .achievement {
   position: fixed;
   top: 20px;
@@ -2621,10 +2621,12 @@ body {
   border-radius: 16px;
   font-size: 1.2rem;
   font-weight: bold;
-  z-index: 16000;
+  z-index: 20000;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  animation: fadeAchievement 2.5s ease-out;
+  animation: none;  /* 暫時停用動畫以確認看得到 */
+  border: 2px dashed red; /* ← ✅ debug 可見 */
 }
+
 
 /* 淡入淡出動畫 */
 @keyframes fadeAchievement {
