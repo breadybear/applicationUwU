@@ -716,7 +716,7 @@ body.dark-mode {
  
 <div class="click-game-wrapper">
   <div class="game-title">點點遊戲</div>
-  <img id="clickImg" src="images/export.png" onclick="handleGameClick()" />
+  <img id="clickImg" src="images/export.nor.png" onclick="handleGameClick()" />
 </div>
     
 
@@ -1092,10 +1092,10 @@ window.addEventListener("click", function (e) {
     const clickImg = document.getElementById("clickImg");
 
     // 切換爆炸圖
-    clickImg.src = "images/export(1).png";
+    clickImg.src = "images/export.nor.png";
     setTimeout(() => {
-      clickImg.src = "images/export.png";
-    }, 150);
+      clickImg.src = "images/export.pon.png";
+    }, 400);
 
     clickCount++;
     showClickCount();
