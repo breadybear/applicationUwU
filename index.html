@@ -709,7 +709,7 @@ body.dark-mode {
 </div>
 <section class="bios-notes">
   <div class="note-day">
-  <button class="toggle-btn">Day 6：模擬 BIOS 開機流程（2025/06/13） ⮟</button>
+  <button class="toggle-btn">Day 7：模擬 BIOS 開機流程（2025/06/13） ⮟</button>
   <div class="note-content" style="display: none;">
       <h2>🗓️ BIOS 學習筆記：第 7 天(2025/6/14)</h2>
     <h3>📌 主題：BIOS 的基本作業與工作流程</h3>
@@ -761,7 +761,35 @@ qemu-system-i386 -fda hello.img</code></pre>
 
   </div>
 </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 8：BIOS 進階設定與風險（2025/06/15） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <h3>📌 主題：進階 BIOS 設定與風險</h3>
 
+    <ul>
+      <li><strong>Fast Boot：</strong>略過部份 POST，加速開機，可能錯過 BIOS 熱鍵。</li>
+      <li><strong>VT-x / AMD-V：</strong>開啟虛擬化支援，必要於 VirtualBox / WSL2。</li>
+      <li><strong>CSM：</strong>相容傳統 BIOS，若系統為 UEFI + GPT 建議關閉。</li>
+      <li><strong>TPM：</strong>信賴平台模組，用於 Windows 11 憑證與 BitLocker。</li>
+    </ul>
+
+    <h4>⚠️ 常見風險對照：</h4>
+    <ul>
+      <li>改錯開機模式：可能導致 OS 無法啟動</li>
+      <li>關閉 TPM：BitLocker 資料可能被鎖住</li>
+      <li>開啟 Fast Boot：難以進入 BIOS 設定</li>
+    </ul>
+
+    <h4>🧪 練習題：</h4>
+    <p>Q：你想安裝模擬器 / Docker，該開什麼？</p>
+    <p><strong>A：</strong>請開啟 BIOS 的 VT-x 或 AMD-V。</p>
+
+    <br>
+    📌 預告：Day 9 將介紹 BIOS 密碼設定與清除方式
+  </div>
+</div>
+
+    
 
   </div>
 </section>
