@@ -813,6 +813,60 @@ qemu-system-i386 -fda hello.img</code></pre>
     📌 預告：Day 10 將介紹 UEFI 與 GPT / MBR 開機架構的差異
   </div>
 </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 10：UEFI 與 MBR / GPT 開機架構差異（2025/06/17） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <h3>📌 主題：UEFI 與 BIOS 的差異與開機架構</h3>
+
+    <ul>
+      <li><strong>BIOS：</strong>傳統韌體架構，支援 <strong>MBR</strong> 格式磁區，開機程序較慢且功能有限。</li>
+      <li><strong>UEFI：</strong>現代主機板使用的新架構，支援 <strong>GPT</strong> 格式，可啟用 Secure Boot、快速開機等功能。</li>
+    </ul>
+
+    <h4>🔄 開機流程差異：</h4>
+    <table class="beep-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>BIOS + MBR</th>
+          <th>UEFI + GPT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>開機磁區</td>
+          <td>MBR（最多 4 個主分割區）</td>
+          <td>GPT（支援 128 個分割區）</td>
+        </tr>
+        <tr>
+          <td>啟動方式</td>
+          <td>從 Boot Sector 跳轉至 OS</td>
+          <td>直接執行 EFI 檔案</td>
+        </tr>
+        <tr>
+          <td>支援容量</td>
+          <td>最大 2TB</td>
+          <td>最大 9.4ZB（實際依硬碟限制）</td>
+        </tr>
+        <tr>
+          <td>圖形介面</td>
+          <td>無（文字為主）</td>
+          <td>支援滑鼠、圖形 BIOS 設定</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>🛡️ Secure Boot 是什麼？</h4>
+    <p>Secure Boot 是 UEFI 功能之一，能驗證開機用的 EFI 檔案是否經過數位簽章，避免開機過程被植入惡意軟體。</p>
+
+    <h4>🧪 練習題：</h4>
+    <p>Q：為什麼新系統建議使用 GPT + UEFI 而非 MBR？</p>
+    <p><strong>A：</strong>GPT 支援更多分割區與大容量硬碟，而 UEFI 開機更快、更安全（支援 Secure Boot），比傳統 BIOS 更適合現代作業系統。</p>
+
+    <br>
+    📌 預告：Day 11 將介紹 BIOS 韌體更新與常見風險（Flash BIOS 的原理）
+  </div>
+</div>
 
     
 
