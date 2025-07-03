@@ -867,6 +867,61 @@ qemu-system-i386 -fda hello.img</code></pre>
     📌 預告：Day 11 將介紹 BIOS 韌體更新與常見風險（Flash BIOS 的原理）
   </div>
 </div>
+<div class="note-day">
+  <button class="toggle-btn">Day 11：BIOS 韌體更新原理與常見風險（2025/06/18） ⮟</button>
+  <div class="note-content" style="display: none;">
+    <h3>📌 主題：BIOS 韌體更新（Flash BIOS）與常見風險</h3>
+
+    <ul>
+      <li><strong>BIOS 韌體：</strong>寫在主機板上的非揮發性儲存記憶體（如 EEPROM / Flash ROM），控制開機流程與硬體初始化。</li>
+      <li><strong>為何需要更新：</strong>
+        <ul>
+          <li>➕ 新硬體支援（如新款 CPU）</li>
+          <li>🔒 安全性修補</li>
+          <li>🧩 修正開機 bug 或相容性問題</li>
+          <li>⚙️ 增加功能（如 XMP、TPM 支援）</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>🔄 BIOS 更新方式</h4>
+    <ul>
+      <li><strong>BIOS 內建工具：</strong>如 ASUS EZ Flash / MSI M-Flash，可直接從 USB 更新</li>
+      <li><strong>Windows 工具：</strong>從桌面執行更新程式（風險較高）</li>
+      <li><strong>USB 開機更新：</strong>製作 FAT32 格式隨身碟，搭配更新工具啟動</li>
+    </ul>
+
+    <h4>⚠️ 常見風險</h4>
+    <ul>
+      <li>🔋 <strong>斷電：</strong>更新中斷電會導致 BIOS 損毀，主機板無法啟動</li>
+      <li>🌀 <strong>錯誤檔案：</strong>若更新錯誤型號，可能導致系統啟動失敗</li>
+      <li>💾 <strong>格式問題：</strong>USB 建議使用 FAT32 格式，否則 BIOS 可能無法辨識</li>
+      <li>🛑 <strong>中途關機或重啟：</strong>會導致 BIOS 寫入不完整，造成主機板錯誤</li>
+    </ul>
+
+    <h4>✅ 更新前建議</h4>
+    <ul>
+      <li>確認主機板型號與 BIOS 檔案完全符合</li>
+      <li>使用穩定電源，避免過程中有震動或斷電</li>
+      <li>更新完建議進入 BIOS 載入 Default 設定再儲存退出</li>
+      <li>優先使用 BIOS 內建工具更新（安全性較高）</li>
+    </ul>
+
+    <h4>🧪 練習題</h4>
+    <p><strong>Q：</strong>如果更新 BIOS 時斷電怎麼辦？</p>
+    <p><strong>A：</strong>若主機板有 Dual BIOS 會自動還原，否則可：</p>
+    <ul>
+      <li>試著啟動主機板提供的「BIOS 恢復模式」</li>
+      <li>拔掉 CMOS 電池等待放電再重設</li>
+      <li>送修或請專業人員使用燒錄器重新寫入 BIOS</li>
+    </ul>
+
+    <br>
+    📌 預告：Day 12 將介紹 BIOS 自動修復機制與 Dual BIOS 原理
+  </div>
+</div>
+  
+
 
     
 
