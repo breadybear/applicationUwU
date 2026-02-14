@@ -7669,12 +7669,17 @@ html {
 }
 
 .work-card {
+  /* --- 關鍵新增 --- */
+  width: fit-content;       /* 寬度隨內容縮放 */
+  margin: 0 auto 30px auto; /* 如果你希望卡片在頁面中間，加上 margin: 0 auto */
+  /* ---------------- */
+
   background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   padding: 35px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 柔和陰影 */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -7761,3 +7766,4 @@ html {
   font-style: italic;
   font-size: 0.85rem;
 }
+
