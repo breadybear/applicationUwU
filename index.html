@@ -179,56 +179,120 @@ body.dark-mode {
 <section class="slogan-rotator">
   <p id="fade-text" class="slogan">Engineer. Dreamer. Problem-Solver.🖥️</p>
 </section>
-
-<section>
+<section id="working" class="working-section content-section reveal-fade">
+  <h2>Working</h2>
+  <div class="working-container">
+    <div class="working-card">
+      <div class="working-info">
+        <h3>Engineer</h3>
+        <p class="company">
+          <strong>Intel Corporation</strong> | Wi-Fi & Bluetooth Validation Engineer<br>
+          <span class="date">2025.09 – 2026.01</span>
+        </p>
+        <p class="summary">
+          Participated in wireless validation projects in Wi-Fi/BT team with direct collaboration with Israel IDC.
+        </p>
+        <ul class="job-desc">
+          <li>Responsible for test setup, every platform checking, and debugging.</li>
+          <li>User experience concept and device configuration.</li>
+          <li>Real-time demo explanation to 3rd-party vendors.</li>
+        </ul>
+      </div>
+    </div> </div> </section>
 
 <section id="skills" class="skills-section content-section reveal-fade">
   <h2>Skills</h2>
   <div class="skill-grid">
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-c')" title="點我看 C 學習歷程">
-        C
-        <span class="hover-icon">⬈</span>
+        C <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-python')" title="點我看 Python 學習歷程">
-        Python
-        <span class="hover-icon">⬈</span>
+        Python <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-html')" title="點我看 HTML 學習歷程">
-        HTML
-        <span class="hover-icon">⬈</span>
+        HTML <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-css')" title="點我看 CSS 學習歷程">
-        CSS
-        <span class="hover-icon">⬈</span>
+        CSS <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-JS')" title="點我看 JS 學習歷程">
-        JS
-        <span class="hover-icon">⬈</span>
+        JS <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-and-so-on')" title="點我看更多技能">
-        UNITY/C#
-        <span class="hover-icon">⬈</span>
+        UNITY/C# <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-matlab')" title="點我看 SASS 學習歷程">
-        SASS
-        <span class="hover-icon">⬈</span>
+        SASS <span class="hover-icon">⬈</span>
       </div>
     </div>
   </div>
 </section>
+
+<section id="languages" class="language-hover-section content-section reveal-fade">
+  <h2>Languages</h2>
+  <p class="language-intro">CLICK CLICK IS GOOOOOD! TRY TRY SEE</p>
+  
+  <div class="language-grid">
+    <div class="language-box" style="background-image: url('images/usa.jpg');" onclick="togglePopup(this)">
+      <div class="label">English</div>
+      <div class="popup">
+        <p>★★★★★</p>
+        <ul>
+          <li>Native speaker</li>
+          <li>Fluent in speaking, writing, and reading</li>
+          <li>TOEIC 890</li>
+        </ul>
+        <button onclick="openModal('certificateModal'); event.stopPropagation()">View Certificate</button>
+      </div>
+    </div>
+
+    <div class="language-box" style="background-image: url('images/tw.jpg');" onclick="togglePopup(this)">
+      <div class="label">中文</div>
+      <div class="popup">
+        <p>★★★★★</p>
+        <ul>
+          <li>母語者 + 一單位的孔子</li>
+          <li>可流暢表達抽象概念</li>
+          <li>具備文化敏感度</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="language-box" style="background-image: url('images/es.jpg');" onclick="togglePopup(this)">
+      <div class="label">Español</div>
+      <div class="popup">
+        <p>★★☆☆☆</p>
+        <ul>
+          <li>Hablo un pococita de Español.</li>
+          <li>Aprender palabras gramaticales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="language-box" style="background-image: url('images/jp.jpg');" onclick="togglePopup(this)">
+      <div class="label">日本語</div>
+      <div class="popup">
+        <p>★★★☆☆</p>
+        <ul>
+          <li>普通の会話ができる</li>
+          <li>敬語については勉強中</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -1446,3 +1510,4 @@ clickImg.addEventListener("click", () => {
 
 </body>
 </html>
+
