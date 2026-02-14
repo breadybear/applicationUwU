@@ -7497,34 +7497,34 @@ body {
   background-color: #aeb2d4;
 }
 
-/* 1. 外層容器：確保三格橫向對齊 */
-/* 外層容器 */
+/* 外層容器：強迫水平排開 */
 .works-grid {
   display: flex;
   flex-direction: row;      /* 橫向排列 */
-  justify-content: center;  /* 整體在畫面居中 */
-  align-items: stretch;     /* 關鍵：讓三格高度自動對齊 */
-  gap: 20px;                /* 格子之間的間距 */
+  justify-content: center;  /* 居中 */
+  align-items: stretch;     /* 關鍵：讓三格高度自動對齊，底部會齊平 */
+  gap: 24px;                /* 卡片間距 */
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .work-card {
   /* 併排核心設定 */
-  flex: 1;                  /* 三格平分寬度 */
-  min-width: 300px;         /* 避免太窄 */
-  width: fit-content;       /* 寬度隨內容縮放 */
+  flex: 1;                  /* 讓三格平均分配寬度 */
+  min-width: 0;             /* 防止內容撐開 flex 容器導致併排失效 */
+  width: auto;              /* 移除 fit-content 以便等寬 */
   
-  /* 沉穩平滑視覺：毛玻璃與漸層 */
+  /* 視覺：毛玻璃與沉穩色彩 */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(226, 232, 240, 0.8);
   border-radius: 24px;
   padding: 30px;
   
-  /* 內容垂直分佈，確保底部註解對齊 */
+  /* 內部佈局：確保註解對齊底部 */
   display: flex;
   flex-direction: column;
   
@@ -7538,75 +7538,39 @@ body {
   border-color: rgba(14, 165, 233, 0.4);
 }
 
-/* 3. 還原：Intel 亮眼風格 */
-.job-title {
-  font-size: 1.3rem;        /* 併排時稍微縮小字體以免換行太亂 */
-  margin: 15px 0 10px 0;
-  color: #1e293b;
-  font-weight: 700;
-}
-
-.highlight-job {
-  color: #0284c7;
-}
-
-.highlight-corp {
-  color: #0071c5;
-  position: relative;
-  display: inline-block;
-}
-
-.highlight-corp::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: rgba(0, 113, 197, 0.12);
-  border-radius: 2px;
-  z-index: -1;
-}
-
-/* 4. 細節修飾 */
-.pro-tag {
-  align-self: flex-start;   /* 標籤靠左 */
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 0.7rem;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 10px;
-}
-
+/* 內容區塊自動撐開，把註解擠到底部 */
 .work-list {
-  flex-grow: 1;             /* 讓中間的文字區域自動撐開，確保底部對齊 */
+  flex-grow: 1; 
   padding-left: 15px;
   border-left: 3px solid #0071c5;
   margin: 20px 0;
 }
 
-.work-list li {
-  list-style: none;
-  color: #334155;
-  margin-bottom: 10px;
-  line-height: 1.5;
-  font-size: 0.9rem;
-}
-
-/* 底部註解塊 */
+/* 底部代碼註解：色彩化並強迫底部對齊 */
 .habits-comment {
-  margin-top: auto;         /* 強制推到卡片最底部 */
+  margin-top: auto;         /* 關鍵：將此區塊推至卡片最下方 */
   background: rgba(241, 245, 249, 0.8);
-  padding: 10px 15px;
+  padding: 12px 15px;
   border-radius: 12px;
   color: #64748b;
-  font-family: monospace;
+  font-family: 'Fira Code', monospace;
   font-size: 0.8rem;
+  line-height: 1.4;
 }
 
-/* 響應式：手機版自動切換回垂直排列 */
-@media (max-width: 992px) {
+/* 其他文字與標籤維持原樣 */
+.job-title {
+  font-size: 1.25rem;
+  margin: 12px 0;
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.highlight-job { color: #0284c7; }
+.highlight-corp { color: #0071c5; font-weight: 700; position: relative; }
+
+/* 響應式：平板以下轉為垂直排列以免太擠 */
+@media (max-width: 1024px) {
   .works-grid {
     flex-direction: column;
     align-items: center;
@@ -7614,7 +7578,9 @@ body {
   .work-card {
     width: 100%;
     max-width: 600px;
+    flex: none;
   }
 }
+
 
 
