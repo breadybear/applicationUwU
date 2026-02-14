@@ -7664,10 +7664,10 @@ body {
 
 /* 卡片主體 */
 .work-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(132, 229, 240, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 40px;
+  border-radius: 14px;
+  padding: 30px;
   transition: all 0.4s ease;
 }
 
@@ -7768,3 +7768,4 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding-top: 15px;
 }
+
