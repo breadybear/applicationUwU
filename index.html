@@ -134,7 +134,6 @@ body.dark-mode {
 <nav class="navbar">
   <ul class="nav-list">
 <li><a href="#intro">Intro</a></li>
-    <li><a href="#working">Works</a></li> 
     <li><a href="#skills">Skills</a></li> 
     <li><a href="#languages">Languages</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -180,73 +179,66 @@ body.dark-mode {
 <section class="slogan-rotator">
   <p id="fade-text" class="slogan">Engineer. Dreamer. Problem-Solver.🖥️</p>
 </section>
-<section id="working" class="working-section content-section reveal-fade">
-  <h2>Working</h2>
-  <div class="working-container">
-    <div class="working-card">
-      <div class="working-info">
-        <h3>Engineer</h3>
-        <p class="company">
-          <strong>Intel Corporation</strong> | Wi-Fi & Bluetooth Validation Engineer<br>
-          <span class="date">2025.09 – 2026.01</span>
-        </p>
-        <p class="summary">
-          Participated in wireless validation projects in Wi-Fi/BT team with direct collaboration with Israel IDC.
-        </p>
-        <ul class="job-desc">
-          <li>Responsible for test setup, every platform checking, and debugging.</li>
-          <li>User experience concept and device configuration.</li>
-          <li>Real-time demo explanation to 3rd-party vendors.</li>
-        </ul>
-      </div>
-    </div> </div> </section>
+
+<section>
 
 <section id="skills" class="skills-section content-section reveal-fade">
   <h2>Skills</h2>
   <div class="skill-grid">
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-c')" title="點我看 C 學習歷程">
-        C <span class="hover-icon">⬈</span>
+        C
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-python')" title="點我看 Python 學習歷程">
-        Python <span class="hover-icon">⬈</span>
+        Python
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-html')" title="點我看 HTML 學習歷程">
-        HTML <span class="hover-icon">⬈</span>
+        HTML
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-css')" title="點我看 CSS 學習歷程">
-        CSS <span class="hover-icon">⬈</span>
+        CSS
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-JS')" title="點我看 JS 學習歷程">
-        JS <span class="hover-icon">⬈</span>
+        JS
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-and-so-on')" title="點我看更多技能">
-        UNITY/C# <span class="hover-icon">⬈</span>
+        UNITY/C#
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
     <div class="skill-box">
       <div class="skill-circle" onclick="openModal('modal-matlab')" title="點我看 SASS 學習歷程">
-        SASS <span class="hover-icon">⬈</span>
+        SASS
+        <span class="hover-icon">⬈</span>
       </div>
     </div>
   </div>
 </section>
+</section>
 
-<section id="languages" class="language-hover-section content-section reveal-fade">
+
+<section id="languages" class="language-hover-section">
   <h2>Languages</h2>
+<p class="language-intro">　　</p>
   <p class="language-intro">CLICK CLICK IS GOOOOOD! TRY TRY SEE</p>
-  
+<p class="language-intro">　　　</p>
   <div class="language-grid">
+    <!-- English -->
     <div class="language-box" style="background-image: url('images/usa.jpg');" onclick="togglePopup(this)">
       <div class="label">English</div>
       <div class="popup">
@@ -254,12 +246,14 @@ body.dark-mode {
         <ul>
           <li>Native speaker</li>
           <li>Fluent in speaking, writing, and reading</li>
+          <li>One of my recommender is the America la!</li>
           <li>TOEIC 890</li>
         </ul>
         <button onclick="openModal('certificateModal'); event.stopPropagation()">View Certificate</button>
       </div>
     </div>
 
+    <!-- 中文 -->
     <div class="language-box" style="background-image: url('images/tw.jpg');" onclick="togglePopup(this)">
       <div class="label">中文</div>
       <div class="popup">
@@ -272,6 +266,7 @@ body.dark-mode {
       </div>
     </div>
 
+    <!-- Español -->
     <div class="language-box" style="background-image: url('images/es.jpg');" onclick="togglePopup(this)">
       <div class="label">Español</div>
       <div class="popup">
@@ -283,6 +278,7 @@ body.dark-mode {
       </div>
     </div>
 
+    <!-- 日本語 -->
     <div class="language-box" style="background-image: url('images/jp.jpg');" onclick="togglePopup(this)">
       <div class="label">日本語</div>
       <div class="popup">
@@ -293,9 +289,9 @@ body.dark-mode {
         </ul>
       </div>
     </div>
+
   </div>
 </section>
-
 
   <section id="projects" class="project-section">
   <h2>Projects</h2>
@@ -1095,7 +1091,75 @@ window.addEventListener("click", function (e) {
 });
 
 </script>
+<!-- Place ALL modals outside any section -->
 
+<div id="modal-c" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-c')">&times;</span>
+      <h3>C 的學習歷程</h3>
+      <p>濫觴是高中時接觸到電腦課和國家高速運算中心，但後來開始coding我難過，但我相信真有人喜歡的。我在大學修習 C 語言時，從資料型別、邏輯控制到指標與記憶體管理逐步建立基礎。尤其在操作硬體層級與理解程式底層運作上，C 給了我深厚的訓練。實作過簡易資料結構（stack, queue）與小型嵌入式專案，大部分如MCU等都是以C為基礎以及SERVER的管理和更低接的設置，故C我認為算是難學但需要具備的基礎。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-python" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-python')">&times;</span>
+      <h3>Python 的學習歷程</h3>
+      <p>Python 是我進入資料處理，再到接觸 TensorFlow 與 sklearn 做機器學習練習。當時使用餵數據庫也遇到許多挫折，但現在依然對其保持興趣。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-html" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-html')">&times;</span>
+      <h3>HTML 的學習歷程</h3>
+      <p>HTML 是我進入網頁開發的第一步。了解各種標籤語義與結構佈局後，逐步結合 CSS 與 JS 打造互動式網頁，並透過開發作品集強化結構思維。現在這個就是HTMLσ`∀´σ</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-css" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-css')">&times;</span>
+      <h3>CSS 的學習歷程</h3>
+      <p>學習 CSS 時，最早接觸其實是噗浪，我從控制版面結構、色彩搭配、到動畫效果漸進累積，看到別人的神奇介面自己也想要故剛好噗浪提供了一個接觸機會。沒錯，而且為了美美地上千行在所不惜。</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-matlab" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-matlab')">&times;</span>
+      <h3>SASS的學習歷程</h3>
+      <p>以CSS為幾處更進一步製造更統一更細緻的語法架構，目前正在學習相關的知識</p>
+    </div>
+  </div>
+</div>
+<div id="modal-and-so-on" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-and-so-on')">&times;</span>
+      <h3>UNITY</h3>
+      <p>因為工作需求在一天之內臨摹寫出一個下樓梯小遊戲</p>
+    </div>
+  </div>
+</div>
+<div id="modal-JS" class="skill-modal">
+  <div class="modal-wrapper">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('modal-JS')">&times;</span>
+      <h3>其他技能的學習歷程</h3>
+      <p>我也持續學習其它語言與技術，例如 JavaScript(這個一定要學習了)、C#、PHP 等，視需求探索並進行專案實踐。</p>
+    </div>
+  </div>
+</div>
 
 <div id="modal-spring" class="habit-modal">
   <div class="modal-box">
@@ -1382,8 +1446,3 @@ clickImg.addEventListener("click", () => {
 
 </body>
 </html>
-
-
-
-
-
