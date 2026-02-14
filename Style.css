@@ -7497,273 +7497,91 @@ body {
   background-color: #aeb2d4;
 }
 
-.beep-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-  font-size: 1rem;
-  background-color: #f9f9fc;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
 
-.beep-table thead {
-  background-color: #bfc3e2;
-  color: white;
-}
-
-.beep-table th, .beep-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #e4e4f2;
-}
-
-.beep-table tr:hover {
-  background-color: #eef0fa;
-}
-
-.centered-text {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 800px; /* 可選，避免太寬難讀 */
-}
-
-.expand-all-btn {
-  background-color: #bfc3e2;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: background-color 0.3s ease;
-}
-
-.expand-all-btn:hover {
-  background-color: #aeb2d4;
-}
-
-.beep-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 16px;
-  font-size: 1rem;
-  background-color: #f9f9fc;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.beep-table thead {
-  background-color: #bfc3e2;
-  color: white;
-}
-
-.beep-table th, .beep-table td {
-  padding: 12px 16px;
-  text-align: left;
-  border-bottom: 1px solid #e4e4f2;
-}
-
-.beep-table tr:hover {
-  background-color: #eef0fa;
-}
-
-.bios-notes {
-  max-width: 800px;
-  margin: 0 auto;              /* ⬅️ 水平置中 */
-  text-align: center;          /* ⬅️ 標題與內部元件置中 */
-  padding: 40px 20px;
-  background: #d9dcf2;
-  border-radius: 20px;
-}
-.bios-notes .note-day,
-.bios-notes .expand-all-btn {
-  margin: 0 auto;            /* 卡片和按鈕都置中 */
-}
-.toggle-btn {
-  display: inline-block;
-  width: auto;
-  min-width: 240px;
-  text-align: center;
-}
-
-.project-box {
-  display: block;
-  width: 200px;
-  height: 120px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.project-box:hover {
-  transform: scale(1.05);
-}
-
-.project-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-.project-hover-text {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 12px;
-  font-size: 0.9rem;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
-
-.project-box:hover .project-hover-text {
-  opacity: 1;
-}
-
-.download-btn {
-  display: inline-block;
-  padding: 4px 10px;
-  background: #90b6f9;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: background 0.3s;
-}
-
-.download-btn:hover {
-  background: #729de3;
-}
-/* 設置平滑滾動 */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 輕盈背景：使用淡淡的冷灰色調 */
-.works-section {
-  background-color: #f8fafc; /* 舒服的淺冷灰 */
-  padding: 80px 20px;
-  scroll-margin-top: 80px; /* 預留導覽列空間 */
-}
-
-.section-title {
-  color: #475569;
-  text-align: center;
-  margin-bottom: 50px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-/* 網格與卡片 */
-.works-grid {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
+/* 修改後的沉穩平滑版 Work Card */
 .work-card {
-  /* --- 關鍵新增 --- */
-  width: fit-content;       /* 寬度隨內容縮放 */
-  margin: 0 auto 30px auto; /* 如果你希望卡片在頁面中間，加上 margin: 0 auto */
-  /* ---------------- */
-
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  padding: 35px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  /* 縮放至邊緣核心設定 */
+  width: fit-content;
+  max-width: 90%;          /* 確保在手機端不會溢出 */
+  margin: 0 auto 32px auto;
+  
+  /* 沉穩視覺效果 */
+  background: rgba(255, 255, 255, 0.95); /* 稍微降低透明度，增加紮實感 */
+  border: 1px solid #e2e8f0;            /* 極淡的實線邊框取代發光感 */
+  border-radius: 24px;                  /* 更平滑的大圓角 */
+  padding: 30px 45px;                   /* 增加左右內距，讓視覺呼吸 */
+  
+  /* 極柔和陰影：多層陰影疊加，營造沉穩懸浮感 */
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+    0 10px 15px -3px rgba(0, 0, 0, 0.03);
+    
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 113, 197, 0.1);
+  transform: translateY(-4px);
+  /* 懸停時陰影稍微加深 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
 }
 
-/* 頂部標籤 */
-.pro-tag {
-  background: #e0f2fe;
-  color: #0369a1;
-  font-size: 0.7rem;
-  font-weight: bold;
-  padding: 4px 12px;
-  border-radius: 50px;
-  letter-spacing: 1px;
-}
-
-.work-date {
-  color: #94a3b8;
-  font-size: 0.85rem;
-}
-
-/* Intel 與職位標示 (輕盈強化版) */
+/* 沉穩的職務標題與配色 */
 .job-title {
-  font-size: 1.5rem;
-  margin: 15px 0 5px 0;
-  color: #1e293b;
+  font-size: 1.4rem;
+  margin: 12px 0 8px 0;
+  color: #334155; /* 深灰藍，比純黑溫潤 */
+  letter-spacing: -0.02em;
 }
 
 .highlight-job {
-  color: #0ea5e9; /* 活潑但不刺眼的藍 */
-  font-weight: 700;
+  color: #475569; /* 降低彩度，使用深灰藍 */
+  font-weight: 600;
 }
 
 .highlight-corp {
-  color: #0071c5; /* Intel 藍 */
-  position: relative;
-  display: inline-block;
+  color: #334155; 
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(51, 65, 85, 0.2);
+  text-underline-offset: 4px;
 }
 
-/* Intel 底下的裝飾線，增加品牌感 */
+/* 移除發光的裝飾線 */
 .highlight-corp::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: rgba(0, 113, 197, 0.2);
-  z-index: -1;
+  display: none;
 }
 
-.connector {
-  color: #cbd5e1;
-  margin: 0 5px;
-}
-
-/* 列表與文字 */
-.team-info {
+/* 沉穩的標籤設計 */
+.pro-tag {
+  background: #f1f5f9; /* 淺灰色，不搶眼 */
   color: #64748b;
-  font-size: 0.9rem;
-  margin-bottom: 20px;
+  font-size: 0.75rem;
+  padding: 4px 14px;
+  border-radius: 8px; /* 稜角更平滑的小圓角 */
+  border: 1px solid #e2e8f0;
 }
 
+/* 列表樣式調整 */
 .work-list {
-  padding-left: 15px;
-  border-left: 2px solid #e2e8f0;
+  padding-left: 0;
+  border-left: none; /* 移除左側線條，改用內距 */
 }
 
 .work-list li {
-  list-style: none;
-  color: #475569;
-  margin-bottom: 10px;
-  line-height: 1.6;
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  opacity: 0.85;
 }
 
-/* 程式碼風格註解：改成淡淡的灰綠 */
+/* 底部代碼註解：改為低調的低對比灰 */
 .habits-comment {
-  margin-top: 25px;
+  margin-top: 20px;
   color: #94a3b8;
-  font-family: monospace;
-  font-style: italic;
-  font-size: 0.85rem;
+  font-family: "Cascadia Code", "Fira Code", monospace;
+  font-size: 0.8rem;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
 }
 
