@@ -7642,130 +7642,122 @@ body {
 .download-btn:hover {
   background: #729de3;
 }
-/* 區塊背景：低飽和深色，對眼睛友好 */
+/* 設置平滑滾動 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 輕盈背景：使用淡淡的冷灰色調 */
 .works-section {
-  background-color: #1a1c22; 
+  background-color: #f8fafc; /* 舒服的淺冷灰 */
   padding: 80px 20px;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  scroll-margin-top: 80px; /* 預留導覽列空間 */
 }
 
 .section-title {
-  color: #e0e0e0;
-  font-size: 1.8rem;
-  margin-bottom: 40px;
+  color: #475569;
   text-align: center;
+  margin-bottom: 50px;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
+/* 網格與卡片 */
 .works-grid {
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* 卡片主體 */
 .work-card {
-  background: rgba(132, 229, 240, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 30px;
-  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px); /* 磨砂玻璃效果 */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* 柔和陰影 */
+  transition: transform 0.3s ease;
 }
 
 .work-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: #4facfe; /* 滑過時微發光 */
   transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 113, 197, 0.1);
 }
 
-/* 頂部標籤與日期 */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
+/* 頂部標籤 */
 .pro-tag {
-  color: #4facfe;
-  font-size: 0.75rem;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.7rem;
   font-weight: bold;
-  letter-spacing: 2px;
-  border: 1px solid #4facfe;
-  padding: 2px 10px;
-  border-radius: 4px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 1px;
 }
 
 .work-date {
-  color: #888;
-  font-size: 0.9rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
 }
 
-/* 核心標示：Intel 與 Validation Engineer */
+/* Intel 與職位標示 (輕盈強化版) */
 .job-title {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 15px 0 5px 0;
+  color: #1e293b;
 }
 
 .highlight-job {
-  color: #00d2ff; /* 亮藍色標示職位 */
-  font-weight: 800;
-  text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+  color: #0ea5e9; /* 活潑但不刺眼的藍 */
+  font-weight: 700;
 }
 
 .highlight-corp {
-  color: #ffffff;
-  font-weight: 700;
-  border-bottom: 2px solid #0071c5; /* Intel 招牌藍色橫線 */
-  padding-bottom: 2px;
+  color: #0071c5; /* Intel 藍 */
+  position: relative;
+  display: inline-block;
+}
+
+/* Intel 底下的裝飾線，增加品牌感 */
+.highlight-corp::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 113, 197, 0.2);
+  z-index: -1;
 }
 
 .connector {
-  color: #666;
-  margin: 0 8px;
-  font-style: italic;
+  color: #cbd5e1;
+  margin: 0 5px;
 }
 
+/* 列表與文字 */
 .team-info {
-  color: #aaa;
-  font-size: 0.95rem;
-  margin-bottom: 25px;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
-/* 列表樣式 */
 .work-list {
-  list-style: none;
-  padding: 0;
+  padding-left: 15px;
+  border-left: 2px solid #e2e8f0;
 }
 
 .work-list li {
-  color: #ccd0d5;
-  margin-bottom: 12px;
+  list-style: none;
+  color: #475569;
+  margin-bottom: 10px;
   line-height: 1.6;
-  position: relative;
-  padding-left: 20px;
 }
 
-.work-list li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: #4facfe;
-}
-
-.work-list strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-/* 你的特色註解樣式 */
+/* 程式碼風格註解：改成淡淡的灰綠 */
 .habits-comment {
-  margin-top: 30px;
-  color: #6a737d;
-  font-family: 'Courier New', Courier, monospace;
+  margin-top: 25px;
+  color: #94a3b8;
+  font-family: monospace;
   font-style: italic;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  padding-top: 15px;
+  font-size: 0.85rem;
 }
-
