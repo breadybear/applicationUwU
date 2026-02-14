@@ -326,8 +326,8 @@ footer {
 }
 
 .company {
-  font-size: 0.9em;
-  color: #aaa;
+  font-size: 1em;
+  color: #19a4cf;
   margin-bottom: 10px;
 }
 
@@ -7671,6 +7671,7 @@ body {
 .download-btn:hover {
   background: #729de3;
 }
+
 
 
 
