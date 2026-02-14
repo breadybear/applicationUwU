@@ -662,35 +662,37 @@ footer {
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
-  margin: 40px auto;     /* ✅ 確保外殼在網頁中間 */
+  width: 90%;            /* ✅ 新增：確保在小螢幕時不會貼死邊緣 */
+  margin: 40px auto;     
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  
-  /* --- 新增這兩行 --- */
   box-sizing: border-box; 
-  overflow: hidden;      /* 消除那個討厭的橫向捲軸 */
+  overflow: hidden;      /* ✅ 確保不會有東西爆出去產生捲軸 */
+  
+  /* --- 新增佈局修正 --- */
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ✅ 強制讓內容物（標題與 Grid）在容器內置中 */
 }
+
 .skill-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* ✅ 水平置中內容 */
-  align-content: center;   /* 垂直方向也置中（如果有多行） */
-  gap: 30px;
-  width: 100%;            /* ✅ 確保佔滿父容器寬度 */
+  flex-wrap: wrap;       /* ✅ 重要：空間不足時自動換行 */
+  justify-content: center; 
+  align-items: center;
+  gap: 20px;             /* 稍微縮小間距，增加容錯空間 */
+  width: 100%;           
+  max-width: 1000px;     /* ✅ 限制 Grid 最大寬度 */
   margin: 0 auto;
 }
 
-/* 3. 修正 Skill Box (方塊本身) */
 .skill-box {
-  /* 不要設死固定寬度，改用 min-width 或簡單的寬度 */
-  flex: 0 0 120px;       /* 固定的伸縮比例，維持 120px 寬 */
+  /* 移除 flex: 0 0 120px; 避免強行撐開寬度 */
+  flex: 0 1 auto;        /* ✅ 讓方塊根據內容自適應 */
   display: flex;
   justify-content: center;
-  align-items: center;
-  /* 移除可能干擾的 margin */
-  margin: 0;
+  padding: 10px;         /* 增加一點點感應範圍 */
 }
 
-/* 4. 針對截圖中出現的白色長方塊 (那是你的 skill-circle 外層) */
 .skill-circle {
   position: relative;
   background-color: #668dbb;
@@ -700,11 +702,13 @@ footer {
   line-height: 80px;
   width: 80px;
   height: 80px;
-  border-radius: 20px; /* 從截圖看，你的圓角比較像 20px 而非 50% */
+  border-radius: 20px; 
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* 加上陰影讓它跟截圖更像 */
   box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+  
+  /* ✅ 確保圓形內容不會換行擠歪 */
+  white-space: nowrap; 
 }
 
 
@@ -7667,6 +7671,7 @@ body {
 .download-btn:hover {
   background: #729de3;
 }
+
 
 
 
