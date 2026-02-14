@@ -656,32 +656,42 @@ footer {
 .slogan.show {
   opacity: 1;
 }
-
+/* 1. 修正背景白色區塊（容器） */
 .skills-section {
   background-color: #dff1ff;
   padding: 60px 20px;
   border-radius: 20px;
   max-width: 1100px;
-  margin: 40px auto;   /* ✅ 讓整塊居中 */
+  margin: 40px auto;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  /* 新增下面這兩行，防止內部內容溢出撐開容器 */
+  overflow: hidden; 
+  box-sizing: border-box;
 }
 
-.skills-section h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #333;
-}
-
-.card-container {
+/* 2. 修正 Skill Grid 佈局 */
+.skill-grid {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  flex-wrap: wrap;       /* 允許方塊換行 */
+  justify-content: center; /* 水平置中 */
+  align-items: center;
+  gap: 30px;
+  width: 100%;           /* 確保寬度不超過父層 */
+  margin: 0 auto;
 }
 
-/* 小箭頭 icon（右下淡出） */
+/* 3. 修正 Skill Box (方塊本身) */
+.skill-box {
+  /* 不要設死固定寬度，改用 min-width 或簡單的寬度 */
+  flex: 0 0 120px;       /* 固定的伸縮比例，維持 120px 寬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 移除可能干擾的 margin */
+  margin: 0;
+}
+
+/* 4. 針對截圖中出現的白色長方塊 (那是你的 skill-circle 外層) */
 .skill-circle {
   position: relative;
   background-color: #668dbb;
@@ -691,53 +701,11 @@ footer {
   line-height: 80px;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 20px; /* 從截圖看，你的圓角比較像 20px 而非 50% */
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.skill-circle:hover {
-  transform: scale(1.05);
-}
-
-.skill-circle .hover-icon {
-  position: absolute;
-  bottom: 6px;
-  right: 8px;
-  font-size: 0.9rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  color: #fff;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
-}
-
-.skill-circle:hover .hover-icon {
-  opacity: 1;
-}
-
-.skill-modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-}
-.skill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* ✅ 這一行關鍵：讓內容水平置中 */
-  gap: 30px;
-}
-.skill-box {
-  flex: 0 1 120px;
-  display: flex;
-  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 加上陰影讓它跟截圖更像 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
 }
 
 
@@ -7700,4 +7668,5 @@ body {
 .download-btn:hover {
   background: #729de3;
 }
+
 
