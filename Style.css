@@ -7497,90 +7497,79 @@ body {
   background-color: #aeb2d4;
 }
 
-/* 外層容器：強迫水平排開 */
-.works-grid {
+/* 上方大卡片容器：維持置中且寬一點 */
+.featured-container {
   display: flex;
-  flex-direction: row;      /* 橫向排列 */
-  justify-content: center;  /* 居中 */
-  align-items: stretch;     /* 關鍵：讓三格高度自動對齊，底部會齊平 */
-  gap: 24px;                /* 卡片間距 */
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  box-sizing: border-box;
+  justify-content: center;
+  margin-bottom: 40px; /* 與下方三塊的間距 */
 }
 
+/* 下方三小塊併排容器 */
+.works-grid-sub {
+  display: flex;
+  flex-direction: row;      /* 關鍵：橫向排列 */
+  justify-content: center;  /* 置中 */
+  align-items: stretch;     /* 關鍵：讓三塊卡片高度一致 */
+  gap: 20px;                /* 格子之間的間距 */
+  width: 100%;
+}
+
+/* 核心卡片樣式：沉穩圓潤版 */
 .work-card {
-  /* 併排核心設定 */
-  flex: 1;                  /* 讓三格平均分配寬度 */
-  min-width: 0;             /* 防止內容撐開 flex 容器導致併排失效 */
-  width: auto;              /* 移除 fit-content 以便等寬 */
+  flex: 1;                  /* 讓三格平分寬度 */
+  min-width: 0;             /* 防止內容撐破 flex 寬度 */
+  width: fit-content;       /* 縮放到文字邊緣 */
   
-  /* 視覺：毛玻璃與沉穩色彩 */
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(226, 232, 240, 0.8);
   border-radius: 24px;
   padding: 30px;
   
-  /* 內部佈局：確保註解對齊底部 */
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column;   /* 內部內容垂直排列 */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease;
 }
 
-.work-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 30px rgba(0, 113, 197, 0.1);
-  border-color: rgba(14, 165, 233, 0.4);
+/* Intel 大卡片的特殊寬度限制 */
+.pro-card {
+  flex: 0 1 900px;          /* 不強制平分，最大寬度設為 900px */
 }
 
-/* 內容區塊自動撐開，把註解擠到底部 */
-.work-list {
-  flex-grow: 1; 
-  padding-left: 15px;
-  border-left: 3px solid #0071c5;
-  margin: 20px 0;
-}
-
-/* 底部代碼註解：色彩化並強迫底部對齊 */
+/* 確保內部註解永遠在底部對齊 */
 .habits-comment {
-  margin-top: auto;         /* 關鍵：將此區塊推至卡片最下方 */
+  margin-top: auto; 
   background: rgba(241, 245, 249, 0.8);
-  padding: 12px 15px;
+  padding: 10px;
   border-radius: 12px;
-  color: #64748b;
-  font-family: 'Fira Code', monospace;
   font-size: 0.8rem;
-  line-height: 1.4;
 }
 
-/* 其他文字與標籤維持原樣 */
-.job-title {
-  font-size: 1.25rem;
-  margin: 12px 0;
-  color: #1e293b;
-  font-weight: 700;
+/* 標籤樣式 */
+.work-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.highlight-job { color: #0284c7; }
-.highlight-corp { color: #0071c5; font-weight: 700; position: relative; }
-
-/* 響應式：平板以下轉為垂直排列以免太擠 */
-@media (max-width: 1024px) {
-  .works-grid {
+/* 手機版自動切換為垂直排列 */
+@media (max-width: 992px) {
+  .works-grid-sub {
     flex-direction: column;
     align-items: center;
   }
   .work-card {
     width: 100%;
     max-width: 600px;
-    flex: none;
   }
 }
+
 
 
 
