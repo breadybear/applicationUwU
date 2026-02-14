@@ -7497,110 +7497,127 @@ body {
   background-color: #aeb2d4;
 }
 
-
-
-
-/* 1. 外層容器：改為橫向排列 (一排) */
+/* 1. 外層容器：確保三格橫向對齊 */
 .works-grid {
   display: flex;
   flex-direction: row;      /* 橫向排列 */
-  flex-wrap: wrap;          /* 寬度不夠時自動換行，避免破版 */
-  justify-content: center;  /* 卡片置中 */
-  align-items: stretch;     /* 讓同排卡片高度一致 (視需求可改為 flex-start) */
-  gap: 20px;                /* 卡片之間的間距 */
+  justify-content: center;  /* 整體居中 */
+  align-items: stretch;     /* 讓三格高度保持一致，視覺較統一 */
+  gap: 25px;                /* 格子之間的間距 */
   width: 100%;
-  max-width: 1300px;
+  max-width: 1400px;        /* 根據你的螢幕寬度調整 */
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-/* 2. 核心卡片樣式：縮放至文字邊緣 + 沉穩圓潤外殼 */
+/* 2. 核心卡片樣式：三格並排優化 */
 .work-card {
-  /* 縮放核心設定 */
-  flex: 0 1 auto;           /* 讓卡片根據內容寬度自動調整 */
-  width: fit-content;
-  min-width: 280px;         /* 設定最小寬度避免太窄 */
+  /* 關鍵修改：讓三格平分空間或根據內容縮放 */
+  flex: 1;                  /* 讓三格等寬排列 */
+  min-width: 300px;         /* 避免在窄螢幕擠壓變形 */
+  max-width: 450px;         /* 避免在超寬螢幕顯得太寬 */
   
-  /* 沉穩平滑視覺 */
-  background: rgba(255, 255, 255, 0.98);
-  border: 1px solid #e2e8f0;
-  border-radius: 24px;      /* 平滑大圓角 */
-  padding: 30px 40px;
+  /* 色彩與質感升級 (維持上一版的毛玻璃與漸層) */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 28px;
+  padding: 35px 30px;       /* 稍微減少左右內距以適應併排空間 */
   
+  /* 立體感陰影 */
   box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.03), 
-    0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    0 10px 1px -5px rgba(226, 232, 240, 0.5),
+    0 4px 20px -2px rgba(0, 0, 0, 0.05);
     
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  flex-direction: column;   /* 讓卡片內部內容垂直排列 */
 }
 
+/* 懸停效果 */
 .work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 113, 197, 0.08); /* 微微帶點 Intel 藍的陰影 */
-  border-color: #cbd5e1;
+  transform: translateY(-10px);
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 25px 50px -12px rgba(0, 113, 197, 0.15);
 }
 
-/* 3. 還原：Intel 亮眼職位配色與裝飾 */
+/* 3. 還原：Intel 亮眼風格 */
 .job-title {
-  font-size: 1.4rem;
-  margin: 15px 0 8px 0;
+  font-size: 1.3rem;        /* 併排時稍微縮小字體以免換行太亂 */
+  margin: 15px 0 10px 0;
   color: #1e293b;
+  font-weight: 700;
 }
 
 .highlight-job {
-  color: #0ea5e9;           /* 還原：活潑亮藍色 */
-  font-weight: 700;
+  color: #0284c7;
 }
 
 .highlight-corp {
-  color: #0071c5;           /* 還原：Intel 經典藍 */
+  color: #0071c5;
   position: relative;
   display: inline-block;
-  font-weight: 700;
 }
 
-/* 還原：Intel 底下的品牌感裝飾線 */
 .highlight-corp::after {
   content: "";
   position: absolute;
   bottom: 2px;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: rgba(0, 113, 197, 0.2); /* 淡淡的 Intel 藍底線 */
+  height: 5px;
+  background: rgba(0, 113, 197, 0.12);
+  border-radius: 2px;
   z-index: -1;
 }
 
-/* 4. 其他沉穩細節 */
+/* 4. 細節修飾 */
 .pro-tag {
-  background: #e0f2fe;      /* 淡淡的淺藍背景 */
+  align-self: flex-start;   /* 標籤靠左 */
+  background: #e0f2fe;
   color: #0369a1;
   font-size: 0.7rem;
-  font-weight: bold;
+  font-weight: 800;
   padding: 4px 12px;
-  border-radius: 50px;      /* 膠囊型圓角 */
-  letter-spacing: 1px;
+  border-radius: 10px;
 }
 
 .work-list {
+  flex-grow: 1;             /* 讓中間的文字區域自動撐開，確保底部對齊 */
   padding-left: 15px;
-  border-left: 2px solid #e2e8f0; /* 保留前版的側邊裝飾線 */
-  margin: 15px 0;
+  border-left: 3px solid #0071c5;
+  margin: 20px 0;
 }
 
 .work-list li {
   list-style: none;
-  color: #475569;
+  color: #334155;
   margin-bottom: 10px;
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 0.9rem;
 }
 
+/* 底部註解塊 */
 .habits-comment {
-  margin-top: 25px;
-  color: #94a3b8;
-  font-family: monospace;
+  margin-top: auto;         /* 確保這塊永遠在卡片底部 */
+  padding: 12px;
+  background: rgba(241, 245, 249, 0.7);
+  border-radius: 15px;
+  color: #64748b;
+  font-family: 'Fira Code', monospace;
   font-style: italic;
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: 0.8rem;
 }
+
+/* 響應式：手機版自動切換回垂直排列 */
+@media (max-width: 992px) {
+  .works-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-card {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
