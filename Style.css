@@ -657,22 +657,7 @@ footer {
   opacity: 1;
 }
 /* 1. 修正背景白色區塊（容器） */
-.skills-section {
-  background-color: #dff1ff;
-  padding: 60px 20px;
-  border-radius: 30px;
-  max-width: 1100px;
-  width: 90%;            /* ✅ 新增：確保在小螢幕時不會貼死邊緣 */
-  margin: 40px auto;     
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  box-sizing: border-box; 
-  overflow: hidden;      /* ✅ 確保不會有東西爆出去產生捲軸 */
-  
-  /* --- 新增佈局修正 --- */
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* ✅ 強制讓內容物（標題與 Grid）在容器內置中 */
-}
+
 
 .skill-grid {
   display: flex;
@@ -710,7 +695,10 @@ footer {
   /* ✅ 確保圓形內容不會換行擠歪 */
   white-space: nowrap; 
 }
-
+.skill-grid {
+    padding: 0;         /* 確保沒有預設內縮 */
+    list-style: none;   /* 如果是 ul 就要這行 */
+}
 
 
 .modal-wrapper {
@@ -812,25 +800,6 @@ footer {
   flex-wrap: nowrap;
   justify-content: flex-start;
   min-width: max-content;   /* ✅ 讓內容不被壓縮 */
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;         /* ✅ 加這行！允許橫向滑動 */
-  padding-left: 40px;       /* ✅ 讓左邊內容不被卡住 */
-  padding-right: 40px;
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px 0;           /* ← 左右不置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skills-section h2 {
@@ -1631,13 +1600,6 @@ footer {
   opacity: 1;
 }
 
-.skills-section {
-  background-color: #f6f8fa;
-  padding: 60px 20px;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-}
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -1788,25 +1750,6 @@ footer {
   flex-wrap: nowrap;
   justify-content: flex-start;
   min-width: max-content;   /* ✅ 讓內容不被壓縮 */
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;         /* ✅ 加這行！允許橫向滑動 */
-  padding-left: 40px;       /* ✅ 讓左邊內容不被卡住 */
-  padding-right: 40px;
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px 0;           /* ← 左右不置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .skills-section h2 {
@@ -3199,13 +3142,6 @@ body {
   opacity: 1;
 }
 
-.skills-section {
-  background-color: #f6f8fa;
-  padding: 60px 20px;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-}
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -3357,25 +3293,8 @@ body {
   justify-content: flex-start;
   min-width: max-content;   /* ✅ 讓內容不被壓縮 */
 }
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;         /* ✅ 加這行！允許橫向滑動 */
-  padding-left: 40px;       /* ✅ 讓左邊內容不被卡住 */
-  padding-right: 40px;
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px 0;           /* ← 左右不置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
+
+
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -4337,13 +4256,6 @@ body {
   opacity: 1;
 }
 
-.skills-section {
-  background-color: #f6f8fa;
-  padding: 60px 20px;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-}
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -4495,25 +4407,9 @@ body {
   justify-content: flex-start;
   min-width: max-content;   /* ✅ 讓內容不被壓縮 */
 }
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;         /* ✅ 加這行！允許橫向滑動 */
-  padding-left: 40px;       /* ✅ 讓左邊內容不被卡住 */
-  padding-right: 40px;
+padding-right: 40px;
 }
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px 0;           /* ← 左右不置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
+
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -6346,13 +6242,6 @@ body {
   opacity: 1;
 }
 
-.skills-section {
-  background-color: #f6f8fa;
-  padding: 60px 20px;
-  border-radius: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-}
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -6504,25 +6393,7 @@ body {
   justify-content: flex-start;
   min-width: max-content;   /* ✅ 讓內容不被壓縮 */
 }
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  overflow-x: auto;         /* ✅ 加這行！允許橫向滑動 */
-  padding-left: 40px;       /* ✅ 讓左邊內容不被卡住 */
-  padding-right: 40px;
-}
-.skills-section {
-  background-color: #d8f0ff;
-  padding: 60px 20px;
-  border-radius: 16px;
-  max-width: 1100px;
-  margin: 40px 0;           /* ← 左右不置中 */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
+
 
 .skills-section h2 {
   font-size: 1.8rem;
@@ -7672,6 +7543,77 @@ body {
   background: #729de3;
 }
 
+/* --- 確保 Skills 整個大區塊置中 --- */
+.skills-section {
+    background-color: #d8f0ff; 
+    padding: 60px 20px;
+    border-radius: 20px;
+    max-width: 1100px;
+    width: 90%;
+    margin: 40px auto !important; /* 確保左右自動分配空間 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* 內部元件水平置中 */
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+/* --- 強制標題文字置中 --- */
+.skills-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center !important; /* 覆蓋之前的 left 設定 */
+    color: #333;
+    width: 100%;
+}
+
+/* --- 修正 Grid 容器為 Flex 置中模式 --- */
+.skill-grid {
+    display: flex !important;      /* 統一使用 flex，避免與 grid 衝突 */
+    flex-wrap: wrap;               /* 自動換行 */
+    justify-content: center;       /* 卡片整體從中間開始排 */
+    align-items: center;
+    gap: 30px;                     /* 增加間距讓畫面更開闊 */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* --- 白色底色框框 --- */
+.skill-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;              /* 確保方塊有一定寬度 */
+}
+
+.skill-box:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 藍色橢圓形技能球 --- */
+.skill-circle {
+    background-color: #5d84b3;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 110px;                  /* 固定寬高比形成橢圓 */
+    height: 65px;
+    border-radius: 35px / 35px;    /* ✅ 這是畫出完美橢圓的關鍵 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;           /* 避免字體換行 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
 
 
